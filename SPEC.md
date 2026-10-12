@@ -12,14 +12,14 @@ Audience: Claude Code. Placed at the repository root; the implementation is base
 ## 0. Purpose and scope
 
 - For a fixed list of organisations (the watch list), check **only what each organisation publishes on its own official website**, once a week; find new publications on the adoption of and policies for agentic AI; and accumulate them as structured records.
-- **Internal use only.** Results are not published. The team reviews them weekly and uses them as material for a regular blog.
+- **Internal use only.** Results are not published on websites or elsewhere (files in this repository aside). The team reviews them weekly and uses them as material for a regular blog.
 - A 4-week pilot, starting with 20–30 organisations.
 - **Keeping API tokens and cost to a minimum** is the most important design constraint.
 
 ### Out of scope
 - Using the content of third-party sites (news, other trackers, vendors' customer stories) in records. Third-party information is only noted by hand in the ledger as a lead to a "candidate organisation"
 - Exploration with web search tools or autonomous browsing (token use is unpredictable)
-- Publishing the results; assessing, scoring or ranking organisations
+- Publishing the results on websites or elsewhere; assessing, scoring or ranking organisations
 - Storing full page text
 - Crawling pages other than those registered on the watch list
 
