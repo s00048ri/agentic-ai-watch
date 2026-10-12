@@ -2,7 +2,7 @@
 
 [English](README.md) | 日本語
 
-ウォッチリストに登録した組織について、**各組織自身の公式サイトの発信だけ**を週1回確認し、agentic AI の導入・方針に関する新しい発信を構造化した記録として蓄積する内部ツールです。収集結果は公開しません。仕様は [SPEC.md](SPEC.md) を参照してください。
+ウォッチリストに登録した組織について、**各組織自身の公式サイトの発信だけ**を週1回確認し、agentic AI の導入・方針に関する新しい発信を構造化した記録として蓄積する内部ツールです。収集結果は公開しません。仕様は [SPEC.ja.md](SPEC.ja.md) を参照してください。
 
 ## 処理の流れ
 
@@ -56,7 +56,7 @@ uv run pytest -q                   # テスト（API は使いません）
 
 ### ウォッチリスト `ledger/organisations.yaml`
 
-組織名・URL は人が確認して入れます（ツールは作りません）。項目は SPEC.md §3.1 のとおりです。`sector` と `region` は `config/taxonomy/vocabularies.yaml` の id を使います。
+組織名・URL は人が確認して入れます（ツールは作りません）。項目は SPEC.ja.md §3.1 のとおりです。`sector` と `region` は `config/taxonomy/vocabularies.yaml` の id を使います。
 
 watch point の `method` ごとの書き方：
 

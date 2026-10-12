@@ -2,7 +2,7 @@
 
 English | [日本語](README.ja.md)
 
-An internal tool that checks, once a week, **only the organisations' own websites** for the organisations on a watch list, finds new publications on their adoption of and policies for agentic AI, and keeps them as structured records. See [SPEC.md](SPEC.md) for the specification (in Japanese).
+An internal tool that checks, once a week, **only the organisations' own websites** for the organisations on a watch list, finds new publications on their adoption of and policies for agentic AI, and keeps them as structured records. See [SPEC.md](SPEC.md) for the specification ([Japanese original](SPEC.ja.md)).
 
 ## How it works
 
