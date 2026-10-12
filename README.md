@@ -69,7 +69,11 @@ Every change is saved as a commit to this repository through the GitHub API. If 
 ### Deploying on Streamlit Community Cloud
 
 1. On [share.streamlit.io](https://share.streamlit.io), sign in with GitHub and create an app from this repository: branch `main`, file `streamlit_app.py`, Python 3.12 (under Advanced settings).
-2. Create a sign-in client: in Google Cloud Console → APIs & Services → Credentials, create an OAuth client ID of type "Web application" with the redirect URI `https://<your-app>.streamlit.app/oauth2callback`. (For Microsoft 365 accounts, register an app in Microsoft Entra ID instead.)
+2. Set up Google sign-in in [Google Cloud Console](https://console.cloud.google.com/) (any Google account can own the project):
+   1. Create a project (e.g. `agentic-ai-watch`).
+   2. **APIs & Services → OAuth consent screen**: user type **External**, app name "Agentic AI Watch", your email as support and developer contact. Scopes: only `openid`, `email` and `profile` (the defaults; no review by Google is needed). Leave the app in **Testing** and add each team member's Google account under **Test users**: only they can sign in, which adds a second check on top of `allowed_emails`.
+   3. **APIs & Services → Credentials → Create credentials → OAuth client ID**: type **Web application**, authorised redirect URI `https://<your-app>.streamlit.app/oauth2callback`. Copy the client ID and secret.
+   4. In Testing mode, people may need to sign in again about once a week.
 3. Create a GitHub fine-grained personal access token limited to this repository with "Contents: Read and write".
 4. Paste the settings into the app's **Secrets**, following [`.streamlit/secrets.toml.example`](.streamlit/secrets.toml.example). `allowed_emails` is the list of people who may use the app; anyone else is refused after signing in. Without the `[auth]` section the app refuses to start.
 5. Optional second layer: in the app's settings on Streamlit Community Cloud, limit viewers to the same people.

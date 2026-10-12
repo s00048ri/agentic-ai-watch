@@ -69,7 +69,11 @@ uv run pytest -q                   # テスト（API は使いません）
 ### Streamlit Community Cloud への公開
 
 1. [share.streamlit.io](https://share.streamlit.io) に GitHub でログインし、このリポジトリからアプリを作成します（ブランチ `main`、ファイル `streamlit_app.py`、Advanced settings で Python 3.12）。
-2. ログイン用のクライアントを作ります。Google Cloud Console → API とサービス → 認証情報で、種類「ウェブ アプリケーション」の OAuth クライアント ID を作成し、リダイレクト URI に `https://<アプリ名>.streamlit.app/oauth2callback` を登録します（Microsoft 365 のアカウントを使う場合は Microsoft Entra ID でアプリを登録します）。
+2. [Google Cloud Console](https://console.cloud.google.com/) で Google ログインを設定します（どの Google アカウントでもプロジェクトを作成できます）。
+   1. プロジェクトを作成します（例：`agentic-ai-watch`）。
+   2. **API とサービス → OAuth 同意画面**：ユーザーの種類は **外部**、アプリ名「Agentic AI Watch」、サポートと開発者の連絡先に自分のメールアドレス。スコープは `openid`・`email`・`profile` だけ（既定のまま。Google の審査は不要です）。公開ステータスは **テスト** のままにし、**テストユーザー** に事務局メンバーの Google アカウントを追加します。ここに登録した人しかログインできないので、`allowed_emails` に加えた二重のチェックになります。
+   3. **API とサービス → 認証情報 → 認証情報を作成 → OAuth クライアント ID**：種類は **ウェブ アプリケーション**、承認済みのリダイレクト URI に `https://<アプリ名>.streamlit.app/oauth2callback` を登録し、クライアント ID とシークレットを控えます。
+   4. テスト状態のままだと、1週間程度で再ログインが必要になることがあります。
 3. GitHub で、このリポジトリだけを対象に「Contents: Read and write」を付けた fine-grained personal access token を作ります。
 4. [`.streamlit/secrets.toml.example`](.streamlit/secrets.toml.example) に沿って、アプリの **Secrets** に設定を貼り付けます。`allowed_emails` が利用できる人のリストで、それ以外の人はログイン後に拒否されます。`[auth]` が無い場合、アプリは起動しません。
 5. 任意：Streamlit Community Cloud のアプリ設定でも、閲覧者を同じ人に限定できます。
