@@ -52,6 +52,39 @@ uv run pytest -q                   # テスト（API は使いません）
 | `monthly.yml` | 手動（月を指定） | 月次まとめ |
 | `ci.yml` | push / PR | lint、型チェック、テスト（API キーは使いません） |
 
+## Web アプリ
+
+チーム向けの、ログインが必要な Web アプリです（英語が基本。サイドバーで日本語に切り替えられます）。
+
+| 画面 | できること |
+|---|---|
+| 記録の確認 | 新着・要確認の記録を絞り込み、要約・根拠の一文・出典を見て「採用」「ブログ候補」「不採用」をメモ付きで付ける |
+| 対象機関 | ウォッチリストを最終確認日・記録数とともに表示。状態や監視ページを変更。機関を追加（トップページから RSS とサイトマップを提案。「verified」は各 URL を自分で開いて確認してからチェック） |
+| 候補組織 | 言及回数の多い順に表示。ウォッチリストへの追加、見送り、手がかりの手入力 |
+| 実行状況 | 今月のトークンと推定費用、処理中のバッチ、直近の実行の件数とエラー、過去の週次ダイジェスト |
+| 検索・書き出し | すべての記録を検索し、CSV でダウンロード |
+
+変更はすべて GitHub API 経由でこのリポジトリにコミットされます。週次の bot や他のメンバーが直前に更新していた場合は、最新の内容に対して自動でやり直します。
+
+### Streamlit Community Cloud への公開
+
+1. [share.streamlit.io](https://share.streamlit.io) に GitHub でログインし、このリポジトリからアプリを作成します（ブランチ `main`、ファイル `streamlit_app.py`、Advanced settings で Python 3.12）。
+2. ログイン用のクライアントを作ります。Google Cloud Console → API とサービス → 認証情報で、種類「ウェブ アプリケーション」の OAuth クライアント ID を作成し、リダイレクト URI に `https://<アプリ名>.streamlit.app/oauth2callback` を登録します（Microsoft 365 のアカウントを使う場合は Microsoft Entra ID でアプリを登録します）。
+3. GitHub で、このリポジトリだけを対象に「Contents: Read and write」を付けた fine-grained personal access token を作ります。
+4. [`.streamlit/secrets.toml.example`](.streamlit/secrets.toml.example) に沿って、アプリの **Secrets** に設定を貼り付けます。`allowed_emails` が利用できる人のリストで、それ以外の人はログイン後に拒否されます。`[auth]` が無い場合、アプリは起動しません。
+5. 任意：Streamlit Community Cloud のアプリ設定でも、閲覧者を同じ人に限定できます。
+
+ログインなしで手元で試す場合：`AGENTIC_WATCH_DEV=1 uv run --extra app streamlit run streamlit_app.py`（変更は手元のチェックアウトにだけ書き込まれます）。
+
+## Issue フォーム
+
+GitHub アカウントを持つ人は **Issues → New issue** から次の2つを使えます。
+
+- **Propose an organisation（機関の提案）**：`ledger/organisations.yaml` に機関を追加するプルリクエストを自動で作ります。トップページで見つかった RSS とサイトマップは `verified: false` で監視ページに入るので、マージ前に各 URL を確認してください。
+- **Suggest a candidate lead（候補の手がかり）**：`ledger/candidates.yaml` に手がかりを追加するプルリクエストを作ります。
+
+プルリクエストが自動で作られるのは、リポジトリの collaborator からの提案だけです。それ以外の提案には返信だけを付け、手で対応します。リポジトリは public なので Issue も公開されます。ラベル `add-organisation` と `candidate-lead` を一度だけ作成してください（Issues → Labels）。フォームの選択肢は `config/` から生成しています。語彙を変えたら `uv run agentic-watch issue-templates` を実行してください（CI が古いままでないか確認します）。
+
 ## 台帳の書き方
 
 ### ウォッチリスト `ledger/organisations.yaml`
@@ -76,7 +109,7 @@ watch point の `method` ごとの書き方：
 
 ## 週次の確認
 
-ダイジェストを見て、`data/entries/YYYY-MM.jsonl` の該当行の `status` を `kept` / `discarded` / `blog_candidate` に書き換え、`reviewer` に名前を入れてコミットします。`needs_review` は根拠の一文が本文に見つからなかった記録です。
+Web アプリの **記録の確認** 画面で、各記録を「採用」「ブログ候補」「不採用」に分類します（`data/entries/YYYY-MM.jsonl` の `status`・`reviewer`・`reviewed`・`review_note` が更新されます）。ファイルを直接編集しても構いません。`needs_review` は根拠の一文が本文に見つからなかった記録です。
 
 ## 手動実行
 

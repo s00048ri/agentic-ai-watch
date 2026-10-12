@@ -125,6 +125,38 @@ def cmd_pilot_summary(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_issue_templates(args: argparse.Namespace) -> int:
+    from .issues import write_templates
+
+    project = load_project(args.root)
+    stale = write_templates(project, check=args.check)
+    if args.check and stale:
+        print("Issue forms are out of date; run `agentic-watch issue-templates`: " + ", ".join(stale))
+        return 1
+    print("\n".join(stale) if stale else "Issue forms are up to date.")
+    return 0
+
+
+def cmd_from_issue(args: argparse.Namespace) -> int:
+    """Apply an issue form to the ledger. The issue body is read from the ISSUE_BODY environment variable."""
+    from .issues import IssueError, apply_lead_issue, apply_organisation_issue
+
+    project = load_project(args.root)
+    body = os.environ.get("ISSUE_BODY", "")
+    today = dt.date.today()
+    try:
+        if args.kind == "organisation":
+            fetcher = None if project.settings.crawl.contact_missing() else Fetcher(project.settings.crawl)
+            result = apply_organisation_issue(project, body, args.number, today, fetcher)
+        else:
+            result = apply_lead_issue(project, body, args.number, today)
+    except (IssueError, ValueError) as e:
+        print(f"error: {e}", file=sys.stderr)
+        return 1
+    print(result)
+    return 0
+
+
 def cmd_validate(args: argparse.Namespace) -> int:
     project = load_project(args.root)
     n_wp = sum(len(o.watch_points) for o in project.organisations)
@@ -169,6 +201,15 @@ def main(argv: list[str] | None = None) -> int:
         func=cmd_pilot_summary
     )
     sub.add_parser("validate", help="check settings, taxonomy and the ledger").set_defaults(func=cmd_validate)
+
+    it = sub.add_parser("issue-templates", help="generate the GitHub issue forms from config/")
+    it.add_argument("--check", action="store_true", help="only report forms that are out of date")
+    it.set_defaults(func=cmd_issue_templates)
+
+    fi = sub.add_parser("from-issue", help="apply an issue form (body in $ISSUE_BODY) to the ledger")
+    fi.add_argument("--kind", choices=["organisation", "lead"], required=True)
+    fi.add_argument("--number", type=int, required=True)
+    fi.set_defaults(func=cmd_from_issue)
 
     args = p.parse_args(argv)
     return int(args.func(args))

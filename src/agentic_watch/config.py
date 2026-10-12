@@ -259,7 +259,11 @@ class Project(BaseModel):
 
 
 def load_organisations(path: Path, taxonomy: Taxonomy) -> list[Organisation]:
-    orgs = [Organisation.model_validate(o) for o in (load_yaml(path) or [])]
+    return load_organisations_data(load_yaml(path) or [], taxonomy)
+
+
+def load_organisations_data(rows: list[Any], taxonomy: Taxonomy) -> list[Organisation]:
+    orgs = [Organisation.model_validate(o) for o in rows]
     ids = [o.id for o in orgs]
     dupes = {i for i in ids if ids.count(i) > 1}
     if dupes:
@@ -272,9 +276,8 @@ def load_organisations(path: Path, taxonomy: Taxonomy) -> list[Organisation]:
     return orgs
 
 
-def load_project(root: Path | None = None) -> Project:
-    root = root or ROOT
-    taxonomy = Taxonomy(
+def load_taxonomy(root: Path) -> Taxonomy:
+    return Taxonomy(
         challenges=[Challenge.model_validate(c) for c in load_yaml(root / "config/taxonomy/challenges.yaml")],
         responses=[Response.model_validate(r) for r in load_yaml(root / "config/taxonomy/responses.yaml")],
         vocabularies={
@@ -282,12 +285,23 @@ def load_project(root: Path | None = None) -> Project:
             for k, v in load_yaml(root / "config/taxonomy/vocabularies.yaml").items()
         },
     )
+
+
+def load_project(root: Path | None = None, organisations_text: str | None = None) -> Project:
+    """Load a checkout's configuration. `organisations_text` overrides the ledger file
+    (the web app passes the latest version read from GitHub)."""
+    root = root or ROOT
+    taxonomy = load_taxonomy(root)
+    if organisations_text is None:
+        organisations = load_organisations(root / "ledger/organisations.yaml", taxonomy)
+    else:
+        organisations = load_organisations_data(yaml.safe_load(organisations_text) or [], taxonomy)
     return Project(
         root=root,
         settings=Settings.model_validate(load_yaml(root / "config/settings.yaml")),
         keywords=Keywords.model_validate(load_yaml(root / "config/keywords.yaml")),
         taxonomy=taxonomy,
-        organisations=load_organisations(root / "ledger/organisations.yaml", taxonomy),
+        organisations=organisations,
     )
 
 

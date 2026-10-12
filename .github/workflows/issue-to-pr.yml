@@ -1,0 +1,74 @@
+name: Issue to pull request
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  ledger-pr:
+    if: contains(github.event.issue.labels.*.name, 'add-organisation') || contains(github.event.issue.labels.*.name, 'candidate-lead')
+    runs-on: ubuntu-latest
+    concurrency:
+      group: agentic-watch-state
+      cancel-in-progress: false
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NUMBER: ${{ github.event.issue.number }}
+      AUTHOR_ASSOCIATION: ${{ github.event.issue.author_association }}
+      ISSUE_BODY: ${{ github.event.issue.body }}
+      KIND: ${{ contains(github.event.issue.labels.*.name, 'add-organisation') && 'organisation' || 'lead' }}
+    steps:
+      - name: Only collaborators can change the ledger
+        id: allowed
+        run: |
+          case "$AUTHOR_ASSOCIATION" in
+            OWNER|MEMBER|COLLABORATOR) echo "ok=true" >> "$GITHUB_OUTPUT" ;;
+            *) echo "ok=false" >> "$GITHUB_OUTPUT"
+               gh issue comment "$NUMBER" --repo "$GITHUB_REPOSITORY" --body "Thank you. A maintainer will review this suggestion by hand." ;;
+          esac
+      - uses: actions/checkout@v4
+        if: steps.allowed.outputs.ok == 'true'
+      - uses: astral-sh/setup-uv@v6
+        if: steps.allowed.outputs.ok == 'true'
+        with:
+          python-version: "3.12"
+      - if: steps.allowed.outputs.ok == 'true'
+        run: uv sync --frozen --no-dev
+      - name: Apply the form to the ledger
+        id: apply
+        if: steps.allowed.outputs.ok == 'true'
+        run: |
+          set +e
+          result=$(uv run agentic-watch from-issue --kind "$KIND" --number "$NUMBER" 2>err.txt)
+          code=$?
+          set -e
+          if [ $code -ne 0 ]; then
+            { echo "Could not apply this form:"; echo; echo '```'; cat err.txt; echo '```'; echo; echo "Edit the issue or ask a maintainer."; } > comment.md
+            gh issue comment "$NUMBER" --repo "$GITHUB_REPOSITORY" --body-file comment.md
+            exit 1
+          fi
+          echo "result=$result" >> "$GITHUB_OUTPUT"
+      - name: Open a pull request
+        if: steps.allowed.outputs.ok == 'true'
+        env:
+          RESULT: ${{ steps.apply.outputs.result }}
+        run: |
+          branch="ledger/issue-$NUMBER"
+          git config user.name "agentic-watch-bot"
+          git config user.email "agentic-watch-bot@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add ledger
+          git commit -m "Update ledger from issue #$NUMBER"
+          git push -u origin "$branch"
+          {
+            echo "Closes #$NUMBER"
+            echo
+            echo "Before merging, open each watch point URL and set \`verified: true\` for the ones you have checked."
+          } > pr.md
+          gh pr create --repo "$GITHUB_REPOSITORY" --head "$branch" --base main \
+            --title "Ledger: $KIND $RESULT (issue #$NUMBER)" --body-file pr.md

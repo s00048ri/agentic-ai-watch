@@ -94,6 +94,8 @@ class Entry(BaseModel):
     other_organisations_named: list[str] = Field(default_factory=list)
     status: EntryStatus = "new"
     reviewer: str | None = None
+    reviewed: dt.date | None = None
+    review_note: str | None = None
     model: EntryModels
 
 

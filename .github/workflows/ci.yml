@@ -15,9 +15,10 @@ jobs:
       - uses: astral-sh/setup-uv@v6
         with:
           python-version: "3.12"
-      - run: uv sync --frozen
+      - run: uv sync --frozen --all-extras
       - run: uv run ruff check src tests
       - run: uv run ruff format --check src tests
       - run: uv run mypy
       - run: uv run pytest -q   # API calls are mocked; no ANTHROPIC_API_KEY in CI
       - run: uv run agentic-watch validate
+      - run: uv run agentic-watch issue-templates --check
