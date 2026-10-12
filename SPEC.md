@@ -36,7 +36,7 @@ Audience: Claude Code. Placed at the repository root; the implementation is base
 
 - Python 3.12, dependencies managed with `uv` (or pip + `requirements.txt`)
 - Main libraries: `httpx`, `feedparser`, `pyyaml`, `pydantic`, `trafilatura` (main-text extraction), `anthropic`, `python-dateutil`
-- Runtime: **GitHub Actions (private repository)**. The same commands must work on a local Mac
+- Runtime: **GitHub Actions (public repository)**. The same commands must work on a local Mac
 - Storage: files in the repository (YAML / JSONL). No database
 - Notifications: Slack Incoming Webhook (#agentic_ai)
 - Secrets: `ANTHROPIC_API_KEY`, `SLACK_WEBHOOK_URL`

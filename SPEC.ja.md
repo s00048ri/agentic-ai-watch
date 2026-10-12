@@ -34,7 +34,7 @@ Version: 0.1 (2026-10-12) / Owner: Rentaro Iida (GPAI Tokyo Centre)
 
 - Python 3.12、依存管理は `uv`（または pip + `requirements.txt`）
 - 主なライブラリ：`httpx`、`feedparser`、`pyyaml`、`pydantic`、`trafilatura`（本文抽出）、`anthropic`、`python-dateutil`
-- 実行環境：**GitHub Actions（private リポジトリ）**。手元の Mac でも同じコマンドで動くこと
+- 実行環境：**GitHub Actions（public リポジトリ）**。手元の Mac でも同じコマンドで動くこと
 - データ保存：リポジトリ内のファイル（YAML / JSONL）。データベースは使わない
 - 通知：Slack Incoming Webhook（#agentic_ai）
 - Secrets：`ANTHROPIC_API_KEY`、`SLACK_WEBHOOK_URL`
