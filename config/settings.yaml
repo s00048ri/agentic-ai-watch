@@ -1,0 +1,48 @@
+# Agentic AI Watch — settings. See SPEC.md §6.
+models:
+  stage1: claude-haiku-5-5
+  stage2: claude-haiku-5-5
+  synthesis: claude-sonnet-5-5
+
+# Thinking per stage. Thinking tokens count toward max_tokens, so the small caps below
+# only work with thinking off. Claude Haiku 5.5 accepts "disabled" at effort low–high;
+# Claude Sonnet 5.5 rejects "disabled" and uses "between_tools" instead.
+thinking:
+  stage1: disabled
+  stage2: disabled
+  synthesis: between_tools
+effort:
+  stage1: low
+  stage2: low
+  synthesis: medium
+
+use_batch: true
+
+limits:
+  stage1_max_items_per_run: 200
+  stage2_max_items_per_run: 40
+  stage1_max_input_chars: 1500
+  stage2_max_input_chars: 6000
+  stage1_max_output_tokens: 100
+  stage2_max_output_tokens: 800
+  synthesis_max_output_tokens: 3000
+  monthly_token_budget: 3000000     # input + output, cache reads/writes included
+
+stage1:
+  threshold: 0.5
+
+crawl:
+  user_agent: "GPAI-Tokyo-Centre-research-pilot/0.1 (+contact: <email>)"
+  min_interval_seconds_per_domain: 1.0
+  timeout_seconds: 20
+  max_sitemap_urls: 5000            # per watch point, to bound work on very large sitemaps
+  first_run_lookback_days: 30       # on a watch point's first check, older items are recorded as seen only
+
+# USD per million tokens, for the cost estimate in the digest only.
+# Check current prices before relying on the figures. Batch requests are billed at 50%.
+pricing:
+  claude-haiku-5-5: {input: 0.10, output: 0.50}
+  claude-sonnet-5-5: {input: 2.00, output: 10.00}
+  cache_write_multiplier: 1.25
+  cache_read_multiplier: 0.10
+  batch_multiplier: 0.50

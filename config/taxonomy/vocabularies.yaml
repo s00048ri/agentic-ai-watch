@@ -1,0 +1,107 @@
+# Vocabularies copied from the living resource (src/lib/vocabularies.ts). Update by copying, not by hand.
+sectors:
+- id: telecommunications
+  label: Telecommunications
+- id: commerce-retail
+  label: E-commerce, retail & consumer goods
+- id: manufacturing
+  label: Manufacturing
+- id: energy-utilities
+  label: Energy & utilities
+- id: financial-services
+  label: Financial services & insurance
+- id: legal
+  label: Legal
+- id: healthcare
+  label: Healthcare
+- id: public-administration
+  label: Public administration
+- id: scientific-research
+  label: Scientific research
+- id: technology
+  label: Technology
+- id: transportation
+  label: Transportation
+- id: professional-business-services
+  label: Professional & business services
+- id: media
+  label: Media
+- id: other
+  label: Other
+application_areas:
+- id: knowledge-management
+  label: Knowledge management
+- id: internal-workflow-optimisation
+  label: Internal workflow optimisation
+- id: customer-support
+  label: Customer support
+- id: analytical-support
+  label: Analytical support & decision assistance
+- id: compliance
+  label: Compliance
+- id: system-database-modifications
+  label: System and database modifications
+- id: legal-research
+  label: Legal research & drafting
+- id: supply-chain-industrial
+  label: Supply chain & industrial optimisation
+- id: customer-facing-transactional
+  label: Customer-facing transactional assistants
+- id: software-development
+  label: Software development
+- id: cybersecurity
+  label: Cybersecurity
+- id: facility-mobility
+  label: Facility & mobility management
+- id: network-infrastructure
+  label: Network capacity & infrastructure planning
+- id: research-discovery
+  label: Research & scientific discovery
+- id: public-services
+  label: Public sector & government services
+- id: other
+  label: Other
+deployment_stages:
+- id: research
+  label: Research
+- id: in-development
+  label: In development
+- id: pilot
+  label: Pilot
+- id: full-deployment
+  label: Full deployment
+org_types:
+- id: private-sector
+  label: Private sector
+- id: public-sector
+  label: Public sector
+- id: academic-institution
+  label: Academic institution
+- id: industry-association
+  label: Industry association
+- id: non-profit
+  label: Non-profit
+ecosystem_roles:
+- id: developer
+  label: Developer
+- id: deployer
+  label: Deployer
+- id: developer-deployer
+  label: Developer + deployer
+- id: regulator
+  label: Regulator
+regions:
+- id: asia-pacific
+  label: Asia-Pacific
+- id: europe
+  label: Europe
+- id: north-america
+  label: North America
+- id: latin-america
+  label: Latin America
+- id: africa
+  label: Africa
+- id: middle-east
+  label: Middle East
+- id: global
+  label: Global

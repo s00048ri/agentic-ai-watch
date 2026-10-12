@@ -1,0 +1,236 @@
+# Governance responses taxonomy — Phase 2 paper, Section 4.2
+# 16 responses. The 10 measures the paper lists under "Layered technical safeguards" are top-level
+# responses in this prototype; the group heading itself is not used. Names are verbatim except
+# "System-level thinking with subject-matter experts".
+# Source / licence / adaptation notice: see challenges.yaml header.
+#
+# addresses[].basis:
+#   explicit  = the paper itself links this response to this challenge
+#   editorial = mapping proposed by GPAI Tokyo Centre for the prototype (to be reviewed)
+# cross_cutting: true = the paper presents it as a general practice, not tied to specific challenges
+# tm: whether this response could link to the OECD Catalogue of Tools & Metrics, and as which
+#     tool type (technical / procedural). Editorial choice. null = no T&M link.
+
+# ---- Top-level responses ----
+
+- id: principles-to-engineering
+  name: Translating AI principles into engineering requirements
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Embedding safety, security and trustworthiness into system architecture from the outset,
+    through close collaboration between engineers and subject-matter experts, largely within
+    existing national and international AI governance frameworks.
+  cross_cutting: true
+  addresses: []
+  tm: { tool_type: procedural }
+
+- id: calibrated-human-oversight
+  name: Calibrated human oversight and decision checkpoints
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Moving beyond a binary choice between full autonomy and continuous review: autonomous
+    execution within defined boundaries, with explicit decision points that escalate
+    high-impact or irreversible actions to humans, and autonomy expanded incrementally as
+    reliability is demonstrated.
+  cross_cutting: false
+  addresses:
+    - { challenge: unintended-actions, basis: explicit }
+    - { challenge: human-oversight-over-reliance, basis: explicit }
+    - { challenge: unpredictability, basis: explicit }
+  tm: { tool_type: procedural }
+
+- id: agent-specific-evaluation
+  name: Developing agent-specific evaluation approaches
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Experimenting with agent-specific metrics such as intent resolution, tool-calling
+    accuracy, task adherence and response completeness, alongside business-level measures,
+    reflecting the view that system-level performance often matters more than isolated
+    model accuracy.
+  cross_cutting: false
+  addresses:
+    - { challenge: unpredictability, basis: explicit }
+    - { challenge: task-adherence, basis: explicit }
+    - { challenge: evaluation-assurance, basis: explicit }
+  tm: { tool_type: technical }
+
+- id: subject-matter-expertise
+  name: System-level thinking with subject-matter experts
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Drawing on domain expertise to define task scope, identify failure modes and validate
+    outputs; technical expertise alone is seen as insufficient, and access to domain
+    knowledge may become a bottleneck.
+  cross_cutting: false
+  addresses:
+    - { challenge: task-adherence, basis: editorial }
+    - { challenge: policy-compliance, basis: editorial }
+    - { challenge: evaluation-assurance, basis: editorial }
+  tm: null
+
+- id: local-language-capabilities
+  name: Investment in local language capabilities
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Targeted investment in domestic-language foundation and domain-specific models, and in
+    national initiatives, to improve accuracy and readiness in non-English contexts;
+    combining models by language and use case.
+  cross_cutting: false
+  addresses:
+    - { challenge: linguistic-contextual-accuracy, basis: explicit }
+  tm: null
+
+- id: agentic-ready-procurement
+  name: Ensuring agentic AI-ready procurement policies
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Addressing agent-specific questions during procurement: which tools, models and data
+    sources an external agentic service may use, its permissions, and limits on its actions
+    and resource consumption, with review and approval before deployment.
+  cross_cutting: false
+  addresses:
+    - { challenge: multi-agent-interaction, basis: editorial }
+    - { challenge: data-governance, basis: editorial }
+    - { challenge: compute-consumption, basis: editorial }
+  tm: { tool_type: procedural }
+
+
+# ---- Listed in the paper under "Layered technical safeguards" ----
+
+- id: sandboxing
+  name: Sandboxing and environment isolation
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Running agents in contained environments, especially during testing and early
+    deployment, to limit the impact of unexpected behaviour before granting broader access.
+  cross_cutting: false
+  addresses:
+    - { challenge: unpredictability, basis: explicit }
+  tm: { tool_type: technical }
+
+- id: access-permission-management
+  name: Access and permission management
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Least-privilege and zero-trust principles for agents, explicit human approval for
+    high-impact actions, and restrictions such as prohibiting bulk approvals.
+  cross_cutting: false
+  addresses:
+    - { challenge: identity-attribution, basis: editorial }
+    - { challenge: cybersecurity, basis: editorial }
+  tm: { tool_type: technical }
+
+- id: agent-authentication
+  name: Agent authentication
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Requiring agents to authenticate before connecting to systems, to reduce the risk of
+    malicious agents impersonating legitimate ones as agent-to-agent communication grows.
+  cross_cutting: false
+  addresses:
+    - { challenge: cybersecurity, basis: explicit }
+    - { challenge: multi-agent-interaction, basis: editorial }
+  tm: { tool_type: technical }
+
+- id: rule-based-safety-layers
+  name: Rule-based safety layers
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Agents propose actions while an external, non-AI rule system validates execution
+    ("AI inside, rules around it"), providing auditable and predictable constraints.
+  cross_cutting: false
+  addresses:
+    - { challenge: unpredictability, basis: editorial }
+    - { challenge: task-adherence, basis: editorial }
+    - { challenge: policy-compliance, basis: editorial }
+  tm: { tool_type: technical }
+
+- id: hard-coded-boundaries
+  name: Hard-coded boundaries
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Monitoring agent activity and setting limits on compute, memory or execution time to
+    prevent runaway resource consumption, cost overruns or unintended behaviour.
+  cross_cutting: false
+  addresses:
+    - { challenge: compute-consumption, basis: explicit }
+    - { challenge: unintended-actions, basis: explicit }
+  tm: { tool_type: technical }
+
+- id: grounding-trusted-data
+  name: Grounding in trusted data sources
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Grounding outputs in vetted internal reference materials to constrain sources, enforce
+    formats and support policy compliance, which depends on keeping those sources accurate
+    and up to date.
+  cross_cutting: false
+  addresses:
+    - { challenge: policy-compliance, basis: explicit }
+    - { challenge: unintended-actions, basis: editorial }
+  tm: { tool_type: technical }
+
+- id: programmatic-tool-calling
+  name: Programmatic tool calling
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Invoking tools through code execution rather than step-by-step natural-language
+    requests, reducing context limits and inference runs and improving reliability in
+    complex workflows.
+  cross_cutting: false
+  addresses:
+    - { challenge: unpredictability, basis: explicit }
+    - { challenge: unintended-actions, basis: editorial }
+  tm: { tool_type: technical }
+
+- id: agent-registries
+  name: Agent registries
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Maintaining registries of approved agents to address shadow agents, while still
+    encouraging use; reusable organisation-wide agents support consistent application of
+    policies and controls.
+  cross_cutting: false
+  addresses:
+    - { challenge: data-governance, basis: explicit }
+  tm: { tool_type: procedural }
+
+- id: observability-mechanisms
+  name: Observability mechanisms
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Dashboards tracking agent actions, decisions and data changes, and specialised agents
+    that evaluate other agents' behaviour and alert human reviewers to anomalies.
+  cross_cutting: false
+  addresses:
+    - { challenge: unpredictability, basis: explicit }
+    - { challenge: traceability, basis: editorial }
+    - { challenge: human-oversight-over-reliance, basis: editorial }
+  tm: { tool_type: technical }
+
+- id: hallucination-mitigation
+  name: Hallucination mitigation techniques
+  parent: null
+  source_ref: "Section 4.2"
+  summary: >-
+    Retrieval-augmented generation, document grounding and validation workflows to reduce
+    hallucinations.
+  cross_cutting: false
+  addresses:
+    - { challenge: unintended-actions, basis: editorial }
+  tm: { tool_type: technical }

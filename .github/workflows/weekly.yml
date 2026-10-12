@@ -1,0 +1,41 @@
+name: Weekly run
+
+on:
+  schedule:
+    - cron: "0 21 * * 0"   # Monday 06:00 JST
+  workflow_dispatch:
+    inputs:
+      sync:
+        description: "Use the synchronous API instead of batches"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agentic-watch-state   # one job at a time touches state/
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - run: uv sync --frozen --no-dev
+      - name: Detect, filter, stage 1
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: uv run agentic-watch run ${{ inputs.sync && '--sync' || '' }}
+      - name: Commit state
+        if: always()
+        run: |
+          git config user.name "agentic-watch-bot"
+          git config user.email "agentic-watch-bot@users.noreply.github.com"
+          git add ledger state data reports
+          git diff --cached --quiet || git commit -m "chore: weekly run $(TZ=Asia/Tokyo date +%F)"
+          git push

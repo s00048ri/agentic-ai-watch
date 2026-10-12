@@ -1,0 +1,25 @@
+# Watch list (SPEC.md §3.1). Entries are added by hand. Example (keep commented out):
+#
+# - id: example-org
+#   name: Example Organisation
+#   name_local: 例示組織
+#   domains: [example.com]
+#   org_type: private-sector
+#   ecosystem_role: deployer
+#   sector: telecommunications
+#   region: asia-pacific
+#   size: large
+#   inclusion_reason: phase2-interviewee
+#   lead_source: null
+#   status: active
+#   added: 2026-10-13
+#   last_reviewed: 2026-10-13
+#   watch_points:
+#     - type: newsroom
+#       url: https://example.com/news
+#       method: rss
+#       feed_url: https://example.com/news/rss.xml
+#       language: en
+#       frequency: weekly
+#       verified: false
+[]

@@ -1,0 +1,7 @@
+# Hand-labelled items for `agentic-watch evaluate` (SPEC.md §8). Example (keep commented out):
+#
+# - url: https://example.com/news/2026/agent-pilot
+#   title: Example pilot of an AI agent in customer service
+#   label: deployment          # deployment | policy-governance | research | product-offering | not-relevant
+#   relevant: true
+[]

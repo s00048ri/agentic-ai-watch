@@ -1,0 +1,8 @@
+# Keyword filter (SPEC.md §4.2). Matching is case-insensitive after NFKC normalisation
+# (full-width and half-width forms are treated as the same).
+include:
+  en: ["agentic", "ai agent", "ai agents", "multi-agent", "multiagent", "autonomous agent", "agentic workflow", "agent platform"]
+  ja: ["AIエージェント", "エージェント型AI", "エージェンティックAI", "自律型AI", "マルチエージェント", "AI agent"]
+exclude:
+  en: ["travel agent", "insurance agent", "real estate agent", "user agent", "secret agent", "free agent"]
+  ja: ["代理店", "エージェント契約", "人材エージェント", "転職エージェント"]

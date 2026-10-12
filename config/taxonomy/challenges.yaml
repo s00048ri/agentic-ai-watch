@@ -1,0 +1,159 @@
+# Challenges taxonomy — adapted from the Phase 2 paper, Section 4.1.
+# Source: OECD (2026), "Agentic AI in organisations: Early insights from practitioner
+#   interviews", OECD Artificial Intelligence Papers, No. 65 (CC BY 4.0).
+# This is an adaptation of an original work by the OECD. The opinions expressed and
+# arguments employed in this adaptation should not be reported as representing the
+# official views of the OECD or of its Member countries.
+#
+# The paper's 11 categories are renamed and some are split for this prototype (17 categories).
+# Summaries are paraphrased from the paper and contain no organisation names; where a category
+# was split, the original summary is divided between the new categories.
+# Related responses are NOT listed here; they are derived from responses.yaml (single source of truth).
+# incident_feed_planned: editorial choice (which challenges an AI Incidents Monitor feed could inform).
+
+- id: unpredictability
+  name: Unpredictability
+  source_ref: "Section 4.1"
+  summary: >-
+    Agentic systems may act in ways that are not fully predictable across contexts, and
+    their behaviour can vary between runs. Limits in reasoning and in maintaining coherent
+    behaviour over extended interactions matter more once systems are trusted to take
+    autonomous actions in real-world processes.
+  incident_feed_planned: true
+
+- id: unintended-actions
+  name: Hallucinated or unintended actions
+  source_ref: "Section 4.1"
+  summary: >-
+    "Unintended" risks such as calling non-existent tools, passing incorrect inputs to valid
+    tools, or executing plausible but ungrounded action sequences. Moving from generating
+    text to taking actions raises the stakes, and some errors only become visible over time.
+  incident_feed_planned: true
+
+- id: compounding-errors
+  name: Compounding errors
+  source_ref: "Section 4.1"
+  summary: >-
+    Multi-agent architectures add compounding complexity: errors can propagate across
+    workflows or cascade through downstream tools.
+  incident_feed_planned: true
+
+- id: multi-agent-interaction
+  name: Multi-agent interaction
+  source_ref: "Section 4.1"
+  summary: >-
+    Agent-to-agent communication may become a new attack surface, and governance for agents
+    from different providers and organisations interacting with one another remains
+    under-defined.
+  incident_feed_planned: true
+
+- id: linguistic-contextual-accuracy
+  name: Linguistic and contextual accuracy beyond English
+  source_ref: "Section 4.1"
+  summary: >-
+    Performance gaps between English and other languages are a material barrier in
+    regulated and high-stakes settings, affecting understanding of domestic legal and
+    administrative contexts, tool selection and task intent.
+  incident_feed_planned: false
+
+- id: cybersecurity
+  name: Cybersecurity vulnerabilities
+  source_ref: "Section 4.1"
+  summary: >-
+    Agentic systems can be manipulated through prompt injection, leading to agent
+    hijacking, credential theft, data extraction or unauthorised transactions. The speed,
+    autonomy and scale that make agents useful for defence also amplify the impact of
+    compromise or misuse.
+  incident_feed_planned: true
+
+- id: traceability
+  name: Traceability
+  source_ref: "Section 4.1"
+  summary: >-
+    Organisations need to reconstruct the pathway behind consequential actions. This is
+    harder in multi-step, multi-agent workflows, including when monitoring sub-agents or
+    detecting unauthorised agents.
+  incident_feed_planned: false
+
+- id: explainability
+  name: Explainability
+  source_ref: "Section 4.1"
+  summary: >-
+    Explainability is treated as a prerequisite for accountability: organisations need to
+    be able to explain why an agent took a consequential action.
+  incident_feed_planned: false
+
+- id: evaluation-assurance
+  name: Evaluation and assurance gaps
+  source_ref: "Section 4.1"
+  summary: >-
+    Evaluation tooling for agentic systems is less mature than for standalone models.
+    Organisations often rely on task-specific proxies, and assessing behaviour over long
+    sequences of actions (planning quality, tool-call order, when to seek user input)
+    lacks a shared standard.
+  incident_feed_planned: false
+
+- id: data-governance
+  name: Data governance
+  source_ref: "Section 4.1"
+  summary: >-
+    Weak data classification and unapproved "shadow agents" are recurring concerns.
+  incident_feed_planned: false
+
+- id: privacy
+  name: Privacy
+  source_ref: "Section 4.1"
+  summary: >-
+    Aggregation-driven privacy risks are a recurring concern.
+  incident_feed_planned: false
+
+- id: identity-attribution
+  name: Identity management & attribution
+  source_ref: "Section 4.1"
+  summary: >-
+    Agents may inherit human users' access rights, while identity and access tools designed
+    for humans fit poorly with continuously operating autonomous systems. Attributing
+    responsibility when agents act with greater autonomy is a further concern.
+  incident_feed_planned: false
+
+- id: data-leakage
+  name: Data leakage
+  source_ref: "Section 4.1"
+  summary: >-
+    [Summary to be drafted.]
+  incident_feed_planned: true
+
+- id: human-oversight-over-reliance
+  name: Human oversight and over-reliance
+  source_ref: "Section 4.1"
+  summary: >-
+    Deciding where autonomous operation is appropriate and where explicit human approval is
+    required is a central challenge. Continuous review is impractical at scale, and
+    authoritative-looking outputs risk automation bias and an erosion of expertise over time.
+  incident_feed_planned: true
+
+- id: task-adherence
+  name: Misalignment / task adherence
+  source_ref: "Section 4.1"
+  summary: >-
+    Keeping agents within their intended scope is critical. Instances were reported of
+    agents modifying constraints or circumventing limits in order to appear successful.
+  incident_feed_planned: false
+
+- id: policy-compliance
+  name: Policy compliance
+  source_ref: "Section 4.1"
+  summary: >-
+    Keeping agents within organisational policies is critical, particularly in regulated
+    contexts.
+  incident_feed_planned: false
+
+- id: compute-consumption
+  name: Compute consumption
+  source_ref: "Section 4.1"
+  summary: >-
+    Because agents may run on recurring triggers and loops, resource consumption can
+    accumulate in ways that are hard to anticipate, making compute cost an operational
+    challenge rather than only a commercial consideration. Tokenisation can also make
+    processing some languages more costly.
+  incident_feed_planned: false
