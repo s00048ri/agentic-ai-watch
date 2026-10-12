@@ -1,107 +1,109 @@
-# Agentic AI Watch（試験導入）
+# Agentic AI Watch (pilot)
 
-ウォッチリストに登録した組織について、**各組織自身の公式サイトの発信だけ**を週1回確認し、agentic AI の導入・方針に関する新しい発信を構造化した記録として蓄積する内部ツールです。収集結果は公開しません。仕様は [SPEC.md](SPEC.md) を参照してください。
+English | [日本語](README.ja.md)
 
-## 処理の流れ
+An internal tool that checks, once a week, **only the organisations' own websites** for the organisations on a watch list, finds new publications on their adoption of and policies for agentic AI, and keeps them as structured records. See [SPEC.md](SPEC.md) for the specification (in Japanese).
+
+## How it works
 
 ```
-検出（RSS・サイトマップ・ページハッシュ、LLMなし）
-  → 自組織ドメインの URL だけ残す・既出を除く
-  → キーワード絞り込み（LLMなし。AIガバナンス系ページは素通し）
-  → 段階1：関連性の判定（Haiku、入力1,500字・出力100トークン以内）
-  → 段階2：項目の抽出（Haiku、本文先頭6,000字・出力800トークン以内）
-  → 根拠の一文が本文に逐語で含まれるかコードで確認（含まれなければ needs_review）
-  → data/entries/YYYY-MM.jsonl に保存、候補組織を更新、週次ダイジェストを Slack に投稿
+Detect new pages (RSS, sitemaps, page hashes; no LLM)
+  → keep only URLs on the organisation's own domains, drop ones already seen
+  → keyword filter (no LLM; AI governance pages skip the filter)
+  → stage 1: relevance (Haiku; input ≤ 1,500 characters, output ≤ 100 tokens)
+  → stage 2: field extraction (Haiku; first 6,000 characters of the page, output ≤ 800 tokens)
+  → code checks that the evidence quote appears verbatim in the page (if not: needs_review)
+  → save to data/entries/YYYY-MM.jsonl, update candidate organisations, post a weekly digest to Slack
 ```
 
-- 本文はメモリ上でのみ扱い、どのファイルにも保存しません（テストで確認しています）。
-- 段階1・2は既定で Message Batches API（半額）を使います。`weekly.yml` が段階1を送り、`collect.yml`（2時間おき）が結果を回収して段階2を送り、すべて終わったらダイジェストを投稿します。
-- 費用を抑えるため、段階1・2は thinking を無効にし（effort は low）、JSON スキーマで出力させます。固定の指示文にはプロンプトキャッシュを指定しています。
-- 月間トークン上限（`limits.monthly_token_budget`）を超える見込みになると LLM 呼び出しを止めて Slack に通知し、残りは翌週に繰り越します。
+- Page text is handled in memory only and is never written to any file (covered by the tests).
+- By default, stages 1 and 2 use the Message Batches API (half price). `weekly.yml` submits stage 1; `collect.yml` (every two hours) collects the results, submits stage 2, and posts the digest when everything is done.
+- To keep costs down, stages 1 and 2 run with thinking disabled (effort `low`) and return JSON through a schema. The fixed system prompts are marked for prompt caching.
+- When the monthly token budget (`limits.monthly_token_budget`) would be exceeded, LLM calls stop, Slack is notified, and the remaining items carry over to the next week.
 
-## セットアップ
+## Setup
 
-### 1. 手元（Mac）
+### 1. Local (Mac)
 
 ```bash
-# uv が無ければ: curl -LsSf https://astral.sh/uv/install.sh | sh
+# If uv is missing: curl -LsSf https://astral.sh/uv/install.sh | sh
 uv sync
-uv run agentic-watch validate      # 設定・分類・台帳の検証
-uv run pytest -q                   # テスト（API は使いません）
+uv run agentic-watch validate      # check settings, taxonomy and the ledger
+uv run pytest -q                   # tests (no API calls)
 ```
 
-### 2. 設定で必ず変えるもの
+### 2. Settings you must change
 
-- `config/settings.yaml` の `crawl.user_agent`：`<email>` を連絡先に置き換えてください。置き換えるまで、クロールするコマンドは停止します。
-- `config/settings.yaml` の `pricing`：ダイジェストの推定費用に使う単価です。現行の料金を確認して更新してください。
+- `crawl.user_agent` in `config/settings.yaml`: replace `<email>` with a contact address. Commands that crawl stop until you do.
+- `pricing` in `config/settings.yaml`: unit prices used only for the cost estimate in the digest. Check current prices and update them.
 
 ### 3. GitHub
 
-1. **Settings → Secrets and variables → Actions** に次の2つを登録します。
-   - `ANTHROPIC_API_KEY`：Claude API のキー（API コンソール側でも月額上限を設定してください）
-   - `SLACK_WEBHOOK_URL`：#agentic_ai の Incoming Webhook の URL
-2. **Slack の Incoming Webhook**：Slack の「Incoming Webhooks」アプリで #agentic_ai を投稿先に選び、発行された URL を上の secret に入れます。未設定の場合、ダイジェストは `reports/weekly/` に保存されるだけで投稿はされません。
-3. **Settings → Actions → General → Workflow permissions** を「Read and write permissions」にします（状態ファイルを bot がコミットするため）。
+1. Under **Settings → Secrets and variables → Actions**, add:
+   - `ANTHROPIC_API_KEY`: a Claude API key (also set a monthly spend limit in the API console)
+   - `SLACK_WEBHOOK_URL`: the Incoming Webhook URL for #agentic_ai
+2. **Slack Incoming Webhook**: in Slack's "Incoming Webhooks" app, choose #agentic_ai as the channel and put the issued URL in the secret above. Without it, the digest is saved to `reports/weekly/` but not posted.
+3. Under **Settings → Actions → General → Workflow permissions**, select "Read and write permissions" (the bot commits state files).
 
-| workflow | 契機 | 内容 |
+| Workflow | Trigger | What it does |
 |---|---|---|
-| `weekly.yml` | 毎週月曜 06:00 JST ＋手動 | 検出 → 絞り込み → 段階1の送信 |
-| `collect.yml` | 2時間おき ＋手動 | バッチ結果の回収 → 段階2 → 保存 → ダイジェスト投稿（処理待ちが無ければ数秒で終了） |
-| `monthly.yml` | 手動（月を指定） | 月次まとめ |
-| `ci.yml` | push / PR | lint、型チェック、テスト（API キーは使いません） |
+| `weekly.yml` | Mondays 06:00 JST, or manual | Detect → filter → submit stage 1 |
+| `collect.yml` | Every two hours, or manual | Collect batch results → stage 2 → save → post the digest (ends in seconds when nothing is pending) |
+| `monthly.yml` | Manual (choose a month) | Monthly note |
+| `ci.yml` | Push / PR | Lint, type check, tests (no API key used) |
 
-## 台帳の書き方
+## The ledger
 
-### ウォッチリスト `ledger/organisations.yaml`
+### Watch list: `ledger/organisations.yaml`
 
-組織名・URL は人が確認して入れます（ツールは作りません）。項目は SPEC.md §3.1 のとおりです。`sector` と `region` は `config/taxonomy/vocabularies.yaml` の id を使います。
+People enter and check organisation names and URLs; the tool never creates them. Fields follow SPEC.md §3.1. `sector` and `region` use ids from `config/taxonomy/vocabularies.yaml`.
 
-watch point の `method` ごとの書き方：
+How to write each watch point `method`:
 
-| method | `url` | `feed_url` | 新着の判定 |
+| method | `url` | `feed_url` | What counts as new |
 |---|---|---|---|
-| `rss` | 一覧ページ | RSS/Atom の URL（必須） | 未検出の URL |
-| `sitemap` | 見たい範囲（例 `https://example.com/news`）。この path 以下の URL だけを見ます | サイトマップの URL（省略時は robots.txt の `Sitemap:`、なければ `/sitemap.xml`） | 未検出の URL、または `lastmod` の更新 |
-| `page-hash` | 監視するページ | 不要 | 本文のハッシュの変化 |
-| `manual` | 手で見るページ | 不要 | 処理せず、ダイジェストに「手動確認」として表示 |
+| `rss` | The listing page | RSS/Atom URL (required) | A URL not seen before |
+| `sitemap` | The section to watch (e.g. `https://example.com/news`); only URLs under this path are used | The sitemap URL (if omitted: robots.txt `Sitemap:`, else `/sitemap.xml`) | A URL not seen before, or a newer `lastmod` |
+| `page-hash` | The page to monitor | Not needed | A change in the hash of the page text |
+| `manual` | A page checked by hand | Not needed | Not processed; listed in the digest under "check by hand" |
 
-- **最初の確認時の扱い**：watch point を初めて確認したときは、`crawl.first_run_lookback_days`（既定30日）より古い項目と日付の無いサイトマップ項目を「既出」として記録するだけにし、処理しません（過去記事が一度に段階1へ流れ込むのを防ぐため）。`page-hash` は初回も処理します。
-- 見るページの候補探し：`uv run agentic-watch discover https://example.com/` で RSS とサイトマップの候補を YAML で表示します。台帳には書き込まないので、確認して貼り付けてください。
+- **First check of a watch point**: items older than `crawl.first_run_lookback_days` (default 30) and undated sitemap entries are recorded as seen but not processed, so a watch point's back catalogue does not flood stage 1. `page-hash` pages are processed on the first check too.
+- Finding pages to watch: `uv run agentic-watch discover https://example.com/` prints RSS and sitemap candidates as YAML. Nothing is written to the ledger; check them and paste them in.
 
-### 候補組織 `ledger/candidates.yaml`
+### Candidate organisations: `ledger/candidates.yaml`
 
-記録の `other_organisations_named` に出た組織は、`official-mention` として自動で追加されます（既にあれば `mentions` を加算。ウォッチリストにある組織は除外）。第三者の手がかり・自薦・紹介などは手で追記してください。追加の判断は四半期に1回、ここを見て行います。
+Organisations named in a record's `other_organisations_named` are added automatically as `official-mention` (or their `mentions` count goes up; organisations already on the watch list are skipped). Add other leads (third-party, self-nominated, introductions) by hand. Decide on additions once a quarter by reviewing this file.
 
-## 週次の確認
+## Weekly review
 
-ダイジェストを見て、`data/entries/YYYY-MM.jsonl` の該当行の `status` を `kept` / `discarded` / `blog_candidate` に書き換え、`reviewer` に名前を入れてコミットします。`needs_review` は根拠の一文が本文に見つからなかった記録です。
+From the digest, set `status` on the matching line of `data/entries/YYYY-MM.jsonl` to `kept`, `discarded` or `blog_candidate`, put your name in `reviewer`, and commit. `needs_review` means the evidence quote was not found in the page text.
 
-## 手動実行
+## Running by hand
 
 ```bash
-uv run agentic-watch run --no-llm          # ドライラン：検出と絞り込みだけ（API なし、何も書き込まない）
-uv run agentic-watch run --sync            # 同期 API で全段階を実行（件数が少ないとき・試行用）
-uv run agentic-watch run                   # バッチ API（段階1を送信）
-uv run agentic-watch collect               # バッチ結果の回収・段階2・ダイジェスト
-uv run agentic-watch digest [--post]       # 直近の実行のダイジェストを作り直す
-uv run agentic-watch evaluate              # data/gold.yaml に対する段階1の精度
+uv run agentic-watch run --no-llm          # dry run: detection and keyword filter only (no API, nothing written)
+uv run agentic-watch run --sync            # all stages with the synchronous API (few items, or trying things out)
+uv run agentic-watch run                   # batch API (submits stage 1)
+uv run agentic-watch collect               # collect batches, stage 2, digest
+uv run agentic-watch digest [--post]       # re-render the latest run's digest
+uv run agentic-watch evaluate              # stage 1 accuracy against data/gold.yaml
 uv run agentic-watch synthesize --month 2026-11
-uv run agentic-watch pilot-summary         # 試験終了時の集計 → reports/pilot-summary.md
+uv run agentic-watch pilot-summary         # end-of-pilot summary → reports/pilot-summary.md
 ```
 
-GitHub 上では **Actions → 該当 workflow → Run workflow** で手動実行できます。
+On GitHub, use **Actions → the workflow → Run workflow**.
 
-## ファイル
+## Files
 
-| パス | 内容 |
+| Path | Contents |
 |---|---|
-| `config/taxonomy/` | リビングリソースの分類（challenges / responses）と語彙のコピー。更新はコピーで行い、コードに分類名は書きません |
-| `prompts/` | 段階1・段階2・月次まとめの指示文 |
-| `state/seen.jsonl` | 検出済み URL（最後の行が有効） |
-| `state/queue.jsonl` | 上限で翌週に繰り越した項目（本文は含みません） |
-| `state/batches.json` | 送信したバッチと処理状況 |
-| `state/run.json` | 実行中の週の件数など |
-| `state/checks.json` | watch point ごとの最終確認日（頻度の判定用） |
-| `state/usage.jsonl` | API 応答ごとのトークン使用量 |
-| `data/entries/` | 記録 |
-| `reports/` | 週次ダイジェストの控え、月次まとめ、集計 |
+| `config/taxonomy/` | Copies of the living resource's taxonomy (challenges / responses) and vocabularies. Update by copying; category names are never written into the code |
+| `prompts/` | System prompts for stage 1, stage 2 and the monthly note |
+| `state/seen.jsonl` | URLs already detected (the last line per URL wins) |
+| `state/queue.jsonl` | Items carried over to the next run by the limits (no page text) |
+| `state/batches.json` | Submitted batches and their status |
+| `state/run.json` | Counts for the current week's run |
+| `state/checks.json` | Last check date per watch point (for the frequency setting) |
+| `state/usage.jsonl` | Token usage per API response |
+| `data/entries/` | Records |
+| `reports/` | Weekly digest copies, monthly notes, summaries |
