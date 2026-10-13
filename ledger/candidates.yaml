@@ -1,3 +1,34 @@
 # Candidate organisations (SPEC.md §3.3). "official-mention" rows are added automatically;
 # add other lead routes by hand.
-[]
+- name: Infosys
+  lead_route: official-mention
+  lead_detail: 'named in anthropic page 2026-09-28: https://www.anthropic.com/news/anthropic-infosys'
+  first_seen: '2026-10-13'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Amazon Bedrock
+  lead_route: official-mention
+  lead_detail: 'named in anthropic page 2026-09-28: https://www.anthropic.com/news/anthropic-infosys'
+  first_seen: '2026-10-13'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Google Cloud Vertex AI
+  lead_route: official-mention
+  lead_detail: 'named in anthropic page 2026-09-28: https://www.anthropic.com/news/anthropic-infosys'
+  first_seen: '2026-10-13'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Microsoft Azure
+  lead_route: official-mention
+  lead_detail: 'named in anthropic page 2026-09-28: https://www.anthropic.com/news/anthropic-infosys'
+  first_seen: '2026-10-13'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null

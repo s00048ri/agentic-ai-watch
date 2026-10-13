@@ -1,0 +1,31 @@
+{
+  "run_id": "2026-10-13",
+  "started": "2026-10-13",
+  "counts": {
+    "detected": 76,
+    "keyword_passed": 3,
+    "stage1_sent": 3,
+    "stage1_passed": 3,
+    "stage2_sent": 1,
+    "recorded": 1,
+    "carried_over": 0
+  },
+  "new_entry_ids": [
+    "b41d83a5090ad36ecd6044f604cec6dccb3fcb91"
+  ],
+  "manual_watch_points": [],
+  "fetch_errors": [
+    "fujitsu: https://global.fujitsu/en-global/pr/news: HTTPStatusError: Client error '429 Too Many Requests' for url 'https://global.fujitsu/sitemap.xml'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+    "imda: https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches: ParseError: no element found: line 1, column 0",
+    "openai: https://openai.com/index/ringg: HTTPStatusError",
+    "openai: https://openai.com/index/advancing-computer-use-with-ironclad: HTTPStatusError"
+  ],
+  "budget_stopped": false,
+  "candidate_changes": [
+    "Infosys: new (anthropic)",
+    "Amazon Bedrock: new (anthropic)",
+    "Google Cloud Vertex AI: new (anthropic)",
+    "Microsoft Azure: new (anthropic)"
+  ],
+  "digest_posted": true
+}
