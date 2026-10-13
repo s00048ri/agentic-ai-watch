@@ -1,25 +1,117 @@
-# Watch list (SPEC.md §3.1). Entries are added by hand. Example (keep commented out):
-#
-# - id: example-org
-#   name: Example Organisation
-#   name_local: 例示組織
-#   domains: [example.com]
-#   org_type: private-sector
-#   ecosystem_role: deployer
-#   sector: telecommunications
-#   region: asia-pacific
-#   size: large
-#   inclusion_reason: phase2-interviewee
-#   lead_source: null
-#   status: active
-#   added: 2026-10-13
-#   last_reviewed: 2026-10-13
-#   watch_points:
-#     - type: newsroom
-#       url: https://example.com/news
-#       method: rss
-#       feed_url: https://example.com/news/rss.xml
-#       language: en
-#       frequency: weekly
-#       verified: false
-[]
+# Watch list (SPEC.md §3.1). Edited by hand, through the web app, or from issue forms.
+- id: anthropic
+  name: Anthropic
+  name_local: null
+  domains:
+  - anthropic.com
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: north-america
+  size: large
+  inclusion_reason: phase2-interviewee
+  lead_source: null
+  status: active
+  added: '2026-10-13'
+  last_reviewed: '2026-10-13'
+  watch_points:
+  - type: newsroom
+    url: https://www.anthropic.com/news
+    method: sitemap
+    feed_url: https://www.anthropic.com/sitemap.xml
+    language: en
+    frequency: weekly
+    verified: true
+- id: openai
+  name: OpenAI
+  name_local: null
+  domains:
+  - openai.com
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: north-america
+  size: large
+  inclusion_reason: haip-reporter
+  lead_source: null
+  status: active
+  added: '2026-10-13'
+  last_reviewed: '2026-10-13'
+  watch_points:
+  - type: newsroom
+    url: https://openai.com/news/
+    method: rss
+    feed_url: https://openai.com/news/rss.xml
+    language: en
+    frequency: weekly
+    verified: false
+- id: fujitsu
+  name: Fujitsu
+  name_local: 富士通株式会社
+  domains:
+  - global.fujitsu
+  - fujitsu.com
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: technology
+  region: asia-pacific
+  size: large
+  inclusion_reason: phase2-interviewee
+  lead_source: null
+  status: active
+  added: '2026-10-13'
+  last_reviewed: '2026-10-13'
+  watch_points:
+  - type: newsroom
+    url: https://global.fujitsu/en-global/pr/news
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: preferred-networks
+  name: Preferred Networks
+  name_local: 株式会社Preferred Networks
+  domains:
+  - preferred.jp
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: asia-pacific
+  size: medium
+  inclusion_reason: phase2-interviewee
+  lead_source: null
+  status: active
+  added: '2026-10-13'
+  last_reviewed: '2026-10-13'
+  watch_points:
+  - type: newsroom
+    url: https://www.preferred.jp/en/news
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: imda
+  name: Infocomm Media Development Authority (IMDA)
+  name_local: null
+  domains:
+  - imda.gov.sg
+  org_type: public-sector
+  ecosystem_role: regulator
+  sector: public-administration
+  region: asia-pacific
+  size: large
+  inclusion_reason: phase2-interviewee
+  lead_source: null
+  status: active
+  added: '2026-10-13'
+  last_reviewed: '2026-10-13'
+  watch_points:
+  - type: newsroom
+    url: https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
