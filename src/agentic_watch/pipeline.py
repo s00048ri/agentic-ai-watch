@@ -18,7 +18,7 @@ import httpx
 
 from . import digest as digest_mod
 from .config import Project
-from .fetch import Detection, Fetcher, RobotsDisallowed, detect, extract_text, page_title
+from .fetch import Detection, Fetcher, RobotsDisallowed, describe_error, detect, extract_text, page_title
 from .filter import passes
 from .leads import update_candidates
 from .llm import (
@@ -207,7 +207,7 @@ def stage1(ctx: Context, run: RunState, queue: list[QueuedItem]) -> None:
                 title, text = _page(ctx, q)
                 q.title = q.title or title
             except (RobotsDisallowed, httpx.HTTPError) as e:
-                run.fetch_errors.append(f"{q.org_id}: {q.url}: {type(e).__name__}")
+                run.fetch_errors.append(f"{q.org_id}: {q.url}: {describe_error(e)}")
                 queue.remove(q)
                 ctx.store.mark_seen([_seen(q, "fetch_failed")])
                 continue
@@ -274,7 +274,8 @@ def stage2(ctx: Context, run: RunState, queue: list[QueuedItem]) -> None:
         try:
             title, text = _page(ctx, q)
         except (RobotsDisallowed, httpx.HTTPError) as e:
-            run.fetch_errors.append(f"{q.org_id}: {q.url}: {type(e).__name__}")
+            # It passed stage 1 on its title and summary, so list it for a person to read.
+            run.unreadable_pages.append(f"{q.org_id}: [{q.title or q.url}]({q.url}) ({describe_error(e)})")
             queue.remove(q)
             ctx.store.mark_seen([_seen(q, "fetch_failed")])
             continue

@@ -38,6 +38,15 @@ class RobotsDisallowed(Exception):
     pass
 
 
+def describe_error(e: Exception) -> str:
+    """A short description for reports, with the HTTP status when there is one."""
+    if isinstance(e, httpx.HTTPStatusError):
+        return f"HTTP {e.response.status_code} for {e.request.url}"
+    if isinstance(e, RobotsDisallowed):
+        return f"robots.txt disallows {e} (or robots.txt could not be read)"
+    return f"{type(e).__name__}: {e}" if str(e) else type(e).__name__
+
+
 class Fetcher:
     """HTTP access with robots.txt checks and per-host spacing."""
 
@@ -274,11 +283,8 @@ def detect(project: Project, store: Store, fetcher: Fetcher, today: dt.date, loo
                     found = read_sitemap(fetcher, wp, project.settings.crawl.max_sitemap_urls)
                 else:
                     found = read_page_hash(fetcher, wp)
-            except RobotsDisallowed as e:
-                result.errors.append(f"{org.id}: robots.txt disallows {e}")
-                continue
-            except (httpx.HTTPError, ET.ParseError, OSError) as e:
-                result.errors.append(f"{org.id}: {key}: {type(e).__name__}: {e}")
+            except (RobotsDisallowed, httpx.HTTPError, ET.ParseError, OSError) as e:
+                result.errors.append(f"{org.id}: {key}: {describe_error(e)}")
                 continue
             result.checked[key] = today
             start = len(result.items)
@@ -296,7 +302,7 @@ def _add_previews(fetcher: Fetcher, project: Project, items: list[Item], errors:
         try:
             resp = fetcher.get(item.url)
         except (RobotsDisallowed, httpx.HTTPError) as e:
-            errors.append(f"{item.org_id}: {item.url}: preview failed: {type(e).__name__}")
+            errors.append(f"{item.org_id}: {item.url}: preview failed: {describe_error(e)}")
             continue
         item.title = page_title(resp.text)
         text = " ".join(extract_text(resp.text, item.url).split())

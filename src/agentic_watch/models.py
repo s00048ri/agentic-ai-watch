@@ -159,6 +159,7 @@ class RunState(BaseModel):
     new_entry_ids: list[str] = Field(default_factory=list)
     manual_watch_points: list[str] = Field(default_factory=list)
     fetch_errors: list[str] = Field(default_factory=list)
+    unreadable_pages: list[str] = Field(default_factory=list)  # passed stage 1, page not readable
     budget_stopped: bool = False
     candidate_changes: list[str] = Field(default_factory=list)
     digest_posted: bool = False

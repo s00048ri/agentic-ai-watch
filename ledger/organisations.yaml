@@ -110,7 +110,7 @@
   watch_points:
   - type: newsroom
     url: https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches
-    method: sitemap
+    method: manual
     feed_url: null
     language: en
     frequency: weekly

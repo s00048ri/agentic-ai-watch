@@ -142,3 +142,20 @@ def test_batch_flow_run_then_collect(project_root):
     assert all(u.batch for u in ctx.store.usage())
     assert notes and "weekly digest" in notes[-1]
     assert collect(ctx) == "nothing to collect"  # idempotent
+
+
+def test_unreadable_relevant_page_is_listed_for_hand_check(project_root):
+    from .conftest import default_site
+
+    site = default_site()
+    site.pages["https://example.com/news/agent-pilot"] = (
+        403,
+        "forbidden",
+    )  # the RSS summary is enough for stage 1
+    ctx, _, _ = make_ctx(project_root, site=site, llm=FakeLLM())
+    run = start_run(ctx)
+    assert run.counts.stage1_passed == 1 and run.counts.recorded == 0
+    [line] = run.unreadable_pages
+    assert "https://example.com/news/agent-pilot" in line and "HTTP 403" in line
+    report = (project_root / f"reports/weekly/{run.run_id}.md").read_text()
+    assert "could not be read" in report and "HTTP 403" in report

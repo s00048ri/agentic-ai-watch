@@ -8,6 +8,6 @@ Rules:
 - fields.autonomy_cues: a short phrase from the page on what the agent does on its own or what needs human approval; otherwise null.
 - fields.human_oversight: a short phrase from the page on how people supervise or review the agent; otherwise null.
 - challenges and responses: ids from the lists below, only where the page itself explicitly describes that challenge or governance response. Do not add an id because it seems likely.
-- other_organisations_named: names of other organisations the page names as partners, customers, suppliers or co-deployers of the agentic AI described. Exclude the publishing organisation itself.
+- other_organisations_named: names of other organisations the page names as partners, customers, suppliers or co-deployers of the agentic AI described. Organisations only (companies, public bodies, universities, associations): never products, services, platforms or models (for example "Microsoft", not "Microsoft Azure"). Exclude the publishing organisation itself.
 
 {{TAXONOMY}}

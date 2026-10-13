@@ -81,6 +81,12 @@ def render_markdown(project: Project, d: DigestData) -> str:
     out += [f"- {_org_name(project, e.org_id)} — [{e.title or e.url}]({e.url})" for e in d.needs_review] or [
         "None."
     ]
+    if d.run.unreadable_pages:
+        out += [
+            "",
+            f"## Relevant pages that could not be read — check by hand ({len(d.run.unreadable_pages)})",
+        ]
+        out += [f"- {line}" for line in d.run.unreadable_pages]
     out += ["", "## Candidate organisations with new mentions"]
     out += [f"- {line}" for line in d.run.candidate_changes] or ["None."]
     out += ["", "## Watch points to check by hand"]
@@ -120,6 +126,11 @@ def render_slack(project: Project, d: DigestData) -> str:
     if not d.new_entries:
         lines.append("None this week.")
     lines += ["", f"*Needs review:* {len(d.needs_review)}"]
+    if d.run.unreadable_pages:
+        lines.append(
+            f"*Pages to read by hand:* {len(d.run.unreadable_pages)} passed stage 1 but could not be read"
+            " (see the weekly report)"
+        )
     if d.run.candidate_changes:
         lines.append("*Candidates:* " + "; ".join(d.run.candidate_changes[:20]))
     if d.run.manual_watch_points:

@@ -163,6 +163,10 @@ TEXT: dict[str, dict[str, str]] = {
         "ja": "月間上限に達したため、この実行では LLM 呼び出しを停止しました。",
     },
     "errors": {"en": "Errors", "ja": "エラー"},
+    "unreadable_pages": {
+        "en": "Relevant pages that could not be read (check by hand)",
+        "ja": "関連ありと判定されたが読み込めなかったページ（手動で確認）",
+    },
     "manual_points": {"en": "Watch points to check by hand", "ja": "手動確認が必要な監視ページ"},
     "tokens_by_month": {"en": "Tokens by month and stage", "ja": "月・段階ごとのトークン"},
     "weekly_reports": {"en": "Weekly digests", "ja": "週次ダイジェスト"},

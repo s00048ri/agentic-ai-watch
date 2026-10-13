@@ -485,6 +485,8 @@ def status_page(user: User) -> None:
             st.warning(t("budget_stopped", lang))
         with st.expander(f"{t('errors', lang)} ({len(run.fetch_errors)})"):
             st.write("\n".join(f"- {e}" for e in run.fetch_errors) or t("none", lang))
+        with st.expander(f"{t('unreadable_pages', lang)} ({len(run.unreadable_pages)})"):
+            st.markdown("\n".join(f"- {u}" for u in run.unreadable_pages) or t("none", lang))
         with st.expander(f"{t('manual_points', lang)} ({len(run.manual_watch_points)})"):
             st.write("\n".join(f"- {m}" for m in run.manual_watch_points) or t("none", lang))
 

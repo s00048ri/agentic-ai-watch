@@ -188,6 +188,7 @@ exclude:
 
 ### 4.4 Stage 2: field extraction (small model)
 - Only for items that passed stage 1: fetch the page, extract the main text with `trafilatura`, and truncate it to **the first 6,000 characters**
+- If the page cannot be fetched (for example, the site refuses automated access), the item is not dropped silently: it is listed in the weekly digest as a relevant page to read by hand, with its link and the HTTP status
 - The instructions (`prompts/extraction.md`) include the living resource's vocabularies and the `config/taxonomy/` classification (ids and short definitions), and are cached
 - Output: `summary`, `evidence`, `fields`, `challenges`, `responses` and `other_organisations_named` from §3.2
 - Rules the instructions must include:
@@ -211,6 +212,7 @@ Posted to #agentic_ai, with a copy saved in `reports/weekly/`.
 - This week's counts (new detections → passed keyword filter → passed stage 1 → recorded)
 - List of new records: organisation name, title (link), one-line summary, label, confidence, challenges and responses mentioned
 - List of `needs_review` records
+- Pages that passed stage 1 but could not be fetched (§4.4), to read by hand
 - Candidate organisations whose `mentions` increased
 - List of watch points that need checking by hand
 - This week's token use and estimated cost, as a share of the monthly limit
