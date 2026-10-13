@@ -78,7 +78,7 @@ uv run pytest -q                   # テスト（API は使いません）
 4. [`.streamlit/secrets.toml.example`](.streamlit/secrets.toml.example) に沿って、アプリの **Secrets** に設定を貼り付けます。`allowed_emails` が利用できる人のリストで、それ以外の人はログイン後に拒否されます。`[auth]` が無い場合、アプリは起動しません。
 5. 任意：Streamlit Community Cloud のアプリ設定でも、閲覧者を同じ人に限定できます。
 
-ログインなしで手元で試す場合：`AGENTIC_WATCH_DEV=1 uv run --extra app streamlit run streamlit_app.py`（変更は手元のチェックアウトにだけ書き込まれます）。
+ログインなしで手元で試す場合：`AGENTIC_WATCH_DEV=1 uv run streamlit run streamlit_app.py`（変更は手元のチェックアウトにだけ書き込まれます）。
 
 ## Issue フォーム
 

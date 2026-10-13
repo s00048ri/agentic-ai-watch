@@ -1,2 +1,2 @@
-# Used by Streamlit Community Cloud: installs this package with the web app extras.
-.[app]
+# Used by Streamlit Community Cloud if it does not read uv.lock.
+.

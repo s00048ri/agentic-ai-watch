@@ -78,7 +78,7 @@ Every change is saved as a commit to this repository through the GitHub API. If 
 4. Paste the settings into the app's **Secrets**, following [`.streamlit/secrets.toml.example`](.streamlit/secrets.toml.example). `allowed_emails` is the list of people who may use the app; anyone else is refused after signing in. Without the `[auth]` section the app refuses to start.
 5. Optional second layer: in the app's settings on Streamlit Community Cloud, limit viewers to the same people.
 
-To try it locally without sign-in: `AGENTIC_WATCH_DEV=1 uv run --extra app streamlit run streamlit_app.py` (changes go to your checkout only).
+To try it locally without sign-in: `AGENTIC_WATCH_DEV=1 uv run streamlit run streamlit_app.py` (changes go to your checkout only).
 
 ## Issue forms
 
