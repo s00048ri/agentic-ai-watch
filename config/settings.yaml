@@ -32,7 +32,7 @@ stage1:
   threshold: 0.5
 
 crawl:
-  user_agent: "GPAI-Tokyo-Centre-research-pilot/0.1 (+contact: <email>)"
+  user_agent: "GPAI-Tokyo-Centre-research-pilot/0.1 (+contact: rentaro.iida@gpai.nict.go.jp)"
   min_interval_seconds_per_domain: 1.0
   timeout_seconds: 20
   max_sitemap_urls: 5000            # per watch point, to bound work on very large sitemaps
