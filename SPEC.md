@@ -165,6 +165,7 @@ One record per line, validated with a pydantic model.
 
 ### 4.2 Keyword filter (no LLM) — `filter.py`
 - Applied to: title, URL path, RSS summary (if any)
+- Sitemaps list URLs only, so for new sitemap items the page's title and the opening of its text (up to the stage 1 input limit) are read first and used in place of an RSS summary. They are held in memory only, as in §4.3. At most `crawl.max_page_previews` pages per watch point and run (default 50); the rest are filtered on the URL alone
 - Pass items that match at least one include term and no exclude term in `config/keywords.yaml`
 - Match after normalising case and full-width/half-width forms
 - Initial values:

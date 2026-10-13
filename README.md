@@ -9,7 +9,7 @@ An internal tool that checks, once a week, **only the organisations' own website
 ```
 Detect new pages (RSS, sitemaps, page hashes; no LLM)
   → keep only URLs on the organisation's own domains, drop ones already seen
-  → keyword filter (no LLM; AI governance pages skip the filter)
+  → keyword filter (no LLM; AI governance pages skip the filter; for sitemap items the page title and opening are read first)
   → stage 1: relevance (Haiku; input ≤ 1,500 characters, output ≤ 100 tokens)
   → stage 2: field extraction (Haiku; first 6,000 characters of the page, output ≤ 800 tokens)
   → code checks that the evidence quote appears verbatim in the page (if not: needs_review)

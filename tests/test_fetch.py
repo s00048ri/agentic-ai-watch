@@ -141,3 +141,43 @@ def test_frequency_skips_watch_points_not_due(project_root):
     orgs[0].watch_points[0].frequency = "monthly"
     det = detect(ctx.project, ctx.store, ctx.fetcher, TODAY, lookback_days=30)
     assert det.items == [] and "https://example.com/news/rss.xml" not in site.log
+
+
+def test_sitemap_items_get_a_page_preview_for_the_filter(project_root):
+    import yaml
+
+    from agentic_watch.filter import passes
+
+    from .conftest import article
+
+    orgs = yaml.safe_load((project_root / "ledger/organisations.yaml").read_text())
+    orgs[0]["watch_points"] = [
+        {
+            "type": "newsroom",
+            "url": "https://example.com/news",
+            "method": "sitemap",
+            "feed_url": "https://example.com/sitemap.xml",
+        }
+    ]
+    (project_root / "ledger/organisations.yaml").write_text(yaml.safe_dump(orgs))
+    sitemap = (
+        '<?xml version="1.0"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        "<url><loc>https://example.com/news/bank-scales-assistant</loc><lastmod>2026-10-15</lastmod></url>"
+        "<url><loc>https://example.com/news/gone</loc><lastmod>2026-10-15</lastmod></url>"
+        "</urlset>"
+    )
+    site = FakeSite(
+        pages={
+            "https://example.com/robots.txt": (404, ""),
+            "https://example.com/sitemap.xml": (200, sitemap),
+            "https://example.com/news/bank-scales-assistant": (200, article("A bank scales its assistant")),
+        }
+    )
+    ctx, _, _ = make_ctx(project_root, site=site)
+    det = detect(ctx.project, ctx.store, ctx.fetcher, TODAY, lookback_days=30)
+    item, gone = det.items
+    assert item.title == "A bank scales its assistant"
+    assert item.feed_summary and "AI agent" in item.feed_summary  # only the page text names the topic
+    assert passes(item, ctx.project.keywords)
+    assert "UNIQUE-BODY-MARKER" not in item.model_dump_json()  # the preview is never serialised
+    assert gone.title == "" and any("preview failed" in e for e in det.errors)

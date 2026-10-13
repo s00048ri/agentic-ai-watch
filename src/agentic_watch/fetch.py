@@ -281,8 +281,26 @@ def detect(project: Project, store: Store, fetcher: Fetcher, today: dt.date, loo
                 result.errors.append(f"{org.id}: {key}: {type(e).__name__}: {e}")
                 continue
             result.checked[key] = today
+            start = len(result.items)
             _collect(org, wp, found, seen, queued_urls, first_check, today, lookback_days, result)
+            if wp.method == "sitemap":
+                _add_previews(fetcher, project, result.items[start:], result.errors)
     return result
+
+
+def _add_previews(fetcher: Fetcher, project: Project, items: list[Item], errors: list[str]) -> None:
+    """Sitemaps list URLs only: read each new page's title and opening text, so the keyword filter
+    and stage 1 see more than the URL. Like an RSS summary, the text is held in memory only."""
+    s = project.settings
+    for item in [i for i in items if not i.title and not i.feed_summary][: s.crawl.max_page_previews]:
+        try:
+            resp = fetcher.get(item.url)
+        except (RobotsDisallowed, httpx.HTTPError) as e:
+            errors.append(f"{item.org_id}: {item.url}: preview failed: {type(e).__name__}")
+            continue
+        item.title = page_title(resp.text)
+        text = " ".join(extract_text(resp.text, item.url).split())
+        item.feed_summary = text[: s.limits.stage1_max_input_chars] or None
 
 
 def _collect(
