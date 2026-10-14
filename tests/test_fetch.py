@@ -126,6 +126,7 @@ def test_sitemap_scope_and_lastmod_updates(project_root):
     assert [i.url for i in det.items] == [
         "https://example.com/news/agentic-launch"
     ]  # /careers is out of scope
+    assert det.per_point == ["example-org: https://example.com/news (sitemap): 1 listed, 1 new, 0 baseline"]
     ctx.store.mark_seen(det.seen_updates)
     ctx.store.save_checks(det.checked)
     site.pages["https://example.com/sitemap.xml"] = (200, sitemap.replace("2026-10-15", "2026-10-25"))

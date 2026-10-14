@@ -53,6 +53,9 @@ def cmd_run(args: argparse.Namespace) -> int:
         baseline = sum(1 for r in d.seen_updates if r.outcome == "skipped")
         if baseline:
             print(f"Baseline (first check, older items, not processed): {baseline}")
+        print("Watch points checked:")
+        for line in d.per_point:
+            print(f"  point  {line}")
         for line in d.manual:
             print(f"  manual  {line}")
         for line in d.errors:

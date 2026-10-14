@@ -115,3 +115,1008 @@
     language: en
     frequency: weekly
     verified: false
+- id: google
+  name: Google
+  name_local: null
+  domains:
+  - blog.google
+  - cloud.google.com
+  - deepmind.google
+  - developers.googleblog.com
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: technology
+  region: north-america
+  size: large
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://blog.google/innovation-and-ai/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+  - type: tech-blog
+    url: https://deepmind.google/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: microsoft
+  name: Microsoft
+  name_local: null
+  domains:
+  - microsoft.com
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: technology
+  region: north-america
+  size: large
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://blogs.microsoft.com/
+    method: rss
+    feed_url: https://blogs.microsoft.com/feed/
+    language: en
+    frequency: weekly
+    verified: false
+- id: rakuten
+  name: Rakuten Group
+  name_local: 楽天グループ株式会社
+  domains:
+  - global.rakuten.com
+  - rakuten.co.jp
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: commerce-retail
+  region: asia-pacific
+  size: large
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://global.rakuten.com/corp/news/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: sakana-ai
+  name: Sakana AI
+  name_local: Sakana AI株式会社
+  domains:
+  - sakana.ai
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: asia-pacific
+  size: small
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: tech-blog
+    url: https://sakana.ai/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: kddi
+  name: KDDI
+  name_local: KDDI株式会社
+  domains:
+  - kddi.com
+  - kddi-research.jp
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: telecommunications
+  region: asia-pacific
+  size: large
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://newsroom.kddi.com/english/news
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: ntt
+  name: NTT
+  name_local: NTT株式会社
+  domains:
+  - group.ntt
+  - nttdata.com
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: telecommunications
+  region: asia-pacific
+  size: large
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://group.ntt/en/newsrelease/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+  - type: newsroom
+    url: https://www.nttdata.com/global/en/news
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: nec
+  name: NEC
+  name_local: 日本電気株式会社
+  domains:
+  - nec.com
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: technology
+  region: asia-pacific
+  size: large
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://www.nec.com/en/press/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: sony
+  name: Sony Group
+  name_local: ソニーグループ株式会社
+  domains:
+  - sony.com
+  - ai.sony
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: technology
+  region: asia-pacific
+  size: large
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: tech-blog
+    url: https://ai.sony/blog/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: mic-japan
+  name: Ministry of Internal Affairs and Communications (Japan)
+  name_local: 総務省
+  domains:
+  - soumu.go.jp
+  org_type: public-sector
+  ecosystem_role: regulator
+  sector: public-administration
+  region: asia-pacific
+  size: large
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://www.soumu.go.jp/menu_news/s-news/
+    method: rss
+    feed_url: https://www.soumu.go.jp/news.rdf
+    language: ja
+    frequency: weekly
+    verified: false
+- id: nrc-canada
+  name: National Research Council Canada
+  name_local: null
+  domains:
+  - nrc.canada.ca
+  - nrc-cnrc.gc.ca
+  org_type: public-sector
+  ecosystem_role: developer
+  sector: scientific-research
+  region: north-america
+  size: large
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://nrc.canada.ca/en/corporate/news
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: bmds
+  name: Federal Ministry for Digital Transformation and Government Modernisation (Germany)
+  name_local: Bundesministerium für Digitales und Staatsmodernisierung (BMDS)
+  domains:
+  - bmds.bund.de
+  org_type: public-sector
+  ecosystem_role: regulator
+  sector: public-administration
+  region: europe
+  size: large
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://bmds.bund.de/aktuelles/pressemitteilungen
+    method: sitemap
+    feed_url: null
+    language: de
+    frequency: weekly
+    verified: false
+  - type: ai-governance-page
+    url: https://bmds.bund.de/themen/kuenstliche-intelligenz
+    method: page-hash
+    feed_url: null
+    language: de
+    frequency: weekly
+    verified: false
+- id: prisme-ai
+  name: Prisme.ai
+  name_local: null
+  domains:
+  - prisme.ai
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: europe
+  size: small
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: tech-blog
+    url: https://blog.prisme.ai/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: infosys
+  name: Infosys
+  name_local: null
+  domains:
+  - infosys.com
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: professional-business-services
+  region: asia-pacific
+  size: large
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://www.infosys.com/newsroom/press-releases/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: qhala
+  name: Qhala
+  name_local: null
+  domains:
+  - qhala.com
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: professional-business-services
+  region: africa
+  size: small
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://qhala.com/insights/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: relx
+  name: RELX
+  name_local: null
+  domains:
+  - relx.com
+  - lexisnexis.com
+  - elsevier.com
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: professional-business-services
+  region: europe
+  size: large
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://www.relx.com/media/press-releases
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+  - type: newsroom
+    url: https://www.lexisnexis.com/community/pressroom
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: nama-ai
+  name: Nama.ai
+  name_local: null
+  domains:
+  - nama.ai
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: latin-america
+  size: small
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://nama.ai/
+    method: sitemap
+    feed_url: null
+    language: pt
+    frequency: weekly
+    verified: false
+- id: fresh-consulting
+  name: Fresh Consulting
+  name_local: null
+  domains:
+  - freshconsulting.com
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: professional-business-services
+  region: latin-america
+  size: medium
+  inclusion_reason: phase2-interviewee
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://www.freshconsulting.com/insights/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: deutsche-telekom
+  name: Deutsche Telekom
+  name_local: null
+  domains:
+  - telekom.com
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: telecommunications
+  region: europe
+  size: large
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://www.telekom.com/en/media
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: mistral-ai
+  name: Mistral AI
+  name_local: null
+  domains:
+  - mistral.ai
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: europe
+  size: medium
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://mistral.ai/news/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: landing-ai
+  name: Landing AI
+  name_local: null
+  domains:
+  - landing.ai
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: north-america
+  size: small
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: tech-blog
+    url: https://landing.ai/blog/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+  - type: newsroom
+    url: https://landing.ai/news/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: sierra-ai
+  name: Sierra
+  name_local: null
+  domains:
+  - sierra.ai
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: north-america
+  size: medium
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: tech-blog
+    url: https://sierra.ai/blog/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: sap
+  name: SAP
+  name_local: null
+  domains:
+  - sap.com
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: technology
+  region: europe
+  size: large
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://news.sap.com/
+    method: rss
+    feed_url: https://news.sap.com/feed/
+    language: en
+    frequency: weekly
+    verified: false
+- id: samsung
+  name: Samsung
+  name_local: null
+  domains:
+  - samsung.com
+  - samsungsds.com
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: manufacturing
+  region: asia-pacific
+  size: large
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://news.samsung.com/global/
+    method: rss
+    feed_url: https://news.samsung.com/global/feed
+    language: en
+    frequency: weekly
+    verified: false
+  - type: newsroom
+    url: https://www.samsungsds.com/en/news/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: totvs
+  name: TOTVS
+  name_local: null
+  domains:
+  - totvs.com
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: latin-america
+  size: large
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://www.totvs.com/blog/inovacoes/
+    method: sitemap
+    feed_url: null
+    language: pt
+    frequency: weekly
+    verified: false
+- id: h-company
+  name: H Company
+  name_local: null
+  domains:
+  - hcompany.ai
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: europe
+  size: small
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://hcompany.ai/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: dataiku
+  name: Dataiku
+  name_local: null
+  domains:
+  - dataiku.com
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: europe
+  size: medium
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: tech-blog
+    url: https://www.dataiku.com/stories/blog/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: nlb
+  name: NLB Group
+  name_local: NLB d.d.
+  domains:
+  - nlbgroup.com
+  org_type: private-sector
+  ecosystem_role: deployer
+  sector: financial-services
+  region: europe
+  size: large
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://www.nlbgroup.com/int-en/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: amini
+  name: Amini
+  name_local: null
+  domains:
+  - amini.ai
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: africa
+  size: small
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://amini.ai/blog-post/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: jacaranda-health
+  name: Jacaranda Health
+  name_local: null
+  domains:
+  - jacarandahealth.org
+  org_type: non-profit
+  ecosystem_role: developer-deployer
+  sector: healthcare
+  region: africa
+  size: small
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://jacarandahealth.org/
+    method: rss
+    feed_url: https://jacarandahealth.org/feed/
+    language: en
+    frequency: weekly
+    verified: false
+- id: ixafrica
+  name: iXAfrica Data Centres
+  name_local: null
+  domains:
+  - ixafrica.co.ke
+  org_type: private-sector
+  ecosystem_role: deployer
+  sector: technology
+  region: africa
+  size: small
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://ixafrica.co.ke/
+    method: rss
+    feed_url: https://ixafrica.co.ke/feed/
+    language: en
+    frequency: weekly
+    verified: false
+- id: karaagro-ai
+  name: KaraAgro AI
+  name_local: null
+  domains:
+  - karaagro.com
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: other
+  region: africa
+  size: small
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://karaagro.com/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: kera-health
+  name: Kera Health
+  name_local: null
+  domains:
+  - kera.health
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: healthcare
+  region: africa
+  size: small
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://kera.health/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: lua-ai
+  name: Lua
+  name_local: null
+  domains:
+  - heylua.ai
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: africa
+  size: small
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: tech-blog
+    url: https://blog.heylua.ai/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: clevva
+  name: Clevva
+  name_local: null
+  domains:
+  - clevva.com
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: africa
+  size: small
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://clevva.com/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: instadeep
+  name: InstaDeep
+  name_local: null
+  domains:
+  - instadeep.com
+  - deeppcb.ai
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: europe
+  size: medium
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://www.instadeep.com/
+    method: rss
+    feed_url: https://www.instadeep.com/feed/
+    language: en
+    frequency: weekly
+    verified: false
+- id: crewai
+  name: CrewAI
+  name_local: null
+  domains:
+  - crewai.com
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: latin-america
+  size: small
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: tech-blog
+    url: https://www.crewai.com/blog
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: fiddler-ai
+  name: Fiddler AI
+  name_local: null
+  domains:
+  - fiddler.ai
+  org_type: private-sector
+  ecosystem_role: developer
+  sector: technology
+  region: north-america
+  size: small
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: tech-blog
+    url: https://www.fiddler.ai/blog
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+  - type: newsroom
+    url: https://www.fiddler.ai/press-releases
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: lg
+  name: LG
+  name_local: null
+  domains:
+  - lg.com
+  - lgresearch.ai
+  - lgcns.com
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: technology
+  region: asia-pacific
+  size: large
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://www.lg.com/global/newsroom
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+  - type: tech-blog
+    url: https://www.lgresearch.ai/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: amazon
+  name: Amazon
+  name_local: null
+  domains:
+  - amazon.com
+  - aboutamazon.com
+  org_type: private-sector
+  ecosystem_role: developer-deployer
+  sector: technology
+  region: north-america
+  size: large
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: tech-blog
+    url: https://aws.amazon.com/blogs/machine-learning/
+    method: rss
+    feed_url: https://aws.amazon.com/blogs/machine-learning/feed/
+    language: en
+    frequency: weekly
+    verified: false
+  - type: newsroom
+    url: https://www.aboutamazon.com/news/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+- id: johnson-johnson
+  name: Johnson & Johnson
+  name_local: null
+  domains:
+  - jnj.com
+  org_type: private-sector
+  ecosystem_role: deployer
+  sector: healthcare
+  region: north-america
+  size: large
+  inclusion_reason: phase2-contacted
+  lead_source: team spreadsheets (interview tracker, pre-interview research), 2026-10-14
+  status: active
+  added: '2026-10-14'
+  last_reviewed: '2026-10-14'
+  watch_points:
+  - type: newsroom
+    url: https://www.jnj.com/media-center/
+    method: sitemap
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false
+  - type: ai-governance-page
+    url: https://www.jnj.com/innovation/artificial-intelligence-in-healthcare
+    method: page-hash
+    feed_url: null
+    language: en
+    frequency: weekly
+    verified: false

@@ -51,6 +51,7 @@ uv run pytest -q                   # tests (no API calls)
 | `collect.yml` | Every two hours, or manual | Collect batch results → stage 2 → save → post the digest (ends in seconds when nothing is pending) |
 | `monthly.yml` | Manual (choose a month) | Monthly note |
 | `ci.yml` | Push / PR | Lint, type check, tests (no API key used) |
+| `check-watch-points.yml` | Manual | Dry run on GitHub's network after adding or changing watch points: per watch point, how many pages are listed, how many are new, and any errors (no API key used, nothing committed) |
 
 ## Web app
 

@@ -88,3 +88,23 @@ def test_evidence_missing_or_paraphrased_fails() -> None:
     text = "The agent drafts replies and staff approve them."
     assert not evidence_in_text("Staff approve every reply before sending.", text)
     assert not evidence_in_text("", text)
+
+
+def test_german_and_portuguese_keywords(project_root):
+    from agentic_watch.config import load_project
+
+    kw = load_project(project_root).keywords
+
+    def item(title):
+        return Item(
+            id="x",
+            org_id="o",
+            url="https://example.com/a",
+            title=title,
+            detected=dt.date(2026, 10, 14),
+            doc_type="newsroom",
+        )
+
+    assert passes(item("Neue KI-Agenten für die Bundesverwaltung"), kw)
+    assert passes(item("TOTVS lança IA agêntica para o ERP"), kw)
+    assert not passes(item("Novo agente de viagens com IA agêntica"), kw)  # excluded term wins

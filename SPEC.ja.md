@@ -70,7 +70,7 @@ Version: 0.1 (2026-10-12) / Owner: Rentaro Iida (GPAI Tokyo Centre)
   cli.py  fetch.py  filter.py  llm.py  verify.py  store.py  digest.py  leads.py  evaluate.py  discover.py
 /tests/
 /.github/workflows/
-  weekly.yml  collect.yml  monthly.yml  ci.yml
+  weekly.yml  collect.yml  monthly.yml  ci.yml  check-watch-points.yml
 ```
 
 ## 3. データモデル
@@ -173,6 +173,7 @@ Version: 0.1 (2026-10-12) / Owner: Rentaro Iida (GPAI Tokyo Centre)
 - サイトマップには URL しか載っていないため、サイトマップの新着は先にページのタイトルと本文の冒頭（第1段階の入力上限まで）を読み、RSS の要約の代わりに使う。§4.3 と同じくメモリ上でのみ扱う。1監視ポイント・1回あたり最大 `crawl.max_page_previews` 件（既定 50）。超えた分は URL だけで判定する
 - `config/keywords.yaml` の含める語に1つ以上一致し、除外語に一致しないものを通す
 - 大文字小文字・全角半角を正規化して照合
+- 語は言語別に持つ（当初は英語・日本語。2026年10月、ドイツ語・ポルトガル語の出典のために両言語を追加）
 - 初期値：
 ```yaml
 include:
@@ -237,6 +238,7 @@ exclude:
 | `collect.yml` | 2時間おき（cron）＋手動 | 未完了のバッチ結果を回収 → 段階2の送信／回収 → 保存 → 全段階完了で週次ダイジェスト投稿 |
 | `monthly.yml` | 手動 | 月次まとめ |
 | `ci.yml` | push / PR | lint、型チェック、テスト |
+| `check-watch-points.yml` | 手動 | 検出とキーワード絞り込みの空実行。監視ポイントごとの件数を表示（API キー不要、コミットなし） |
 
 - 段階1・2は **Message Batches API**（半額）を使う。バッチ ID は `state/batches.json` に保存し、`collect.yml` が冪等に回収する
 - `settings.yaml` の `use_batch: false` で、同期 API（プロンプトキャッシュ付き）に切り替えられること（件数が少ないとき・手元での試行用）

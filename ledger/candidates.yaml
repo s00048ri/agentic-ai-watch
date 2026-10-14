@@ -1,9 +1,385 @@
 # Candidate organisations (SPEC.md §3.3). "official-mention" rows are added automatically;
-# add other lead routes by hand.
+# other lead routes are added by hand or through the web app.
 - name: Infosys
   lead_route: official-mention
   lead_detail: 'named in anthropic page 2026-09-28: https://www.anthropic.com/news/anthropic-infosys'
   first_seen: '2026-10-13'
+  mentions: 1
+  official_confirmation_url: null
+  decision: add
+  decided: '2026-10-14'
+- name: Google DeepMind
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: SoftBank
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Salesforce
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Novo Nordisk
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Stripe
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://stripe.com/blog/introducing-our-agentic-commerce-solutions
+  decision: pending
+  decided: null
+- name: Autodesk
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.autodesk.com/solutions/autodesk-ai/autodesk-assistant
+  decision: pending
+  decided: null
+- name: Harvey AI
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.harvey.ai/
+  decision: pending
+  decided: null
+- name: Cisco
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Cohere
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://cohere.com/
+  decision: pending
+  decided: null
+- name: Aleph Alpha
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Samsara
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.samsara.com/
+  decision: pending
+  decided: null
+- name: Ada
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.ada.cx/
+  decision: pending
+  decided: null
+- name: Klue
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://klue.com/
+  decision: pending
+  decided: null
+- name: AbCellera
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.abcellera.com/
+  decision: pending
+  decided: null
+- name: Trulioo
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.trulioo.com/
+  decision: pending
+  decided: null
+- name: Vambe
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://vambe.ai/
+  decision: pending
+  decided: null
+- name: Fracttal
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.fracttal.com/en/artificial-intelligence-agents
+  decision: pending
+  decided: null
+- name: Satellogic
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://satellogic.com/
+  decision: pending
+  decided: null
+- name: mPharma
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://mpharma.com/
+  decision: pending
+  decided: null
+- name: Wipro
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.wipro.com/
+  decision: pending
+  decided: null
+- name: Naver
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.naver.com/
+  decision: pending
+  decided: null
+- name: Darktrace
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.darktrace.com/
+  decision: pending
+  decided: null
+- name: n8n
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://n8n.io/
+  decision: pending
+  decided: null
+- name: Lovable
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://lovable.dev/
+  decision: pending
+  decided: null
+- name: Corti
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.corti.ai/
+  decision: pending
+  decided: null
+- name: Tractable
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://tractable.ai/
+  decision: pending
+  decided: null
+- name: Fetch.ai
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://fetch.ai/
+  decision: pending
+  decided: null
+- name: Loka
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.loka.com/labs
+  decision: pending
+  decided: null
+- name: AIR Company
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Visa
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: AlphaSense
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.alpha-sense.com/
+  decision: pending
+  decided: null
+- name: Celonis
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.celonis.com/
+  decision: pending
+  decided: null
+- name: Gong
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: https://www.gong.io/
+  decision: pending
+  decided: null
+- name: Notion
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Sana Labs
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Moonshot AI
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: DeepSeek
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: MinoHealth AI
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Digital Agency (Japan)
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: National Security Council (Philippines)
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: UK AI Security Institute
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Korea AI Safety Institute
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Tsinghua University Institute for AI International Governance
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Taiwan AI Center of Excellence / National Taiwan University
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: CSIRO Data61
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: OWASP
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Coalition for Secure AI (CoSAI)
+  lead_route: people
+  lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
   mentions: 1
   official_confirmation_url: null
   decision: pending

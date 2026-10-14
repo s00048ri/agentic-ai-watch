@@ -1,0 +1,33 @@
+name: Check watch points
+
+# A dry run on GitHub's network: detection and keyword filter only. No API key is used and
+# nothing is committed. Use it after adding or changing watch points to see, per watch point,
+# how many pages were listed and whether any could not be read.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - run: uv sync --frozen --no-dev
+      - name: Dry run
+        run: uv run agentic-watch run --no-llm | tee dry-run.txt
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo '## Watch points'
+            echo '```'
+            grep -E '^(Detected|Baseline|  (point|error|manual)) ' dry-run.txt || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

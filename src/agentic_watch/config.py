@@ -130,9 +130,11 @@ class Settings(BaseModel):
 class KeywordSet(BaseModel):
     en: list[str] = Field(default_factory=list)
     ja: list[str] = Field(default_factory=list)
+    de: list[str] = Field(default_factory=list)
+    pt: list[str] = Field(default_factory=list)
 
     def all(self) -> list[str]:
-        return [*self.en, *self.ja]
+        return [*self.en, *self.ja, *self.de, *self.pt]
 
 
 class Keywords(BaseModel):

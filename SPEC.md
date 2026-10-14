@@ -72,7 +72,7 @@ Audience: Claude Code. Placed at the repository root; the implementation is base
   cli.py  fetch.py  filter.py  llm.py  verify.py  store.py  digest.py  leads.py  evaluate.py  discover.py
 /tests/
 /.github/workflows/
-  weekly.yml  collect.yml  monthly.yml  ci.yml
+  weekly.yml  collect.yml  monthly.yml  ci.yml  check-watch-points.yml
 ```
 
 ## 3. Data model
@@ -175,6 +175,7 @@ One record per line, validated with a pydantic model.
 - Sitemaps list URLs only, so for new sitemap items the page's title and the opening of its text (up to the stage 1 input limit) are read first and used in place of an RSS summary. They are held in memory only, as in §4.3. At most `crawl.max_page_previews` pages per watch point and run (default 50); the rest are filtered on the URL alone
 - Pass items that match at least one include term and no exclude term in `config/keywords.yaml`
 - Match after normalising case and full-width/half-width forms
+- Terms are kept per language (English and Japanese at first; German and Portuguese added in October 2026 for sources in those languages)
 - Initial values:
 ```yaml
 include:
@@ -239,6 +240,7 @@ Posted to #agentic_ai, with a copy saved in `reports/weekly/`.
 | `collect.yml` | Every two hours (cron) + manual | Collect pending batch results → submit/collect stage 2 → save → post the weekly digest when all stages are complete |
 | `monthly.yml` | Manual | Monthly summary |
 | `ci.yml` | push / PR | Lint, type check, tests |
+| `check-watch-points.yml` | Manual | Dry run of detection and the keyword filter, with counts per watch point (no API key, nothing committed) |
 
 - Stages 1 and 2 use the **Message Batches API** (half price). Batch IDs are saved in `state/batches.json`, and `collect.yml` collects them idempotently
 - `use_batch: false` in `settings.yaml` switches to the synchronous API (with prompt caching), for small volumes and local trials

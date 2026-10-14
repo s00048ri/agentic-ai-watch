@@ -246,6 +246,7 @@ class Detection:
     manual: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
     checked: dict[str, dt.date] = field(default_factory=dict)
+    per_point: list[str] = field(default_factory=list)  # one line per watch point checked, for the dry run
 
 
 def is_due(wp: WatchPoint, last: dt.date | None, today: dt.date) -> bool:
@@ -287,8 +288,13 @@ def detect(project: Project, store: Store, fetcher: Fetcher, today: dt.date, loo
                 result.errors.append(f"{org.id}: {key}: {describe_error(e)}")
                 continue
             result.checked[key] = today
-            start = len(result.items)
+            start, seen_before = len(result.items), len(result.seen_updates)
             _collect(org, wp, found, seen, queued_urls, first_check, today, lookback_days, result)
+            baseline = sum(1 for r in result.seen_updates[seen_before:] if r.outcome == "skipped")
+            result.per_point.append(
+                f"{org.id}: {wp.url} ({wp.method}): {len(found)} listed, "
+                f"{len(result.items) - start} new, {baseline} baseline"
+            )
             if wp.method == "sitemap":
                 _add_previews(fetcher, project, result.items[start:], result.errors)
     return result
