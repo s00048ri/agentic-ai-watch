@@ -1,5 +1,5 @@
 # Candidate organisations (SPEC.md §3.3). "official-mention" rows are added automatically;
-# other lead routes are added by hand or through the web app.
+# add other lead routes by hand.
 - name: Infosys
   lead_route: official-mention
   lead_detail: 'named in anthropic page 2026-09-28: https://www.anthropic.com/news/anthropic-infosys'
@@ -36,7 +36,7 @@
   lead_route: people
   lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
   first_seen: '2026-10-14'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -44,7 +44,7 @@
   lead_route: people
   lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
   first_seen: '2026-10-14'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: https://stripe.com/blog/introducing-our-agentic-commerce-solutions
   decision: pending
   decided: null
@@ -379,6 +379,438 @@
 - name: Coalition for Secure AI (CoSAI)
   lead_route: people
   lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Meta
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-06: https://sierra.ai/blog/introducing-personal-agent-protocol'
+  first_seen: '2026-10-14'
+  mentions: 3
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Genesys
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-06: https://sierra.ai/blog/introducing-personal-agent-protocol'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Instinct
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-06: https://sierra.ai/blog/introducing-personal-agent-protocol'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Rocket
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-06: https://sierra.ai/blog/introducing-personal-agent-protocol'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Shopify
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-06: https://sierra.ai/blog/introducing-personal-agent-protocol'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Walmart
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-06: https://sierra.ai/blog/introducing-personal-agent-protocol'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Linux Foundation
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-launches-575-lab'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Agentic AI Foundation
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-launches-575-lab'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Cursor
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-expands-cobuild-capability'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Alteryx
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-expands-cobuild-capability'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Perdue Farms
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-expands-cobuild-capability'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Air Canada
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-expands-cobuild-capability'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Trane Technologies
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-expands-cobuild-capability'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Snowflake
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-named-snowflake-ai-data-cloud-product-partner-of-the-year'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: GitHub
+  lead_route: official-mention
+  lead_detail: 'named in mistral-ai page 2026-10-08: https://mistral.ai/news/connectors'
+  first_seen: '2026-10-14'
+  mentions: 2
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: DeepWiki
+  lead_route: official-mention
+  lead_detail: 'named in mistral-ai page 2026-10-08: https://mistral.ai/news/connectors'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Lentera
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-08: https://deepmind.google/models/gemma'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Crane AI Labs
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-08: https://deepmind.google/models/gemma'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Qlik
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-07: https://aws.amazon.com/blogs/machine-learning/how-qlik-built-grounded-enterprise-scale-ai-with-amazon-bedrock'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Bystronic
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-07: https://aws.amazon.com/blogs/machine-learning/how-qlik-built-grounded-enterprise-scale-ai-with-amazon-bedrock'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Lintech International
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-07: https://aws.amazon.com/blogs/machine-learning/how-qlik-built-grounded-enterprise-scale-ai-with-amazon-bedrock'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: TouchPoint Support Services
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-07: https://aws.amazon.com/blogs/machine-learning/how-qlik-built-grounded-enterprise-scale-ai-with-amazon-bedrock'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: ISG
+  lead_route: official-mention
+  lead_detail: 'named in ntt page 2026-09-25: https://www.nttdata.com/global/en/news/press-release/2026/september/092500'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: The Alchemy Technology Services
+  lead_route: official-mention
+  lead_detail: 'named in ntt page 2026-09-25: https://www.nttdata.com/global/en/news/press-release/2026/september/092500'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: ExxonMobil
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-announces-the-2026-AI-success-frontrunner-award-winners'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Pfizer
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-announces-the-2026-AI-success-frontrunner-award-winners'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Morgan Stanley Wealth Management
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-announces-the-2026-AI-success-frontrunner-award-winners'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Standard Chartered
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-announces-the-2026-AI-success-frontrunner-award-winners'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Bank Hapoalim
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-announces-the-2026-AI-success-frontrunner-award-winners'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: SLB
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-announces-the-2026-AI-success-frontrunner-award-winners'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Aviva
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-announces-the-2026-AI-success-frontrunner-award-winners'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: One Acre Fund
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-announces-the-2026-AI-success-frontrunner-award-winners'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Corios
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-announces-the-2026-AI-success-frontrunner-award-winners'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Databricks
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-announces-the-2026-AI-success-frontrunner-award-winners'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: KPMG
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-announces-the-2026-AI-success-frontrunner-award-winners'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Harris Poll
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-10-01: https://www.dataiku.com/company/news/global-ai-confessions-report-cio-edition-2026'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: McKinsey
+  lead_route: official-mention
+  lead_detail: 'named in totvs page 2026-09-16: https://www.totvs.com/blog/inovacoes/agentes-de-ia'
+  first_seen: '2026-10-14'
+  mentions: 2
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Cornerstone OnDemand
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-07: https://aws.amazon.com/blogs/machine-learning/how-cornerstone-ondemand-cut-database-diagnosis-by-78-with-amazon-bedrock'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Hamburg
+  lead_route: official-mention
+  lead_detail: 'named in bmds page 2026-10-14: https://bmds.bund.de/themen/kuenstliche-intelligenz'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Bundesnetzagentur
+  lead_route: official-mention
+  lead_detail: 'named in bmds page 2026-10-14: https://bmds.bund.de/themen/kuenstliche-intelligenz'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Mistral
+  lead_route: official-mention
+  lead_detail: 'named in bmds page 2026-10-14: https://bmds.bund.de/themen/kuenstliche-intelligenz'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Helsing
+  lead_route: official-mention
+  lead_detail: 'named in bmds page 2026-10-14: https://bmds.bund.de/themen/kuenstliche-intelligenz'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: BMW
+  lead_route: official-mention
+  lead_detail: 'named in bmds page 2026-10-14: https://bmds.bund.de/themen/kuenstliche-intelligenz'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Siemens
+  lead_route: official-mention
+  lead_detail: 'named in bmds page 2026-10-14: https://bmds.bund.de/themen/kuenstliche-intelligenz'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Bundesministerium des Innern
+  lead_route: official-mention
+  lead_detail: 'named in bmds page 2026-10-14: https://bmds.bund.de/themen/kuenstliche-intelligenz'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: SiliconANGLE Media
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-wins-most-innovative-agent-development-platform'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: theCUBE
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-wins-most-innovative-agent-development-platform'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Forbes
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-wins-most-innovative-agent-development-platform'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Black Forest Lab
+  lead_route: official-mention
+  lead_detail: 'named in mistral-ai page 2026-10-08: https://mistral.ai/news/agents-api'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Linear
+  lead_route: official-mention
+  lead_detail: 'named in mistral-ai page 2026-10-08: https://mistral.ai/news/agents-api'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Forrester
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-08: https://www.fiddler.ai/blog/forrester-agentic-control-plane-solutions-landscape'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Mozilla
+  lead_route: official-mention
+  lead_detail: 'named in mistral-ai page 2026-10-08: https://mistral.ai/news'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: AWS Generative AI Innovation Center
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-13: https://aws.amazon.com/blogs/machine-learning/building-agents-that-transact-with-anchor-browser-and-agentcore-payments'
+  first_seen: '2026-10-14'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: NVIDIA
+  lead_route: official-mention
+  lead_detail: 'named in h-company page 2026-09-28: https://hcompany.ai/newsroom/holo4'
   first_seen: '2026-10-14'
   mentions: 1
   official_confirmation_url: null
