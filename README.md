@@ -51,7 +51,7 @@ uv run pytest -q                   # tests (no API calls)
 | `collect.yml` | Every two hours, or manual | Collect batch results → stage 2 → save → post the digest (ends in seconds when nothing is pending) |
 | `monthly.yml` | Manual (choose a month) | Monthly note |
 | `ci.yml` | Push / PR | Lint, type check, tests (no API key used) |
-| `check-watch-points.yml` | Manual | Dry run on GitHub's network after adding or changing watch points: per watch point, how many pages are listed, how many are new, and any errors (no API key used, nothing committed) |
+| `check-watch-points.yml` | Manual | Dry run on GitHub's network after adding or changing watch points: per watch point, how many pages are listed, how many are new, and any errors. With home pages in `urls`, it instead suggests feeds and sitemaps and counts sitemap URLs by path (`agentic-watch sitemap-paths`). No API key used, nothing committed |
 
 ## Web app
 
@@ -106,7 +106,7 @@ How to write each watch point `method`:
 | `page-hash` | The page to monitor | Not needed | A change in the hash of the page text |
 | `manual` | A page checked by hand | Not needed | Not processed; listed in the digest under "check by hand" |
 
-- **First check of a watch point**: items older than `crawl.first_run_lookback_days` (default 30) and undated sitemap entries are recorded as seen but not processed, so a watch point's back catalogue does not flood stage 1. `page-hash` pages are processed on the first check too.
+- **First check of a watch point**: items older than `crawl.first_run_lookback_days` (default 30) and undated sitemap entries are recorded as seen but not processed, and at most `crawl.first_run_max_items` (default 20) of the most recent items are processed, so a watch point's back catalogue does not flood stage 1 (some sites refresh every page's `lastmod`). `page-hash` pages are processed on the first check too.
 - Finding pages to watch: `uv run agentic-watch discover https://example.com/` prints RSS and sitemap candidates as YAML. Nothing is written to the ledger; check them and paste them in.
 
 ### Candidate organisations: `ledger/candidates.yaml`

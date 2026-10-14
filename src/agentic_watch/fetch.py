@@ -206,11 +206,17 @@ def read_sitemap(fetcher: Fetcher, wp: WatchPoint, max_urls: int) -> list[Found]
 
     out: list[Found] = []
     queue = list(locations)
-    visited = 0
+    visited = read = 0
+    first_error: Exception | None = None
     while queue and visited < MAX_CHILD_SITEMAPS and len(out) < max_urls:
         loc = queue.pop(0)
         visited += 1
-        root = _xml_root(fetcher.get(loc))
+        try:
+            root = _xml_root(fetcher.get(loc))
+        except (httpx.HTTPError, RobotsDisallowed, ET.ParseError, OSError) as e:
+            first_error = first_error or e  # one broken sitemap among several should not stop the rest
+            continue
+        read += 1
         if root.tag == f"{SITEMAP_NS}sitemapindex":
             queue.extend(
                 (s.findtext(f"{SITEMAP_NS}loc") or "").strip() for s in root.findall(f"{SITEMAP_NS}sitemap")
@@ -227,7 +233,23 @@ def read_sitemap(fetcher: Fetcher, wp: WatchPoint, max_urls: int) -> list[Found]
             out.append(Found(url=url, title=title, lastmod=lastmod, published=_parse_date(pub or lastmod)))
             if len(out) >= max_urls:
                 break
+    if not read and first_error is not None:
+        raise first_error
     return out
+
+
+def sitemap_paths(fetcher: Fetcher, url: str, depth: int = 2, max_urls: int = 50000) -> list[tuple[str, int]]:
+    """How many sitemap URLs fall under each path prefix (to choose a sitemap watch point's scope)."""
+    parts = urlsplit(url)
+    site = WatchPoint(type="newsroom", url=f"{parts.scheme}://{parts.netloc}/", method="sitemap")
+    if parts.path.endswith(".xml"):
+        site.feed_url = url
+    counts: dict[str, int] = {}
+    for f in read_sitemap(fetcher, site, max_urls):
+        segments = [s for s in urlsplit(f.url).path.split("/") if s][:depth]
+        key = "/" + "/".join(segments)
+        counts[key] = counts.get(key, 0) + 1
+    return sorted(counts.items(), key=lambda kv: -kv[1])
 
 
 def read_page_hash(fetcher: Fetcher, wp: WatchPoint) -> list[Found]:
@@ -289,7 +311,20 @@ def detect(project: Project, store: Store, fetcher: Fetcher, today: dt.date, loo
                 continue
             result.checked[key] = today
             start, seen_before = len(result.items), len(result.seen_updates)
-            _collect(org, wp, found, seen, queued_urls, first_check, today, lookback_days, result)
+            if first_check:  # newest first, so the first-check cap keeps the most recent pages
+                found.sort(key=lambda f: f.published or dt.date.min, reverse=True)
+            _collect(
+                org,
+                wp,
+                found,
+                seen,
+                queued_urls,
+                first_check,
+                today,
+                lookback_days,
+                result,
+                project.settings.crawl.first_run_max_items,
+            )
             baseline = sum(1 for r in result.seen_updates[seen_before:] if r.outcome == "skipped")
             result.per_point.append(
                 f"{org.id}: {wp.url} ({wp.method}): {len(found)} listed, "
@@ -325,8 +360,10 @@ def _collect(
     today: dt.date,
     lookback_days: int,
     result: Detection,
+    first_run_max_items: int,
 ) -> None:
     cutoff = today - dt.timedelta(days=lookback_days)
+    taken = 0
     for f in found:
         url = normalise_url(f.url)
         if not on_domains(url, org.domains) or url in queued_urls:
@@ -347,6 +384,8 @@ def _collect(
             content_hash=f.content_hash,
         )
         baseline = first_check and wp.method != "page-hash" and (f.published is None or f.published < cutoff)
+        # A site that refreshes every page's lastmod would otherwise flood the first run.
+        baseline = baseline or (first_check and taken >= first_run_max_items)
         if baseline:
             record.outcome = "skipped"
             result.seen_updates.append(record)
@@ -371,3 +410,4 @@ def _collect(
         )
         result.seen_updates.append(record)
         queued_urls.add(url)
+        taken += 1

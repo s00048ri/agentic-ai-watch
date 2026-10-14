@@ -87,6 +87,7 @@ class Crawl(BaseModel):
     max_sitemap_urls: int = 5000
     first_run_lookback_days: int = 30
     max_page_previews: int = 50
+    first_run_max_items: int = 20
 
     def contact_missing(self) -> bool:
         return "<email>" in self.user_agent

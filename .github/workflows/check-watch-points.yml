@@ -1,17 +1,23 @@
 name: Check watch points
 
-# A dry run on GitHub's network: detection and keyword filter only. No API key is used and
-# nothing is committed. Use it after adding or changing watch points to see, per watch point,
-# how many pages were listed and whether any could not be read.
+# Runs on GitHub's network. No API key is used and nothing is committed.
+# - Without input: a dry run of detection and the keyword filter, with counts per watch point.
+# - With "urls": for each site, suggest RSS feeds and sitemaps, and count sitemap URLs by path,
+#   to help choose a watch point.
 
 on:
   workflow_dispatch:
+    inputs:
+      urls:
+        description: "Home pages to investigate, separated by spaces (leave empty for the dry run)"
+        type: string
+        default: ""
 
 permissions:
   contents: read
 
 jobs:
-  dry-run:
+  check:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -21,13 +27,29 @@ jobs:
           python-version: "3.12"
       - run: uv sync --frozen --no-dev
       - name: Dry run
-        run: uv run agentic-watch run --no-llm | tee dry-run.txt
+        if: inputs.urls == ''
+        run: uv run agentic-watch run --no-llm | tee out.txt
+      - name: Investigate sites
+        if: inputs.urls != ''
+        env:
+          URLS: ${{ inputs.urls }}
+        run: |
+          for u in $URLS; do
+            echo "=== $u"
+            uv run agentic-watch discover "$u" || true
+            uv run agentic-watch sitemap-paths --top 15 "$u" || true
+          done | tee out.txt
       - name: Summary
         if: always()
+        env:
+          URLS: ${{ inputs.urls }}
         run: |
           {
-            echo '## Watch points'
             echo '```'
-            grep -E '^(Detected|Baseline|  (point|error|manual)) ' dry-run.txt || true
+            if [ -z "$URLS" ]; then
+              grep -E '^(Detected|Baseline|  (point|error|manual)) ' out.txt || true
+            else
+              cat out.txt
+            fi
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"

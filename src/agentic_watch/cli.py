@@ -11,7 +11,7 @@ from pathlib import Path
 
 from .config import load_project
 from .discover import as_yaml, discover
-from .fetch import Fetcher
+from .fetch import Fetcher, describe_error, sitemap_paths
 from .llm import AnthropicClient, BudgetExceeded
 from .pipeline import Context, RunInProgress, collect, dry_run, finish_run, slack_notifier, start_run
 from .store import Store
@@ -94,6 +94,20 @@ def cmd_digest(args: argparse.Namespace) -> int:
 def cmd_discover(args: argparse.Namespace) -> int:
     ctx = _context(args.root, need_llm=False)
     print(as_yaml(discover(ctx.fetcher, args.url)))
+    return 0
+
+
+def cmd_sitemap_paths(args: argparse.Namespace) -> int:
+    ctx = _context(args.root, need_llm=False)
+    for url in args.url:
+        print(f"# {url}")
+        try:
+            rows = sitemap_paths(ctx.fetcher, url, args.depth)
+        except Exception as e:  # report and go on to the next site
+            print(f"  error: {describe_error(e)}")
+            continue
+        for path, n in rows[: args.top]:
+            print(f"  {n:6d}  {path}")
     return 0
 
 
@@ -194,6 +208,13 @@ def main(argv: list[str] | None = None) -> int:
     dc.add_argument("url")
     dc.set_defaults(func=cmd_discover)
 
+    sp = sub.add_parser(
+        "sitemap-paths", help="count sitemap URLs by path prefix, to choose a watch point's scope"
+    )
+    sp.add_argument("url", nargs="+", help="a site's home page or a sitemap URL")
+    sp.add_argument("--depth", type=int, default=2)
+    sp.add_argument("--top", type=int, default=25)
+    sp.set_defaults(func=cmd_sitemap_paths)
     sub.add_parser("evaluate", help="run stage 1 on data/gold.yaml").set_defaults(func=cmd_evaluate)
 
     s = sub.add_parser("synthesize", help="monthly note from reviewed records")

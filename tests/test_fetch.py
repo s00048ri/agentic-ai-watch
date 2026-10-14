@@ -182,3 +182,74 @@ def test_sitemap_items_get_a_page_preview_for_the_filter(project_root):
     assert passes(item, ctx.project.keywords)
     assert "UNIQUE-BODY-MARKER" not in item.model_dump_json()  # the preview is never serialised
     assert gone.title == "" and any("preview failed" in e for e in det.errors)
+
+
+def _sitemap_org(project_root, feed_url="https://example.com/sitemap.xml"):
+    import yaml
+
+    orgs = yaml.safe_load((project_root / "ledger/organisations.yaml").read_text())
+    orgs[0]["watch_points"] = [
+        {"type": "newsroom", "url": "https://example.com/news", "method": "sitemap", "feed_url": feed_url}
+    ]
+    (project_root / "ledger/organisations.yaml").write_text(yaml.safe_dump(orgs))
+
+
+def _urlset(n: int, day: str = "2026-10-15") -> str:
+    rows = "".join(
+        f"<url><loc>https://example.com/news/item-{i}</loc><lastmod>{day}</lastmod></url>" for i in range(n)
+    )
+    return f'<?xml version="1.0"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{rows}</urlset>'
+
+
+def test_a_broken_child_sitemap_does_not_stop_the_others(project_root):
+    _sitemap_org(project_root)
+    index = (
+        '<?xml version="1.0"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        "<sitemap><loc>https://example.com/broken.xml</loc></sitemap>"
+        "<sitemap><loc>https://example.com/news.xml</loc></sitemap></sitemapindex>"
+    )
+    site = FakeSite(
+        pages={
+            "https://example.com/robots.txt": (404, ""),
+            "https://example.com/sitemap.xml": (200, index),
+            "https://example.com/broken.xml": (500, "oops"),
+            "https://example.com/news.xml": (200, _urlset(2)),
+        }
+    )
+    ctx, _, _ = make_ctx(project_root, site=site)
+    det = detect(ctx.project, ctx.store, ctx.fetcher, TODAY, lookback_days=30)
+    assert len(det.items) == 2
+    assert not [
+        e for e in det.errors if "preview" not in e
+    ]  # the article pages themselves are not in this fake site
+
+
+def test_first_check_is_capped(project_root):
+    _sitemap_org(project_root)
+    site = FakeSite(
+        pages={
+            "https://example.com/robots.txt": (404, ""),
+            "https://example.com/sitemap.xml": (200, _urlset(25)),
+        }
+    )
+    ctx, _, _ = make_ctx(project_root, site=site)
+    det = detect(ctx.project, ctx.store, ctx.fetcher, TODAY, lookback_days=30)
+    assert len(det.items) == 20
+    assert sum(1 for r in det.seen_updates if r.outcome == "skipped") == 5
+
+
+def test_sitemap_paths_counts_prefixes():
+    from agentic_watch.fetch import sitemap_paths
+
+    site = FakeSite(
+        pages={
+            "https://example.com/robots.txt": (404, ""),
+            "https://example.com/sitemap.xml": (200, _urlset(3)),
+        }
+    )
+    f = Fetcher(
+        Crawl(user_agent="t"),
+        client=httpx.Client(transport=httpx.MockTransport(site.handler)),
+        sleep=lambda s: None,
+    )
+    assert sitemap_paths(f, "https://example.com/", depth=1) == [("/news", 3)]
