@@ -95,7 +95,7 @@
 
 - id: data-governance
   name: Data governance
-  source_ref: "Section 4.1"
+  source_ref: "Sections 3.3 and 4.1"
   summary: >-
     Decisions on cloud-based versus on-premise deployment are consistently shaped by client
     requirements on data governance, security and confidentiality. Regulations and client
@@ -105,7 +105,7 @@
 
 - id: privacy
   name: Privacy
-  source_ref: "Section 4.1"
+  source_ref: "Sections 3.3 and 4.1"
   summary: >-
     Privacy risks are seen as amplified by agents' ability to aggregate and analyse data from
     multiple sources, although some organisations use agentic AI to help detect and mask
