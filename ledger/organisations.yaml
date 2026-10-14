@@ -64,12 +64,11 @@
   watch_points:
   - type: newsroom
     url: https://global.fujitsu/en-global/pr/news
-    method: links
+    method: manual
     feed_url: null
     language: en
     frequency: weekly
     verified: false
-    scope: /en-global/pr/news/
 - id: preferred-networks
   name: Preferred Networks
   name_local: 株式会社Preferred Networks
@@ -191,12 +190,11 @@
   watch_points:
   - type: newsroom
     url: https://global.rakuten.com/corp/news/
-    method: links
+    method: manual
     feed_url: null
     language: en
     frequency: weekly
     verified: false
-    scope: /corp/news/
 - id: sakana-ai
   name: Sakana AI
   name_local: Sakana AI株式会社
@@ -803,7 +801,7 @@
   last_reviewed: '2026-10-14'
   watch_points:
   - type: newsroom
-    url: https://www.amini.ai/blog
+    url: https://www.amini.ai/
     method: links
     feed_url: null
     language: en
@@ -898,12 +896,11 @@
   watch_points:
   - type: newsroom
     url: https://kera.health/
-    method: links
+    method: manual
     feed_url: null
     language: en
     frequency: weekly
     verified: false
-    scope: /
 - id: lua-ai
   name: Lua
   name_local: null
@@ -1048,8 +1045,8 @@
   watch_points:
   - type: newsroom
     url: https://www.lgnewsroom.com/
-    method: rss
-    feed_url: https://www.lgnewsroom.com/feed/
+    method: manual
+    feed_url: null
     language: en
     frequency: weekly
     verified: false
@@ -1108,9 +1105,9 @@
   last_reviewed: '2026-10-14'
   watch_points:
   - type: newsroom
-    url: https://www.jnj.com/
-    method: rss
-    feed_url: https://www.jnj.com/index.rss
+    url: https://www.jnj.com/latest-news
+    method: manual
+    feed_url: null
     language: en
     frequency: weekly
     verified: false
