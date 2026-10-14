@@ -7,7 +7,11 @@ Rules:
 - fields.sector, fields.application_area, fields.deployment_stage: an id from the vocabularies below, only if the page states it clearly; otherwise null.
 - fields.autonomy_cues: a short phrase from the page on what the agent does on its own or what needs human approval; otherwise null.
 - fields.human_oversight: a short phrase from the page on how people supervise or review the agent; otherwise null.
-- challenges and responses: ids from the lists below, only where the page itself explicitly describes that challenge or governance response. Do not add an id because it seems likely.
+- challenges: every challenge, risk or difficulty with AI agents or agentic AI that the page itself describes. responses: every governance response, safeguard or practice the page describes for dealing with them. Capture all of them, including ones that do not fit any category below: the team uses these lists to decide whether new categories are needed. For each item:
+  - description: one sentence in English, in your own words, saying what the page describes. No evaluative adjectives.
+  - quote: the passage that states it, copied verbatim from the page text (at most 300 characters), with the same rules as evidence.
+  - suggested_category: the id of the closest category in the lists below, only if the item clearly fits it; otherwise "none". Never stretch an item to fit a category.
+  Do not list an item the page does not state, even if it seems likely. If the page describes none, return an empty list.
 - other_organisations_named: names of other organisations the page names as partners, customers, suppliers or co-deployers of the agentic AI described. Organisations only (companies, public bodies, universities, associations): never products, services, platforms or models (for example "Microsoft", not "Microsoft Azure"). Exclude the publishing organisation itself.
 
 {{TAXONOMY}}

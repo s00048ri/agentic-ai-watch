@@ -24,7 +24,7 @@ limits:
   stage1_max_input_chars: 1500
   stage2_max_input_chars: 6000
   stage1_max_output_tokens: 100
-  stage2_max_output_tokens: 800
+  stage2_max_output_tokens: 1500
   synthesis_max_output_tokens: 3000
   monthly_token_budget: 3000000     # input + output, cache reads/writes included
 

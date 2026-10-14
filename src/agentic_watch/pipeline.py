@@ -41,6 +41,8 @@ from .models import (
     Entry,
     EntryModels,
     Extraction,
+    Finding,
+    FindingOut,
     Item,
     QueuedItem,
     Relevance,
@@ -316,6 +318,9 @@ def _make_entry(
         ctx.store.mark_seen([_seen(q, "stage1_rejected")])
         return None
     verified = evidence_in_text(ext.evidence, text)
+    challenges = _verified_findings(ext.challenges, text)
+    responses = _verified_findings(ext.responses, text)
+    all_quotes_found = verified and all(f.quote_verified for f in [*challenges, *responses])
     s = ctx.settings
     return Entry(
         id=q.id,
@@ -331,12 +336,16 @@ def _make_entry(
         evidence=ext.evidence,
         evidence_verified=verified,
         fields=ext.fields,
-        challenges=ext.challenges,
-        responses=ext.responses,
+        challenges=challenges,
+        responses=responses,
         other_organisations_named=ext.other_organisations_named,
-        status="new" if verified else "needs_review",
+        status="new" if all_quotes_found else "needs_review",
         model=EntryModels(stage1=s.models.stage1, stage2=s.models.stage2),
     )
+
+
+def _verified_findings(findings: list[FindingOut], text: str) -> list[Finding]:
+    return [Finding(**f.model_dump(), quote_verified=evidence_in_text(f.quote, text)) for f in findings]
 
 
 def _save_entries(ctx: Context, run: RunState, entries: list[Entry]) -> None:

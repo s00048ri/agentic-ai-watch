@@ -137,8 +137,30 @@ STAGE2_OK = {
         "autonomy_cues": "drafts replies",
         "human_oversight": "staff approve every reply",
     },
-    "challenges": ["human-oversight-over-reliance", "not-a-real-id"],
-    "responses": ["calibrated-human-oversight"],
+    "challenges": [
+        {
+            "description": "Staff could rely on the agent's drafts without checking them.",
+            "quote": "a member of staff approves every reply before it is sent",
+            "suggested_category": "human-oversight-over-reliance",
+        },
+        {
+            "description": "The pilot is reviewed after three months.",
+            "quote": "The pilot runs with Partner Co. and will be reviewed after three months.",
+            "suggested_category": "not-a-real-id",
+        },
+        {
+            "description": "A described risk that was never in the page.",
+            "quote": "This sentence is not on the page.",
+            "suggested_category": "none",
+        },
+    ],
+    "responses": [
+        {
+            "description": "Staff approve every reply before it is sent.",
+            "quote": "a member of staff approves every reply before it is sent",
+            "suggested_category": "calibrated-human-oversight",
+        }
+    ],
     "other_organisations_named": ["Partner Co.", "Example Org"],
 }
 

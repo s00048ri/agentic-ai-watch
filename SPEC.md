@@ -126,8 +126,14 @@ One record per line, validated with a pydantic model.
     "sector": null, "application_area": null, "deployment_stage": null,
     "autonomy_cues": null, "human_oversight": null
   },
-  "challenges": ["challenge-id"],
-  "responses": ["response-id"],
+  "challenges": [
+    {"description": "One sentence in our own words (English)",
+     "quote": "Verbatim quote from the source (at most 300 characters)",
+     "quote_verified": true,
+     "suggested_category": "challenge-id",   // closest existing category, or null when none fits
+     "category": null}                        // set in review: a category id, "new-category" or "not-applicable"
+  ],
+  "responses": [ /* same shape as challenges */ ],
   "other_organisations_named": ["Partner Co."],
   "status": "new",
     // new | needs_review | kept | discarded | blog_candidate
@@ -136,6 +142,7 @@ One record per line, validated with a pydantic model.
 }
 ```
 - `fields`, `challenges` and `responses` are null / empty arrays unless the source states them explicitly
+- `challenges` and `responses` capture every challenge and response the source describes, including ones that fit no existing category, so the team can judge whether the taxonomy needs a new category. The category is only a suggestion until a reviewer confirms it, changes it, or marks the item as a possible new category
 - Page text is not stored (it is handled only in memory during processing)
 
 ### 3.3 `ledger/candidates.yaml` (candidates for addition)
@@ -194,9 +201,9 @@ exclude:
 - Rules the instructions must include:
   - Anything not stated explicitly in the source is null / an empty array. No guessing
   - `evidence` is a verbatim quote from the page text (at most 300 characters)
-  - `challenges` / `responses` are tagged with taxonomy ids only where the page text states them explicitly
+  - `challenges` / `responses` list every challenge and response the page text states, each with a one-sentence description, a verbatim quote and the closest existing category as `suggested_category` (or none when nothing fits; never stretched to fit). Items the page does not state are not listed
   - `summary` is in English, at most two sentences, without evaluative adjectives
-- `verify.py`: check that `evidence` appears verbatim in the extracted text (substring match after normalising whitespace and line breaks). If not, `evidence_verified: false` and `status: needs_review`
+- `verify.py`: check that `evidence` and each finding's `quote` appear verbatim in the extracted text (substring match after normalising whitespace and line breaks). If not, `evidence_verified` / `quote_verified` is false and `status: needs_review`
 
 ### 4.5 Storage and candidate updates — `store.py`, `leads.py`
 - Append records to `data/entries/YYYY-MM.jsonl` and update `state/seen.jsonl`
@@ -210,7 +217,7 @@ exclude:
 ### 4.7 Weekly digest — `digest.py`
 Posted to #agentic_ai, with a copy saved in `reports/weekly/`.
 - This week's counts (new detections → passed keyword filter → passed stage 1 → recorded)
-- List of new records: organisation name, title (link), one-line summary, label, confidence, challenges and responses mentioned
+- List of new records: organisation name, title (link), one-line summary, label, confidence, categories of the challenges and responses described (and how many fit no existing category)
 - List of `needs_review` records
 - Pages that passed stage 1 but could not be fetched (§4.4), to read by hand
 - Candidate organisations whose `mentions` increased
@@ -250,7 +257,7 @@ limits:
   stage1_max_input_chars: 1500
   stage2_max_input_chars: 6000
   stage1_max_output_tokens: 100
-  stage2_max_output_tokens: 800
+  stage2_max_output_tokens: 1500
   synthesis_max_output_tokens: 3000
   monthly_token_budget: 3000000     # input + output combined (cache reads are also recorded)
 stage1:

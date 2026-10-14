@@ -6,9 +6,14 @@ import json
 from typing import Any
 
 from .llm import Budget, BudgetExceeded, estimate_tokens, system_prompt, usage_record
+from .models import Finding
 from .pipeline import Context
 
 INCLUDED = {"kept", "blog_candidate"}
+
+
+def _finding(f: Finding) -> dict[str, Any]:
+    return {"description": f.description, "category": f.current_category() or "no existing category"}
 
 
 def synthesis_payload(ctx: Context, month: str) -> list[dict[str, Any]]:
@@ -26,8 +31,8 @@ def synthesis_payload(ctx: Context, month: str) -> list[dict[str, Any]]:
                 "summary": e.summary,
                 "evidence": e.evidence,
                 "fields": e.fields.model_dump(),
-                "challenges": e.challenges,
-                "responses": e.responses,
+                "challenges": [_finding(f) for f in e.challenges],
+                "responses": [_finding(f) for f in e.responses],
                 "status": e.status,
             }
         )

@@ -48,8 +48,12 @@ def set_entry_status(
     reviewer: str,
     note: str | None,
     today: dt.date,
+    categories: dict[str, list[str]] | None = None,
 ) -> str:
-    """Update one record's review fields; every other line is kept byte for byte."""
+    """Update one record's review fields; every other line is kept byte for byte.
+
+    `categories` maps "challenges" / "responses" to the reviewer's category for each finding, in order.
+    """
     if not text:
         raise LedgerError(f"record {entry_id} not found")
     out: list[str] = []
@@ -61,6 +65,12 @@ def set_entry_status(
             entry.reviewer = reviewer
             entry.reviewed = today
             entry.review_note = (note or "").strip() or None
+            for kind, chosen in (categories or {}).items():
+                findings = entry.challenges if kind == "challenges" else entry.responses
+                if len(chosen) != len(findings):
+                    raise LedgerError(f"record {entry_id} changed; please reload and try again")
+                for finding, category in zip(findings, chosen, strict=True):
+                    finding.category = category
             line = entry.model_dump_json()
             found = True
         out.append(line)

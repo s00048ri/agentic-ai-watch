@@ -47,7 +47,11 @@ def _org_name(project: Project, org_id: str) -> str:
 
 
 def _tags(e: Entry) -> str:
-    tags = [*e.challenges, *e.responses]
+    """Categories of the record's findings; findings without one count as possible new categories."""
+    tags = [c for _kind, f in e.findings() if (c := f.current_category())]
+    uncategorised = sum(1 for _kind, f in e.findings() if not f.current_category())
+    if uncategorised:
+        tags.append(f"no existing category ×{uncategorised}")
     return ", ".join(tags) if tags else "—"
 
 
@@ -71,7 +75,7 @@ def render_markdown(project: Project, d: DigestData) -> str:
     if not d.new_entries:
         out.append("None this week.")
     for e in d.new_entries:
-        flag = "" if e.evidence_verified else " **[needs review: evidence not found in page]**"
+        flag = "" if e.status != "needs_review" else " **[needs review: a quote was not found in the page]**"
         out += [
             f"- **{_org_name(project, e.org_id)}** — [{e.title or e.url}]({e.url}){flag}",
             f"  {e.summary}",
@@ -118,7 +122,7 @@ def render_slack(project: Project, d: DigestData) -> str:
         f"*New records ({len(d.new_entries)})*",
     ]
     for e in d.new_entries:
-        flag = " :warning: needs review" if not e.evidence_verified else ""
+        flag = " :warning: needs review" if e.status == "needs_review" else ""
         lines.append(
             f"• *{_org_name(project, e.org_id)}* <{e.url}|{(e.title or e.url)[:120]}>{flag}\n"
             f"   {e.summary}\n   _{e.relevance.label} ({e.relevance.confidence:.2f}) · {_tags(e)}_"

@@ -48,10 +48,11 @@ TEXT: dict[str, dict[str, str]] = {
     "page_candidates": {"en": "Candidates", "ja": "候補組織"},
     "page_status": {"en": "Run status", "ja": "実行状況"},
     "page_search": {"en": "Search and export", "ja": "検索・書き出し"},
+    "page_categories": {"en": "Possible new categories", "ja": "新分類の候補"},
     # ---- review
     "review_intro": {
-        "en": "Mark each record as kept, blog candidate or discarded. Records needing review have an evidence quote that was not found in the page.",
-        "ja": "各記録を「採用」「ブログ候補」「不採用」に分類してください。「要確認」は、根拠の一文がページ本文に見つからなかった記録です。",
+        "en": "Mark each record as kept, blog candidate or discarded. Records needing review have a quote that was not found in the page. Each challenge and response comes with a suggested category: confirm it, change it, or mark it as a possible new category.",
+        "ja": "各記録を「採用」「ブログ候補」「不採用」に分類してください。「要確認」は、引用がページ本文に見つからなかった記録です。課題・対応には分類が提案されているので、確定・変更するか「新分類の候補」としてください。",
     },
     "filter_status": {"en": "Status", "ja": "状態"},
     "filter_org": {"en": "Organisation", "ja": "組織"},
@@ -67,8 +68,13 @@ TEXT: dict[str, dict[str, str]] = {
     "evidence": {"en": "Evidence (verbatim from the page)", "ja": "根拠（ページからの引用）"},
     "evidence_ok": {"en": "Found in the page text", "ja": "本文で確認済み"},
     "evidence_ng": {"en": "Not found in the page text", "ja": "本文に見つからず"},
-    "challenges": {"en": "Challenges", "ja": "課題"},
-    "responses": {"en": "Governance responses", "ja": "ガバナンス上の対応"},
+    "challenges": {"en": "Challenges described on the page", "ja": "ページが述べている課題"},
+    "responses": {"en": "Governance responses described on the page", "ja": "ページが述べている対応"},
+    "suggested": {"en": "Suggested", "ja": "提案された分類"},
+    "category": {"en": "Category", "ja": "分類"},
+    "no_category": {"en": "No existing category", "ja": "既存の分類なし"},
+    "cat_new": {"en": "Possible new category", "ja": "新分類の候補"},
+    "cat_na": {"en": "Not applicable", "ja": "該当なし"},
     "fields": {"en": "Fields", "ja": "項目"},
     "partners": {"en": "Other organisations named", "ja": "言及された他の組織"},
     "decision": {"en": "Decision", "ja": "判断"},
@@ -179,6 +185,16 @@ TEXT: dict[str, dict[str, str]] = {
     "date_from": {"en": "Detected from", "ja": "検出日（から）"},
     "date_to": {"en": "Detected to", "ja": "検出日（まで）"},
     "download_csv": {"en": "Download CSV", "ja": "CSV をダウンロード"},
+    # ---- categories
+    "categories_intro": {
+        "en": "Challenges and responses the pages describe that fit no existing category (as suggested by "
+        "the model, or as marked in review), and how often each existing category is used. "
+        "Discarded records are left out.",
+        "ja": "ページが述べている課題・対応のうち、既存の分類に当てはまらないもの（モデルの提案、またはレビューでの判断）と、"
+        "既存の各分類の使用回数です。破棄した記録は除きます。",
+    },
+    "cat_candidates": {"en": "Findings without an existing category", "ja": "既存の分類に当てはまらない項目"},
+    "cat_usage": {"en": "Use of existing categories", "ja": "既存の分類の使用回数"},
 }
 
 

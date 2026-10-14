@@ -60,3 +60,23 @@ def test_auth_is_required_without_dev_mode(project_root, monkeypatch):
     monkeypatch.setenv("AGENTIC_WATCH_ROOT", str(project_root))
     at = AppTest.from_file(SCRIPT, default_timeout=30).run()
     assert at.error and "Sign-in is not configured" in at.error[0].value
+
+
+def _categories_script() -> None:
+    import streamlit as st
+
+    from agentic_watch.webapp import views
+    from agentic_watch.webapp.auth import User
+
+    st.session_state.setdefault("lang", "en")
+    views.categories_page(User(email="dev@example.org", name="dev"))
+
+
+@pytest.mark.parametrize("lang", ["en", "ja"])
+def test_categories_page_renders(app_root, lang):
+    at = AppTest.from_function(_categories_script, default_timeout=30)
+    at.session_state["lang"] = lang
+    at.run()
+    assert not at.exception
+    assert at.header[0].value == ("Possible new categories" if lang == "en" else "新分類の候補")
+    assert "(2)" in at.subheader[0].value  # two findings in the fixture have no existing category

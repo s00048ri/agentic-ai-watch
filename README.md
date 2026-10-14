@@ -11,7 +11,7 @@ Detect new pages (RSS, sitemaps, page hashes; no LLM)
   → keep only URLs on the organisation's own domains, drop ones already seen
   → keyword filter (no LLM; AI governance pages skip the filter; for sitemap items the page title and opening are read first)
   → stage 1: relevance (Haiku; input ≤ 1,500 characters, output ≤ 100 tokens)
-  → stage 2: field extraction (Haiku; first 6,000 characters of the page, output ≤ 800 tokens)
+  → stage 2: field extraction (Haiku; first 6,000 characters of the page, output ≤ 1,500 tokens)
   → code checks that the evidence quote appears verbatim in the page (if not: needs_review)
   → save to data/entries/YYYY-MM.jsonl, update candidate organisations, post a weekly digest to Slack
 ```
@@ -58,7 +58,8 @@ A sign-in protected web app for the team (English, with a Japanese option in the
 
 | Page | What you can do |
 |---|---|
-| Review records | Filter new and needs-review records; read the summary, the evidence quote and the source; mark each as kept, blog candidate or discarded, with a note |
+| Review records | Filter new and needs-review records; read the summary, the evidence quote and the source; see every challenge and response the page describes, each with its quote and a suggested category, and confirm or change the category (or mark it as a possible new category); mark each record as kept, blog candidate or discarded, with a note |
+| Possible new categories | Challenges and responses that fit no existing category, with their quotes and sources (CSV download), and how often each existing category is used |
 | Organisations | See the watch list with last-check dates and record counts; change an organisation's status and watch points; add an organisation (RSS feeds and sitemaps are suggested from the home page; tick "verified" only after opening each URL) |
 | Candidates | Candidates by number of mentions; add one to the watch list or reject it; add a lead by hand |
 | Run status | Tokens and estimated cost this month, pending batches, the latest run's counts and errors, past weekly digests |
@@ -113,7 +114,7 @@ Organisations named in a record's `other_organisations_named` are added automati
 
 ## Weekly review
 
-Use the web app's **Review records** page to mark each record as kept, blog candidate or discarded (it fills in `status`, `reviewer`, `reviewed` and `review_note` in `data/entries/YYYY-MM.jsonl`). Editing the file directly also works. `needs_review` means the evidence quote was not found in the page text.
+Use the web app's **Review records** page to mark each record as kept, blog candidate or discarded (it fills in `status`, `reviewer`, `reviewed` and `review_note` in `data/entries/YYYY-MM.jsonl`). Editing the file directly also works. `needs_review` means the evidence quote, or a challenge or response quote, was not found in the page text.
 
 ## Running by hand
 

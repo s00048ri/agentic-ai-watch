@@ -251,3 +251,27 @@ def test_every_text_key_used_in_the_app_exists_in_both_languages():
     assert not missing, missing
     no_ja = sorted(k for k, v in TEXT.items() if not v.get("ja") or not v.get("en"))
     assert not no_ja, no_ja
+
+
+def test_review_sets_finding_categories_and_lists_candidates(project_root):
+    from agentic_watch.models import NEW_CATEGORY
+    from agentic_watch.pipeline import start_run
+    from agentic_watch.webapp.views import category_candidates, category_usage
+
+    ctx, _, _ = make_ctx(project_root, llm=FakeLLM())
+    start_run(ctx)
+    path = project_root / "data/entries/2026-10.jsonl"
+    [entry] = ctx.store.entries()
+    assert len(category_candidates([entry], {})) == 2  # two findings have no existing category
+    chosen = {
+        "challenges": ["human-oversight-over-reliance", "human-oversight-over-reliance", NEW_CATEGORY],
+        "responses": ["calibrated-human-oversight"],
+    }
+    new = ledger_ops.set_entry_status(path.read_text(), entry.id, "kept", "Ren", None, TODAY, chosen)
+    [updated] = ledger_ops.parse_entries(new)
+    assert [f.category for f in updated.challenges] == chosen["challenges"]
+    [candidate] = category_candidates([updated], {})
+    assert candidate["reviewed"] == "yes"
+    assert category_usage([updated])["challenges"] == {"human-oversight-over-reliance": 2}
+    with pytest.raises(ledger_ops.LedgerError):
+        ledger_ops.set_entry_status(new, entry.id, "kept", "Ren", None, TODAY, {"challenges": ["x"]})

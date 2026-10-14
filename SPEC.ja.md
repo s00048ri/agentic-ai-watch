@@ -124,8 +124,14 @@ Version: 0.1 (2026-10-12) / Owner: Rentaro Iida (GPAI Tokyo Centre)
     "sector": null, "application_area": null, "deployment_stage": null,
     "autonomy_cues": null, "human_oversight": null
   },
-  "challenges": ["challenge-id"],
-  "responses": ["response-id"],
+  "challenges": [
+    {"description": "One sentence in our own words (English)",
+     "quote": "Verbatim quote from the source (at most 300 characters)",
+     "quote_verified": true,
+     "suggested_category": "challenge-id",   // closest existing category, or null when none fits
+     "category": null}                        // set in review: a category id, "new-category" or "not-applicable"
+  ],
+  "responses": [ /* same shape as challenges */ ],
   "other_organisations_named": ["Partner Co."],
   "status": "new",
     // new | needs_review | kept | discarded | blog_candidate
@@ -134,6 +140,7 @@ Version: 0.1 (2026-10-12) / Owner: Rentaro Iida (GPAI Tokyo Centre)
 }
 ```
 - `fields`、`challenges`、`responses` は出典に明記がなければ null／空配列
+- `challenges` と `responses` には、出典が述べている課題・対応を、既存の分類に当てはまらないものも含めてすべて記録する。分類の追加が必要かどうかをチームが判断するためである。分類は、確認者が確定・変更するか「新分類の候補」と印を付けるまでは提案にとどまる
 - 本文は保存しない（処理中のメモリ上でのみ扱う）
 
 ### 3.3 `ledger/candidates.yaml`（追加候補）
@@ -192,9 +199,9 @@ exclude:
 - 指示文に必ず含める規則：
   - 出典に明記されていないことは null / 空配列にする。推測しない
   - `evidence` は本文からの逐語引用（300字以内）
-  - `challenges` / `responses` は、本文が明示的に述べている場合のみ、分類の id で付ける
+  - `challenges` / `responses` には、本文が述べている課題・対応をすべて挙げる。各項目に、1文の説明、逐語引用、最も近い既存分類（`suggested_category`。当てはまらなければなし。無理に当てはめない）を付ける。本文が述べていないものは挙げない
   - `summary` は英語で2文以内、評価的な形容をしない
-- `verify.py`：`evidence` が抽出本文に逐語で含まれるか確認（空白・改行を正規化して部分一致）。含まれなければ `evidence_verified: false`、`status: needs_review`
+- `verify.py`：`evidence` と各項目の `quote` が抽出本文に逐語で含まれるか確認（空白・改行を正規化して部分一致）。含まれなければ `evidence_verified` / `quote_verified` を false にし、`status: needs_review`
 
 ### 4.5 保存と候補の更新 — `store.py`、`leads.py`
 - 記録を `data/entries/YYYY-MM.jsonl` に追記、`state/seen.jsonl` を更新
@@ -208,7 +215,7 @@ exclude:
 ### 4.7 週次ダイジェスト — `digest.py`
 #agentic_ai に投稿し、`reports/weekly/` に控えを保存する。
 - 今週の件数（新着検出 → キーワード通過 → 段階1通過 → 記録）
-- 新しい記録の一覧：組織名、タイトル（リンク）、要約1行、ラベル、確信度、言及された課題・対応
+- 新しい記録の一覧：組織名、タイトル（リンク）、要約1行、ラベル、確信度、述べられた課題・対応の分類（既存分類に当てはまらない件数を含む）
 - `needs_review` の一覧
 - 段階1を通ったが取得できなかったページ（§4.4）。手動で読む
 - 候補組織のうち `mentions` が増えたもの
@@ -248,7 +255,7 @@ limits:
   stage1_max_input_chars: 1500
   stage2_max_input_chars: 6000
   stage1_max_output_tokens: 100
-  stage2_max_output_tokens: 800
+  stage2_max_output_tokens: 1500
   synthesis_max_output_tokens: 3000
   monthly_token_budget: 3000000     # 入力＋出力の合計（キャッシュ読込も含めて記録）
 stage1:

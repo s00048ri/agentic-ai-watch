@@ -132,7 +132,7 @@ def pilot_summary(ctx: Context) -> str:
     for t in types:
         detections = sum(1 for s in seen if (s.doc_type or "unknown") == t and s.outcome != "skipped")
         recs = [e for e in entries if e.doc_type == t]
-        with_tax = sum(1 for e in recs if e.challenges or e.responses)
+        with_tax = sum(1 for e in recs if e.findings())
         useful = sum(1 for e in recs if e.status in USEFUL)
         tokens = sum(u.total() for u in usage if u.doc_type == t)
         share = f"{100 * with_tax / len(recs):.0f}%" if recs else "—"

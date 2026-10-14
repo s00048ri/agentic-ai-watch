@@ -24,7 +24,7 @@ from ..config import (
 from ..digest import cost_usd
 from ..discover import discover
 from ..fetch import Fetcher
-from ..models import Entry, EntryStatus, RelevanceLabel
+from ..models import NEW_CATEGORY, NOT_APPLICABLE, Entry, EntryStatus, Finding, RelevanceLabel
 from ..repo import Edit
 from . import data
 from .auth import User
@@ -50,6 +50,17 @@ def _org_names() -> dict[str, str]:
 def _tax_names() -> tuple[dict[str, str], dict[str, str]]:
     tax = data.project().taxonomy
     return {c.id: c.name for c in tax.challenges}, {r.id: r.name for r in tax.responses}
+
+
+def _category_label(category: str | None, names: dict[str, str]) -> str:
+    lang = _lang()
+    if category is None:
+        return t("no_category", lang)
+    if category == NEW_CATEGORY:
+        return t("cat_new", lang)
+    if category == NOT_APPLICABLE:
+        return t("cat_na", lang)
+    return names.get(category, category)
 
 
 # ---------------------------------------------------------------- review
@@ -123,14 +134,6 @@ def _entry_card(entry: Entry, user: User, orgs: dict[str, str]) -> None:
         st.markdown(f"**{t('evidence', lang)}** — {mark}")
         st.markdown(f"> {entry.evidence}")
         details = []
-        if entry.challenges:
-            details.append(
-                f"**{t('challenges', lang)}:** " + ", ".join(challenges.get(c, c) for c in entry.challenges)
-            )
-        if entry.responses:
-            details.append(
-                f"**{t('responses', lang)}:** " + ", ".join(responses.get(r, r) for r in entry.responses)
-            )
         fields = {k: v for k, v in entry.fields.model_dump().items() if v}
         if fields:
             details.append(f"**{t('fields', lang)}:** " + "; ".join(f"{k}: {v}" for k, v in fields.items()))
@@ -141,6 +144,10 @@ def _entry_card(entry: Entry, user: User, orgs: dict[str, str]) -> None:
         if entry.reviewer and entry.reviewed:
             st.caption(t("reviewed_by", lang, who=entry.reviewer, date=entry.reviewed))
         with st.form(f"review-{entry.id}", border=False):
+            chosen = {
+                "challenges": _finding_inputs(entry, "challenges", entry.challenges, challenges),
+                "responses": _finding_inputs(entry, "responses", entry.responses, responses),
+            }
             cols = st.columns([3, 3, 1])
             current = entry.status if entry.status in DECISIONS else "kept"
             decision = cols[0].radio(
@@ -158,7 +165,7 @@ def _entry_card(entry: Entry, user: User, orgs: dict[str, str]) -> None:
                     [path],
                     lambda files: {
                         path: ledger_ops.set_entry_status(
-                            files[path], entry.id, decision, user.name, note, today
+                            files[path], entry.id, decision, user.name, note, today, chosen
                         )
                     },
                     f"chore: review record {entry.id[:8]}",
@@ -166,6 +173,32 @@ def _entry_card(entry: Entry, user: User, orgs: dict[str, str]) -> None:
                 )
                 if ok:
                     st.rerun()
+
+
+def _finding_inputs(entry: Entry, kind: str, findings: list[Finding], names: dict[str, str]) -> list[str]:
+    """Show each finding with a category selector; returns the selected categories in order."""
+    lang = _lang()
+    if not findings:
+        return []
+    st.markdown(f"**{t(kind, lang)}** ({len(findings)})")
+    options = [*names, NEW_CATEGORY, NOT_APPLICABLE]
+    chosen = []
+    for i, f in enumerate(findings):
+        mark = "✅" if f.quote_verified else "⚠️ " + t("evidence_ng", lang)
+        left, right = st.columns([3, 2])
+        left.markdown(f"{f.description or '—'}  \n> {f.quote or '—'}  \n{mark}")
+        current = f.current_category() or NEW_CATEGORY
+        right.caption(f"{t('suggested', lang)}: {_category_label(f.suggested_category, names)}")
+        chosen.append(
+            right.selectbox(
+                t("category", lang),
+                options,
+                index=options.index(current) if current in options else len(names),
+                format_func=lambda c: _category_label(c, names),
+                key=f"cat-{entry.id}-{kind}-{i}",
+            )
+        )
+    return chosen
 
 
 # ---------------------------------------------------------------- organisations
@@ -520,7 +553,7 @@ def search_page(user: User) -> None:
     st.caption(t("search_intro", lang))
     entries = data.entries()
     orgs = _org_names()
-    challenges, _responses = _tax_names()
+    challenges, responses = _tax_names()
     c1, c2, c3 = st.columns(3)
     text = c1.text_input(t("filter_text", lang), key="search_text")
     statuses = c2.multiselect(
@@ -547,7 +580,7 @@ def search_page(user: User) -> None:
         rows = [e for e in rows if e.detected >= start]
     if end:
         rows = [e for e in rows if e.detected <= end]
-    df = entries_frame(rows, orgs, challenges)
+    df = entries_frame(rows, orgs, challenges, responses)
     st.caption(t("showing_n", lang, shown=len(df), total=len(entries)))
     st.dataframe(
         df, hide_index=True, use_container_width=True, column_config={"url": st.column_config.LinkColumn()}
@@ -559,7 +592,13 @@ def search_page(user: User) -> None:
     )
 
 
-def entries_frame(entries: list[Entry], orgs: dict[str, str], challenges: dict[str, str]) -> pd.DataFrame:
+def _findings_text(findings: list[Finding], names: dict[str, str]) -> str:
+    return "; ".join(f"{f.description} [{_category_label(f.current_category(), names)}]" for f in findings)
+
+
+def entries_frame(
+    entries: list[Entry], orgs: dict[str, str], challenges: dict[str, str], responses: dict[str, str]
+) -> pd.DataFrame:
     return pd.DataFrame(
         [
             {
@@ -573,8 +612,8 @@ def entries_frame(entries: list[Entry], orgs: dict[str, str], challenges: dict[s
                 "summary": e.summary,
                 "evidence": e.evidence,
                 "evidence_verified": e.evidence_verified,
-                "challenges": "; ".join(challenges.get(c, c) for c in e.challenges),
-                "responses": "; ".join(e.responses),
+                "challenges": _findings_text(e.challenges, challenges),
+                "responses": _findings_text(e.responses, responses),
                 "status": e.status,
                 "reviewer": e.reviewer or "",
                 "review_note": e.review_note or "",
@@ -599,3 +638,82 @@ def entries_frame(entries: list[Entry], orgs: dict[str, str], challenges: dict[s
             "review_note",
         ],
     )
+
+
+# ---------------------------------------------------------------- categories
+
+
+def categories_page(user: User) -> None:
+    """Findings without an existing category, and how often each category is used."""
+    lang = _lang()
+    st.header(t("page_categories", lang))
+    st.caption(t("categories_intro", lang))
+    orgs = _org_names()
+    challenges, responses = _tax_names()
+    entries = [e for e in data.entries() if e.status != "discarded"]
+    rows = category_candidates(entries, orgs)
+    st.subheader(f"{t('cat_candidates', lang)} ({len(rows)})")
+    if rows:
+        df = pd.DataFrame(rows)
+        st.dataframe(
+            df,
+            hide_index=True,
+            use_container_width=True,
+            column_config={"url": st.column_config.LinkColumn()},
+        )
+        buf = io.StringIO()
+        df.to_csv(buf, index=False)
+        st.download_button(
+            t("download_csv", lang),
+            buf.getvalue().encode("utf-8-sig"),
+            "agentic-watch-category-candidates.csv",
+            "text/csv",
+        )
+    else:
+        st.info(t("none", lang))
+    st.subheader(t("cat_usage", lang))
+    usage = category_usage(entries)
+    for kind, names in (("challenges", challenges), ("responses", responses)):
+        counts = usage[kind]
+        st.markdown(f"**{t(kind, lang)}**")
+        st.dataframe(
+            pd.DataFrame(
+                [{"category": name, "id": cid, "findings": counts.get(cid, 0)} for cid, name in names.items()]
+            ),
+            hide_index=True,
+            use_container_width=True,
+        )
+
+
+def category_candidates(entries: list[Entry], orgs: dict[str, str]) -> list[dict[str, str]]:
+    """Findings with no existing category: no suggestion, or marked as a new category by a reviewer."""
+    out = []
+    for e in entries:
+        for kind, f in e.findings():
+            category = f.current_category()
+            if category is not None and category != NEW_CATEGORY:
+                continue
+            out.append(
+                {
+                    "kind": kind,
+                    "description": f.description,
+                    "quote": f.quote,
+                    "reviewed": "yes" if f.category == NEW_CATEGORY else "",
+                    "organisation": orgs.get(e.org_id, e.org_id),
+                    "title": e.title,
+                    "url": e.url,
+                    "detected": e.detected.isoformat(),
+                }
+            )
+    return out
+
+
+def category_usage(entries: list[Entry]) -> dict[str, dict[str, int]]:
+    usage: dict[str, dict[str, int]] = {"challenges": {}, "responses": {}}
+    for e in entries:
+        for kind, findings in (("challenges", e.challenges), ("responses", e.responses)):
+            for f in findings:
+                c = f.current_category()
+                if c and c not in (NEW_CATEGORY, NOT_APPLICABLE):
+                    usage[kind][c] = usage[kind].get(c, 0) + 1
+    return usage

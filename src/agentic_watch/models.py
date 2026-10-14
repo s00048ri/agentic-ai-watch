@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import datetime as dt
 import hashlib
-from typing import Literal
+from typing import Any, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 RelevanceLabel = Literal["deployment", "policy-governance", "research", "product-offering", "not-relevant"]
 EntryStatus = Literal["new", "needs_review", "kept", "discarded", "blog_candidate"]
@@ -57,14 +57,48 @@ class Fields(BaseModel):
     human_oversight: str | None = None
 
 
+# A reviewer's category for a finding: a taxonomy id, or one of these.
+NEW_CATEGORY = "new-category"  # does not fit any existing category: a candidate for a new one
+NOT_APPLICABLE = "not-applicable"  # on reflection, not a challenge / response worth logging
+
+
+class FindingOut(BaseModel):
+    """A challenge or governance response the page describes, as the model returns it."""
+
+    description: str
+    quote: str
+    suggested_category: str | None = None  # closest existing taxonomy id; None when nothing fits
+
+
+class Finding(FindingOut):
+    """A finding in a record. The category is only a suggestion until a reviewer sets `category`."""
+
+    quote: str = Field(max_length=300)
+    quote_verified: bool = False
+    category: str | None = None
+
+    def current_category(self) -> str | None:
+        return self.category or self.suggested_category
+
+
+def _findings(value: Any) -> Any:
+    # Records written before findings existed held bare taxonomy ids.
+    if isinstance(value, list):
+        return [
+            {"description": "", "quote": "", "suggested_category": v} if isinstance(v, str) else v
+            for v in value
+        ]
+    return value
+
+
 class Extraction(BaseModel):
     """Stage 2 model output (validated before it becomes an Entry)."""
 
     summary: str
     evidence: str
     fields: Fields = Fields()
-    challenges: list[str] = Field(default_factory=list)
-    responses: list[str] = Field(default_factory=list)
+    challenges: list[FindingOut] = Field(default_factory=list)
+    responses: list[FindingOut] = Field(default_factory=list)
     other_organisations_named: list[str] = Field(default_factory=list)
 
 
@@ -89,14 +123,20 @@ class Entry(BaseModel):
     evidence: str = Field(max_length=300)
     evidence_verified: bool
     fields: Fields = Fields()
-    challenges: list[str] = Field(default_factory=list)
-    responses: list[str] = Field(default_factory=list)
+    challenges: list[Finding] = Field(default_factory=list)
+    responses: list[Finding] = Field(default_factory=list)
     other_organisations_named: list[str] = Field(default_factory=list)
     status: EntryStatus = "new"
     reviewer: str | None = None
     reviewed: dt.date | None = None
     review_note: str | None = None
     model: EntryModels
+
+    _upgrade_findings = field_validator("challenges", "responses", mode="before")(_findings)
+
+    def findings(self) -> list[tuple[str, Finding]]:
+        """("challenge" | "response", finding) pairs in order."""
+        return [("challenge", f) for f in self.challenges] + [("response", f) for f in self.responses]
 
 
 SeenOutcome = Literal[

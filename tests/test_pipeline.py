@@ -28,8 +28,15 @@ def test_sync_run_records_entry_with_verified_evidence(project_root):
     assert run.counts.detected == 3 and run.counts.keyword_passed == 1
     assert run.counts.stage1_passed == 1 and run.counts.recorded == 1
     [entry] = ctx.store.entries()
-    assert entry.evidence_verified and entry.status == "new"
-    assert entry.challenges == ["human-oversight-over-reliance"]  # unknown ids dropped
+    assert (
+        entry.evidence_verified and entry.status == "needs_review"
+    )  # one finding's quote is not on the page
+    first, second, third = entry.challenges
+    assert first.suggested_category == "human-oversight-over-reliance" and first.quote_verified
+    assert second.suggested_category is None and second.quote_verified  # unknown id: no category, kept
+    assert (
+        third.suggested_category is None and not third.quote_verified
+    )  # the model's quote is not on the page
     assert entry.model.stage1 == "claude-haiku-5-5"
     # stage 1 only saw a short input; stage 2 at most the configured characters
     s1 = [c for c in llm.calls if "screen pages" in c["system"][0]["text"]]
@@ -159,3 +166,32 @@ def test_unreadable_relevant_page_is_listed_for_hand_check(project_root):
     assert "https://example.com/news/agent-pilot" in line and "HTTP 403" in line
     report = (project_root / f"reports/weekly/{run.run_id}.md").read_text()
     assert "could not be read" in report and "HTTP 403" in report
+
+
+def test_findings_with_quotes_on_the_page_keep_the_record_new(project_root):
+    ok = dict(STAGE2_OK, challenges=STAGE2_OK["challenges"][:2])
+    ctx, _, _ = make_ctx(project_root, llm=FakeLLM(stage2=lambda p: message(ok)))
+    start_run(ctx)
+    [entry] = ctx.store.entries()
+    assert entry.status == "new" and len(entry.findings()) == 3
+
+
+def test_records_with_bare_category_ids_still_load():
+    old = {
+        "id": "x",
+        "org_id": "o",
+        "url": "https://example.com/a",
+        "title": "t",
+        "detected": "2026-10-13",
+        "doc_type": "newsroom",
+        "language": "en",
+        "relevance": {"label": "deployment", "confidence": 0.9},
+        "summary": "s",
+        "evidence": "e",
+        "evidence_verified": True,
+        "challenges": ["human-oversight-over-reliance"],
+        "responses": [],
+        "model": {"stage1": "m", "stage2": "m"},
+    }
+    entry = Entry.model_validate(old)
+    assert entry.challenges[0].current_category() == "human-oversight-over-reliance"

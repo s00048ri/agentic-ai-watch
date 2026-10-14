@@ -19,7 +19,8 @@ def test_extraction_prompt_lists_taxonomy_from_config(project_root):
     for c in ctx.project.taxonomy.challenges:
         assert c.id in text
     schema = stage2_schema(ctx.project)
-    assert set(schema["properties"]["challenges"]["items"]["enum"]) == ctx.project.taxonomy.challenge_ids()
+    enum = schema["properties"]["challenges"]["items"]["properties"]["suggested_category"]["enum"]
+    assert set(enum) == ctx.project.taxonomy.challenge_ids() | {"none"}
 
 
 def test_discover_suggests_feeds_and_sitemaps():
@@ -67,7 +68,7 @@ def test_synthesis_sends_structured_records_only(project_root):
     ctx, _, _ = make_ctx(project_root, llm=llm)
     start_run(ctx)
     path = project_root / "data/entries/2026-10.jsonl"
-    path.write_text(path.read_text().replace('"status":"new"', '"status":"kept"'))
+    path.write_text(path.read_text().replace('"status":"needs_review"', '"status":"kept"'))
     llm.stage2 = lambda p: message({"x": 1}, model="claude-sonnet-5-5")
     ctx.client = llm
     out = synthesize(ctx, "2026-10")

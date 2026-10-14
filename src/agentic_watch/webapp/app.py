@@ -54,6 +54,12 @@ def main() -> None:
             icon="🧭",
             url_path="candidates",
         ),
+        "categories": st.Page(
+            partial(views.categories_page, user),
+            title=t("page_categories", lang),
+            icon="🗂️",
+            url_path="categories",
+        ),
         "status": st.Page(
             partial(views.status_page, user), title=t("page_status", lang), icon="📊", url_path="status"
         ),

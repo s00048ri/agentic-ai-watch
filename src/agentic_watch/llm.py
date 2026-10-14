@@ -21,7 +21,7 @@ from anthropic.types.messages.batch_create_params import Request
 from pydantic import ValidationError
 
 from .config import Project
-from .models import Extraction, Item, Relevance, UsageRecord
+from .models import Extraction, FindingOut, Item, Relevance, UsageRecord
 from .store import Store
 
 log = logging.getLogger(__name__)
@@ -44,9 +44,9 @@ def taxonomy_block(project: Project) -> str:
     for name in ("sectors", "application_areas", "deployment_stages"):
         lines.append(f"### {name}")
         lines.extend(f"- {t.id}: {t.label}" for t in tax.vocabularies.get(name, []))
-    lines.append("## Challenges (use the id)")
+    lines.append("## Challenges (ids for suggested_category)")
     lines.extend(f"- {c.id}: {c.name} — {' '.join(c.summary.split())}" for c in tax.challenges)
-    lines.append("## Governance responses (use the id)")
+    lines.append("## Governance responses (ids for suggested_category)")
     lines.extend(f"- {r.id}: {r.name} — {' '.join(r.summary.split())}" for r in tax.responses)
     return "\n".join(lines)
 
@@ -99,11 +99,24 @@ def stage2_schema(project: Project) -> dict[str, Any]:
                 ],
                 "additionalProperties": False,
             },
-            "challenges": {"type": "array", "items": {"type": "string", "enum": sorted(tax.challenge_ids())}},
-            "responses": {"type": "array", "items": {"type": "string", "enum": sorted(tax.response_ids())}},
+            "challenges": {"type": "array", "items": _finding_schema(tax.challenge_ids())},
+            "responses": {"type": "array", "items": _finding_schema(tax.response_ids())},
             "other_organisations_named": {"type": "array", "items": {"type": "string"}},
         },
         "required": ["summary", "evidence", "fields", "challenges", "responses", "other_organisations_named"],
+        "additionalProperties": False,
+    }
+
+
+def _finding_schema(ids: Iterable[str]) -> dict[str, Any]:
+    return {
+        "type": "object",
+        "properties": {
+            "description": {"type": "string"},
+            "quote": {"type": "string"},
+            "suggested_category": {"type": "string", "enum": [*sorted(ids), NO_CATEGORY]},
+        },
+        "required": ["description", "quote", "suggested_category"],
         "additionalProperties": False,
     }
 
@@ -174,6 +187,25 @@ def parse_stage1(message: Message) -> Relevance:
         raise ParseError(str(e)) from e
 
 
+NO_CATEGORY = "none"  # the model's answer when no existing category fits
+MAX_FINDINGS = 10  # per list, to bound a runaway answer
+
+
+def _clean_findings(findings: list[FindingOut], ids: set[str]) -> list[FindingOut]:
+    out: list[FindingOut] = []
+    seen: set[str] = set()
+    for f in findings:
+        f.description = " ".join(f.description.split())
+        f.quote = f.quote.strip()[:300]
+        if f.suggested_category not in ids:
+            f.suggested_category = None  # "none", or an id the taxonomy does not have
+        key = f.description.casefold()
+        if f.description and key not in seen:
+            seen.add(key)
+            out.append(f)
+    return out[:MAX_FINDINGS]
+
+
 def parse_stage2(project: Project, message: Message) -> Extraction:
     data = message_json(message)
     try:
@@ -181,9 +213,9 @@ def parse_stage2(project: Project, message: Message) -> Extraction:
     except ValidationError as e:
         raise ParseError(str(e)) from e
     tax = project.taxonomy
-    # Keep only ids that exist in the copied taxonomy and vocabularies.
-    ext.challenges = [c for c in dict.fromkeys(ext.challenges) if c in tax.challenge_ids()]
-    ext.responses = [r for r in dict.fromkeys(ext.responses) if r in tax.response_ids()]
+    ext.challenges = _clean_findings(ext.challenges, tax.challenge_ids())
+    ext.responses = _clean_findings(ext.responses, tax.response_ids())
+    # Keep only ids that exist in the copied vocabularies.
     f = ext.fields
     if f.sector not in tax.vocab_ids("sectors"):
         f.sector = None
