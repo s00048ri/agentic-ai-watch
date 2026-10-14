@@ -253,3 +253,32 @@ def test_sitemap_paths_counts_prefixes():
         sleep=lambda s: None,
     )
     assert sitemap_paths(f, "https://example.com/", depth=1) == [("/news", 3)]
+
+
+def test_links_watch_point_finds_new_article_links(project_root):
+    import yaml
+
+    orgs = yaml.safe_load((project_root / "ledger/organisations.yaml").read_text())
+    orgs[0]["watch_points"] = [
+        {"type": "newsroom", "url": "https://example.com/blog/", "method": "links", "scope": "/posts/"}
+    ]
+    (project_root / "ledger/organisations.yaml").write_text(yaml.safe_dump(orgs))
+
+    def listing(slugs):
+        links = "".join(f'<a href="/posts/{s}">{s}</a>' for s in slugs)
+        return f'<html><body><a href="/about">About</a><a href="https://other.example.net/posts/x">x</a>{links}</body></html>'
+
+    site = FakeSite(
+        pages={
+            "https://example.com/robots.txt": (404, ""),
+            "https://example.com/blog/": (200, listing(["old-one", "old-two"])),
+        }
+    )
+    ctx, _, _ = make_ctx(project_root, site=site)
+    first = detect(ctx.project, ctx.store, ctx.fetcher, TODAY, lookback_days=30)
+    assert first.items == [] and len(first.seen_updates) == 2  # undated links: baseline only
+    ctx.store.mark_seen(first.seen_updates)
+    ctx.store.save_checks(first.checked)
+    site.pages["https://example.com/blog/"] = (200, listing(["new-agents", "old-one", "old-two"]))
+    later = detect(ctx.project, ctx.store, ctx.fetcher, TODAY + dt.timedelta(days=7), lookback_days=30)
+    assert [i.url for i in later.items] == ["https://example.com/posts/new-agents"]

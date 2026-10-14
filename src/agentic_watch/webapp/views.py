@@ -278,7 +278,7 @@ def _org_list(user: User) -> None:
                 st.rerun()
 
 
-WP_COLUMNS = ["type", "url", "method", "feed_url", "language", "frequency", "verified"]
+WP_COLUMNS = ["type", "url", "method", "feed_url", "scope", "language", "frequency", "verified"]
 
 
 def _watch_points_editor(rows: list[dict[str, Any]], key: str) -> pd.DataFrame:
@@ -295,6 +295,7 @@ def _watch_points_editor(rows: list[dict[str, Any]], key: str) -> pd.DataFrame:
             "url": st.column_config.TextColumn(required=True),
             "method": st.column_config.SelectboxColumn(options=list(get_args(Method)), required=True),
             "feed_url": st.column_config.TextColumn(),
+            "scope": st.column_config.TextColumn(),
             "language": st.column_config.TextColumn(default="en"),
             "frequency": st.column_config.SelectboxColumn(
                 options=list(get_args(Frequency)), default="weekly"

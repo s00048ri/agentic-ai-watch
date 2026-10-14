@@ -64,11 +64,12 @@
   watch_points:
   - type: newsroom
     url: https://global.fujitsu/en-global/pr/news
-    method: sitemap
+    method: links
     feed_url: null
     language: en
     frequency: weekly
     verified: false
+    scope: /en-global/pr/news/
 - id: preferred-networks
   name: Preferred Networks
   name_local: 株式会社Preferred Networks
@@ -190,11 +191,12 @@
   watch_points:
   - type: newsroom
     url: https://global.rakuten.com/corp/news/
-    method: sitemap
+    method: links
     feed_url: null
     language: en
     frequency: weekly
     verified: false
+    scope: /corp/news/
 - id: sakana-ai
   name: Sakana AI
   name_local: Sakana AI株式会社
@@ -212,12 +214,13 @@
   last_reviewed: '2026-10-14'
   watch_points:
   - type: tech-blog
-    url: https://sakana.ai/
-    method: sitemap
+    url: https://sakana.ai/blog/
+    method: links
     feed_url: null
     language: en
     frequency: weekly
     verified: false
+    scope: /
 - id: kddi
   name: KDDI
   name_local: KDDI株式会社
@@ -236,12 +239,13 @@
   last_reviewed: '2026-10-14'
   watch_points:
   - type: newsroom
-    url: https://newsroom.kddi.com/english/news
-    method: sitemap
+    url: https://newsroom.kddi.com/english/
+    method: links
     feed_url: null
     language: en
     frequency: weekly
     verified: false
+    scope: /english/news/
 - id: ntt
   name: NTT
   name_local: NTT株式会社
@@ -291,7 +295,7 @@
   watch_points:
   - type: newsroom
     url: https://www.nec.com/en/press/
-    method: sitemap
+    method: manual
     feed_url: null
     language: en
     frequency: weekly
@@ -361,7 +365,7 @@
   last_reviewed: '2026-10-14'
   watch_points:
   - type: newsroom
-    url: https://nrc.canada.ca/en/corporate/news
+    url: https://nrc.canada.ca/en/stories
     method: sitemap
     feed_url: null
     language: en
@@ -438,7 +442,7 @@
   watch_points:
   - type: newsroom
     url: https://www.infosys.com/newsroom/press-releases/
-    method: sitemap
+    method: manual
     feed_url: null
     language: en
     frequency: weekly
@@ -491,13 +495,6 @@
     language: en
     frequency: weekly
     verified: false
-  - type: newsroom
-    url: https://www.lexisnexis.com/community/pressroom
-    method: sitemap
-    feed_url: null
-    language: en
-    frequency: weekly
-    verified: false
 - id: nama-ai
   name: Nama.ai
   name_local: null
@@ -539,7 +536,7 @@
   watch_points:
   - type: newsroom
     url: https://www.freshconsulting.com/insights/
-    method: sitemap
+    method: manual
     feed_url: null
     language: en
     frequency: weekly
@@ -561,9 +558,9 @@
   last_reviewed: '2026-10-14'
   watch_points:
   - type: newsroom
-    url: https://www.telekom.com/en/media
+    url: https://www.telekom.com/en/newsroom
     method: sitemap
-    feed_url: null
+    feed_url: https://www.telekom.com/en.sitemap.xml
     language: en
     frequency: weekly
     verified: false
@@ -661,8 +658,8 @@
   watch_points:
   - type: newsroom
     url: https://news.sap.com/
-    method: rss
-    feed_url: https://news.sap.com/feed/
+    method: manual
+    feed_url: null
     language: en
     frequency: weekly
     verified: false
@@ -685,15 +682,15 @@
   watch_points:
   - type: newsroom
     url: https://news.samsung.com/global/
-    method: rss
-    feed_url: https://news.samsung.com/global/feed
+    method: manual
+    feed_url: null
     language: en
     frequency: weekly
     verified: false
   - type: newsroom
-    url: https://www.samsungsds.com/en/news/
+    url: https://www.samsungsds.com/en/news
     method: sitemap
-    feed_url: null
+    feed_url: https://www.samsungsds.com/en/sitemap.xml
     language: en
     frequency: weekly
     verified: false
@@ -716,7 +713,7 @@
   - type: newsroom
     url: https://www.totvs.com/blog/inovacoes/
     method: sitemap
-    feed_url: null
+    feed_url: https://www.totvs.com/sitemap_index.xml
     language: pt
     frequency: weekly
     verified: false
@@ -759,8 +756,8 @@
   added: '2026-10-14'
   last_reviewed: '2026-10-14'
   watch_points:
-  - type: tech-blog
-    url: https://www.dataiku.com/stories/blog/
+  - type: newsroom
+    url: https://www.dataiku.com/company/news
     method: sitemap
     feed_url: null
     language: en
@@ -806,12 +803,13 @@
   last_reviewed: '2026-10-14'
   watch_points:
   - type: newsroom
-    url: https://amini.ai/blog-post/
-    method: sitemap
+    url: https://www.amini.ai/blog
+    method: links
     feed_url: null
     language: en
     frequency: weekly
     verified: false
+    scope: /blog-post/
 - id: jacaranda-health
   name: Jacaranda Health
   name_local: null
@@ -876,11 +874,12 @@
   watch_points:
   - type: newsroom
     url: https://karaagro.com/
-    method: sitemap
+    method: links
     feed_url: null
     language: en
     frequency: weekly
     verified: false
+    scope: /
 - id: kera-health
   name: Kera Health
   name_local: null
@@ -899,11 +898,12 @@
   watch_points:
   - type: newsroom
     url: https://kera.health/
-    method: sitemap
+    method: links
     feed_url: null
     language: en
     frequency: weekly
     verified: false
+    scope: /
 - id: lua-ai
   name: Lua
   name_local: null
@@ -968,9 +968,9 @@
   last_reviewed: '2026-10-14'
   watch_points:
   - type: newsroom
-    url: https://www.instadeep.com/
-    method: rss
-    feed_url: https://www.instadeep.com/feed/
+    url: https://www.instadeep.com/20
+    method: sitemap
+    feed_url: https://instadeep.com/sitemap_index.xml
     language: en
     frequency: weekly
     verified: false
@@ -1032,8 +1032,9 @@
   name_local: null
   domains:
   - lg.com
-  - lgresearch.ai
   - lgcns.com
+  - lgnewsroom.com
+  - lgresearch.ai
   org_type: private-sector
   ecosystem_role: developer-deployer
   sector: technology
@@ -1046,9 +1047,9 @@
   last_reviewed: '2026-10-14'
   watch_points:
   - type: newsroom
-    url: https://www.lg.com/global/newsroom
-    method: sitemap
-    feed_url: null
+    url: https://www.lgnewsroom.com/
+    method: rss
+    feed_url: https://www.lgnewsroom.com/feed/
     language: en
     frequency: weekly
     verified: false
@@ -1107,9 +1108,9 @@
   last_reviewed: '2026-10-14'
   watch_points:
   - type: newsroom
-    url: https://www.jnj.com/media-center/
-    method: sitemap
-    feed_url: null
+    url: https://www.jnj.com/
+    method: rss
+    feed_url: https://www.jnj.com/index.rss
     language: en
     frequency: weekly
     verified: false

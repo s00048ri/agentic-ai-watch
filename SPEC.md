@@ -97,7 +97,7 @@ Audience: Claude Code. Placed at the repository root; the implementation is base
   watch_points:
     - type: newsroom               # newsroom | tech-blog | ai-governance-page | responsible-ai-report | ir-annual-report | haip-report | transparency-record
       url: https://example.com/news
-      method: rss                  # rss | sitemap | page-hash | manual
+      method: rss                  # rss | sitemap | links | page-hash | manual
       feed_url: https://example.com/news/rss.xml
       language: en
       frequency: weekly            # weekly | monthly | annual
@@ -165,6 +165,7 @@ One record per line, validated with a pydantic model.
 - Check each watch point of organisations with `status: active` according to its `frequency`
 - `rss`: fetch the feed; URLs not yet detected are new
 - `sitemap`: fetch sitemap.xml; URLs not yet detected, or whose `lastmod` has been updated, are new
+- `links` (added October 2026, for sites with neither a feed nor a usable sitemap): fetch a listing page; links on the same host under `scope` (a path prefix; default: the listing page's path) that were not detected before are new. Links carry no date, so the first check only records them
 - `page-hash`: compare a hash of the page text with the previous one; a change counts as new
 - `manual`: not processed (only listed as "check by hand" in the weekly digest)
 - Exclude new URLs whose domain is not in the organisation's `domains`

@@ -95,7 +95,7 @@ Version: 0.1 (2026-10-12) / Owner: Rentaro Iida (GPAI Tokyo Centre)
   watch_points:
     - type: newsroom               # newsroom | tech-blog | ai-governance-page | responsible-ai-report | ir-annual-report | haip-report | transparency-record
       url: https://example.com/news
-      method: rss                  # rss | sitemap | page-hash | manual
+      method: rss                  # rss | sitemap | links | page-hash | manual
       feed_url: https://example.com/news/rss.xml
       language: en
       frequency: weekly            # weekly | monthly | annual
@@ -163,6 +163,7 @@ Version: 0.1 (2026-10-12) / Owner: Rentaro Iida (GPAI Tokyo Centre)
 - `status: active` の組織の各 watch point を `frequency` に従って確認
 - `rss`：フィードを取得し、未検出の URL を新着とする
 - `sitemap`：sitemap.xml を取得し、未検出 URL または `lastmod` が更新されたものを新着とする
+- `links`（2026年10月追加。RSS も使えるサイトマップもないサイト向け）：一覧ページを取得し、同じホストで `scope`（パスの接頭辞。既定は一覧ページのパス）配下のリンクのうち、未検出のものを新着とする。リンクには日付がないため、初回は記録のみ
 - `page-hash`：ページ本文のハッシュを前回と比較し、変化があれば新着とする
 - `manual`：処理しない（週次ダイジェストに「手動確認」として一覧のみ表示）
 - 新着の URL のドメインが組織の `domains` に含まれなければ除外

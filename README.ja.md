@@ -103,6 +103,7 @@ watch point の `method` ごとの書き方：
 |---|---|---|---|
 | `rss` | 一覧ページ | RSS/Atom の URL（必須） | 未検出の URL |
 | `sitemap` | 見たい範囲（例 `https://example.com/news`）。この path 以下の URL だけを見ます | サイトマップの URL（省略時は robots.txt の `Sitemap:`、なければ `/sitemap.xml`） | 未検出の URL、または `lastmod` の更新 |
+| `links` | 一覧ページ（ブログの目次など） | 不要。記事リンクのパスが一覧ページと異なる場合は `scope` にその接頭辞を指定 | 未検出のリンク（RSS も使えるサイトマップもないサイト向け） |
 | `page-hash` | 監視するページ | 不要 | 本文のハッシュの変化 |
 | `manual` | 手で見るページ | 不要 | 処理せず、ダイジェストに「手動確認」として表示 |
 

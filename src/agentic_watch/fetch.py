@@ -252,6 +252,30 @@ def sitemap_paths(fetcher: Fetcher, url: str, depth: int = 2, max_urls: int = 50
     return sorted(counts.items(), key=lambda kv: -kv[1])
 
 
+_HREF = re.compile(r"""<a\s[^>]*?href\s*=\s*["']([^"'#]+)""", re.I)
+
+
+def read_links(fetcher: Fetcher, wp: WatchPoint) -> list[Found]:
+    """Links on a listing page (for sites with neither a feed nor a usable sitemap).
+
+    Links on the same host whose path starts with `wp.scope` (default: the page's own path) count;
+    the page itself does not. Links carry no date, so a watch point's first check only records them.
+    """
+    page = urlsplit(wp.url)
+    prefix = (wp.scope or page.path).rstrip("/") or "/"
+    resp = fetcher.get(wp.url)
+    out: dict[str, Found] = {}
+    for href in _HREF.findall(resp.text):
+        url = urljoin(wp.url, html.unescape(href.strip()))
+        parts = urlsplit(url)
+        if parts.scheme not in ("http", "https") or parts.netloc != page.netloc:
+            continue
+        if not parts.path.startswith(prefix) or parts.path.rstrip("/") == page.path.rstrip("/"):
+            continue
+        out.setdefault(url, Found(url=url))
+    return list(out.values())
+
+
 def read_page_hash(fetcher: Fetcher, wp: WatchPoint) -> list[Found]:
     resp = fetcher.get(wp.url)
     text = extract_text(resp.text, wp.url)
@@ -304,6 +328,8 @@ def detect(project: Project, store: Store, fetcher: Fetcher, today: dt.date, loo
                     found = read_rss(fetcher, wp)
                 elif wp.method == "sitemap":
                     found = read_sitemap(fetcher, wp, project.settings.crawl.max_sitemap_urls)
+                elif wp.method == "links":
+                    found = read_links(fetcher, wp)
                 else:
                     found = read_page_hash(fetcher, wp)
             except (RobotsDisallowed, httpx.HTTPError, ET.ParseError, OSError) as e:

@@ -34,7 +34,7 @@ WatchPointType = Literal[
     "haip-report",
     "transparency-record",
 ]
-Method = Literal["rss", "sitemap", "page-hash", "manual"]
+Method = Literal["rss", "sitemap", "links", "page-hash", "manual"]
 Frequency = Literal["weekly", "monthly", "annual"]
 Thinking = Literal["disabled", "adaptive", "between_tools"]
 Effort = Literal["low", "medium", "high", "xhigh", "max"]
@@ -189,6 +189,7 @@ class WatchPoint(BaseModel):
     language: str = "en"
     frequency: Frequency = "weekly"
     verified: bool = False
+    scope: str | None = None  # links: path prefix of the article links to keep (default: the page's path)
 
     @model_validator(mode="after")
     def _feed_required(self) -> WatchPoint:

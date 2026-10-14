@@ -103,6 +103,7 @@ How to write each watch point `method`:
 |---|---|---|---|
 | `rss` | The listing page | RSS/Atom URL (required) | A URL not seen before |
 | `sitemap` | The section to watch (e.g. `https://example.com/news`); only URLs under this path are used | The sitemap URL (if omitted: robots.txt `Sitemap:`, else `/sitemap.xml`) | A URL not seen before, or a newer `lastmod` |
+| `links` | A listing page (e.g. a blog index) | Not needed; set `scope` to the path prefix of the article links if it differs from the listing page's path | A link not seen before (for sites with neither a feed nor a usable sitemap) |
 | `page-hash` | The page to monitor | Not needed | A change in the hash of the page text |
 | `manual` | A page checked by hand | Not needed | Not processed; listed in the digest under "check by hand" |
 

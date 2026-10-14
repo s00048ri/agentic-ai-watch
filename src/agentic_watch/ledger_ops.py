@@ -111,6 +111,9 @@ def add_organisation(text: str | None, org: dict[str, Any], taxonomy: Taxonomy) 
     if any(r.get("id") == org.get("id") for r in rows):
         raise LedgerError(f"An organisation with id '{org.get('id')}' already exists")
     clean = Organisation.model_validate(org).model_dump(mode="json")
+    for wp in clean["watch_points"]:
+        if wp.get("scope") is None:
+            wp.pop("scope", None)  # only links watch points use it
     rows.append(clean)
     _validate_orgs(rows, taxonomy)
     return _orgs_dump(rows)
