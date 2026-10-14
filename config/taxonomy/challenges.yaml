@@ -97,14 +97,19 @@
   name: Data governance
   source_ref: "Section 4.1"
   summary: >-
-    Weak data classification and unapproved "shadow agents" are recurring concerns.
+    Decisions on cloud-based versus on-premise deployment are consistently shaped by client
+    requirements on data governance, security and confidentiality. Regulations and client
+    requirements also affect whether to allow external access to sensitive corporate data or
+    operational workflows.
   incident_feed_planned: false
 
 - id: privacy
   name: Privacy
   source_ref: "Section 4.1"
   summary: >-
-    Aggregation-driven privacy risks are a recurring concern.
+    Privacy risks are seen as amplified by agents' ability to aggregate and analyse data from
+    multiple sources, although some organisations use agentic AI to help detect and mask
+    sensitive information.
   incident_feed_planned: false
 
 - id: identity-attribution
@@ -120,7 +125,11 @@
   name: Data leakage
   source_ref: "Section 4.1"
   summary: >-
-    [Summary to be drafted.]
+    Weak data classification practices could allow AI agents to access or act on confidential
+    information inappropriately. Malicious actors can use prompt injection attacks on agents to
+    access or exfiltrate confidential or private data, escalate an agent's privileges, or redirect
+    outputs to unauthorised APIs. "Shadow agents" deployed or used by employees without formal
+    organisational approval are a growing concern.
   incident_feed_planned: true
 
 - id: human-oversight-over-reliance
