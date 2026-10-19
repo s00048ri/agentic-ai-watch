@@ -28,7 +28,7 @@
   lead_route: people
   lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
   first_seen: '2026-10-14'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -44,7 +44,7 @@
   lead_route: people
   lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
   first_seen: '2026-10-14'
-  mentions: 2
+  mentions: 3
   official_confirmation_url: https://stripe.com/blog/introducing-our-agentic-commerce-solutions
   decision: pending
   decided: null
@@ -372,7 +372,7 @@
   lead_route: people
   lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
   first_seen: '2026-10-14'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -420,7 +420,7 @@
   lead_route: official-mention
   lead_detail: 'named in sierra-ai page 2026-10-06: https://sierra.ai/blog/introducing-personal-agent-protocol'
   first_seen: '2026-10-14'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -492,7 +492,7 @@
   lead_route: official-mention
   lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-named-snowflake-ai-data-cloud-product-partner-of-the-year'
   first_seen: '2026-10-14'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -652,7 +652,7 @@
   lead_route: official-mention
   lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-announces-the-2026-AI-success-frontrunner-award-winners'
   first_seen: '2026-10-14'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -812,6 +812,334 @@
   lead_route: official-mention
   lead_detail: 'named in h-company page 2026-09-28: https://hcompany.ai/newsroom/holo4'
   first_seen: '2026-10-14'
+  mentions: 3
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: IDC
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-14: https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Stability AI
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-14: https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: IBM
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-10-14: https://www.dataiku.com/company/news/dataiku-agent-management-general-availability'
+  first_seen: '2026-10-19'
+  mentions: 2
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: AWS
+  lead_route: official-mention
+  lead_detail: 'named in dataiku page 2026-10-14: https://www.dataiku.com/company/news/dataiku-agent-management-general-availability'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Tamnoon
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-14: https://aws.amazon.com/blogs/machine-learning/how-tamnoon-built-ai-powered-cloud-security-remediation-with-amazon-bedrock'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: World Health Organization’s Regional Office for Africa (WHO AFRO)
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-06: https://blog.google/innovation-and-ai/technology/health/google-earth-ai'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Epidemic Modeling and Intelligence Unit (UMIE)
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-06: https://blog.google/innovation-and-ai/technology/health/google-earth-ai'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: National Institute of Biomedical Research (INRB)
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-06: https://blog.google/innovation-and-ai/technology/health/google-earth-ai'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: NYU Langone Health
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-06: https://blog.google/innovation-and-ai/technology/health/google-earth-ai'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Mount Sinai Health System
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-06: https://blog.google/innovation-and-ai/technology/health/google-earth-ai'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Boston Children’s Hospital
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-06: https://blog.google/innovation-and-ai/technology/health/google-earth-ai'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: University of Oxford
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-06: https://blog.google/innovation-and-ai/technology/health/google-earth-ai'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Tecnológico de Monterrey
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-06: https://blog.google/innovation-and-ai/technology/health/google-earth-ai'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Google.org
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-06: https://blog.google/innovation-and-ai/technology/health/google-earth-ai'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Incarna
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-08: https://aws.amazon.com/blogs/machine-learning/pay-per-inference-for-ai-agents-how-blockrun-and-incarna-use-amazon-bedrock-agentcore-payments'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: BlockRun
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-08: https://aws.amazon.com/blogs/machine-learning/pay-per-inference-for-ai-agents-how-blockrun-and-incarna-use-amazon-bedrock-agentcore-payments'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Coinbase
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-08: https://aws.amazon.com/blogs/machine-learning/pay-per-inference-for-ai-agents-how-blockrun-and-incarna-use-amazon-bedrock-agentcore-payments'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Lumeus
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-17: https://www.fiddler.ai/blog/agentic-ai-observability-decision-chains'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Instacart
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-13: https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: OpenTable
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-13: https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Adobe
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-13: https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Nielsen
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-17: https://www.fiddler.ai/blog/trace-agent-handoffs-multi-agent-llm-systems'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: LangGraph
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-17: https://www.fiddler.ai/blog/trace-agent-handoffs-multi-agent-llm-systems'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Amazon Bedrock
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-17: https://www.fiddler.ai/blog/trace-agent-handoffs-multi-agent-llm-systems'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Gartner
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-17: https://www.fiddler.ai/blog/api-cost-ai-agent-roi'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Centers for Disease Control
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-15: https://blog.google/innovation-and-ai/technology/research/research-capabilities-intelligence-2026'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: The Lancet
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-15: https://blog.google/innovation-and-ai/technology/research/research-capabilities-intelligence-2026'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: STOC
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-15: https://blog.google/innovation-and-ai/technology/research/research-capabilities-intelligence-2026'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: ICML
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-15: https://blog.google/innovation-and-ai/technology/research/research-capabilities-intelligence-2026'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: NeurIPS
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-15: https://blog.google/innovation-and-ai/technology/research/research-capabilities-intelligence-2026'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: ICLR
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-15: https://blog.google/innovation-and-ai/technology/research/research-capabilities-intelligence-2026'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: UniProt
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-16: https://deepmind.google/blog/accelerating-antimicrobial-discovery'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: AlphaFold Database
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-16: https://deepmind.google/blog/accelerating-antimicrobial-discovery'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: EY
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-16: https://www.fiddler.ai/blog/ai-governance-in-the-age-of-genai'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: NIST
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-16: https://www.fiddler.ai/blog/ai-governance-in-the-age-of-genai'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: ISO
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-16: https://www.fiddler.ai/blog/ai-governance-in-the-age-of-genai'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: European Union
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-16: https://www.fiddler.ai/blog/ai-governance-in-the-age-of-genai'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Reflection AI
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-16: https://aws.amazon.com/blogs/machine-learning/introducing-reflection-beam-an-open-weight-model-for-agentic-coding-on-aws'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Hugging Face
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-16: https://aws.amazon.com/blogs/machine-learning/introducing-reflection-beam-an-open-weight-model-for-agentic-coding-on-aws'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Brex
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-17: https://www.fiddler.ai/blog/ai-agent-control-plane-beyond-proxy'
+  first_seen: '2026-10-19'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: All Hands AI
+  lead_route: official-mention
+  lead_detail: 'named in mistral-ai page 2026-10-08: https://mistral.ai/news/devstral-2507'
+  first_seen: '2026-10-19'
   mentions: 1
   official_confirmation_url: null
   decision: pending

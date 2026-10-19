@@ -1,6 +1,6 @@
 {
   "msgbatch_015NX1nrcERKV3YHPfSWsqAw": {
-    "collected": false,
+    "collected": true,
     "items": [
       {
         "attempts": 0,
@@ -147,7 +147,7 @@
         "url": "https://mistral.ai/news/devstral-2507"
       },
       {
-        "attempts": 0,
+        "attempts": 1,
         "content_hash": null,
         "detected": "2026-10-18",
         "doc_type": "tech-blog",
@@ -201,7 +201,7 @@
         "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery"
       },
       {
-        "attempts": 0,
+        "attempts": 1,
         "content_hash": null,
         "detected": "2026-10-18",
         "doc_type": "tech-blog",
@@ -237,7 +237,7 @@
         "url": "https://aws.amazon.com/blogs/machine-learning/trust-in-depth-giving-agents-more-autonomy-without-losing-control"
       },
       {
-        "attempts": 0,
+        "attempts": 1,
         "content_hash": null,
         "detected": "2026-10-18",
         "doc_type": "tech-blog",
@@ -291,7 +291,7 @@
         "url": "https://www.fiddler.ai/blog/agentic-ai-observability-decision-chains"
       },
       {
-        "attempts": 0,
+        "attempts": 1,
         "content_hash": null,
         "detected": "2026-10-18",
         "doc_type": "tech-blog",
@@ -399,7 +399,7 @@
         "url": "https://www.fiddler.ai/blog/model-ai-tokenomics-agentic-systems"
       },
       {
-        "attempts": 0,
+        "attempts": 1,
         "content_hash": null,
         "detected": "2026-10-18",
         "doc_type": "tech-blog",
@@ -579,7 +579,7 @@
         "url": "https://www.fiddler.ai/blog/api-cost-ai-agent-roi"
       },
       {
-        "attempts": 0,
+        "attempts": 1,
         "content_hash": null,
         "detected": "2026-10-18",
         "doc_type": "tech-blog",
@@ -597,7 +597,7 @@
         "url": "https://www.fiddler.ai/blog/agentic-ai-security-risks-coding-agents"
       },
       {
-        "attempts": 0,
+        "attempts": 1,
         "content_hash": null,
         "detected": "2026-10-18",
         "doc_type": "tech-blog",
@@ -633,7 +633,7 @@
         "url": "https://www.fiddler.ai/blog/trace-agent-handoffs-multi-agent-llm-systems"
       },
       {
-        "attempts": 0,
+        "attempts": 1,
         "content_hash": null,
         "detected": "2026-10-18",
         "doc_type": "tech-blog",
@@ -692,6 +692,52 @@
     "run_id": "2026-10-18",
     "stage": "stage2",
     "submitted": "2026-10-19T04:47:25.229868Z"
+  },
+  "msgbatch_01RfHZe4Fy4qLK9cHNv2goYL": {
+    "collected": false,
+    "items": [
+      {
+        "attempts": 1,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "1137929dc286dd15ed3889dac73747975a57ba55",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "What Your Agent Harness Is Missing | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/ai-agent-harness-engineering"
+      },
+      {
+        "attempts": 1,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "1f5b24c94a7af68f9b50b21e9b4f25e63c8cd90d",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "AI Security Posture Management in the Age of Agents | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/ai-security-posture-management"
+      }
+    ],
+    "model": "claude-haiku-5-5",
+    "reserved_tokens": 22022,
+    "run_id": "2026-10-18",
+    "stage": "stage2",
+    "submitted": "2026-10-19T13:25:27.860342Z"
   },
   "msgbatch_01UUF5tiTFWKQTLZHCkMHB1q": {
     "collected": true,
