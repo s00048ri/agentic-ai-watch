@@ -7,7 +7,7 @@
     "stage1_sent": 37,
     "stage1_passed": 35,
     "stage2_sent": 40,
-    "recorded": 30,
+    "recorded": 31,
     "carried_over": 9
   },
   "new_entry_ids": [
@@ -40,7 +40,8 @@
     "25dcb59795ffe17eb57c6f8b6a2c92dee4295f32",
     "db68ed00ad7ff41ecee21e89cc087a7aa0d655af",
     "7cd102446ad9f55809dc666557e4079c7d836547",
-    "c22ce4d9c5995d4a0e885e557681fd19d60a2b9b"
+    "c22ce4d9c5995d4a0e885e557681fd19d60a2b9b",
+    "1f5b24c94a7af68f9b50b21e9b4f25e63c8cd90d"
   ],
   "manual_watch_points": [
     "Fujitsu: https://global.fujitsu/en-global/pr/news",
@@ -113,5 +114,5 @@
     "All Hands AI: new (mistral-ai)",
     "NVIDIA: 3 mentions"
   ],
-  "digest_posted": false
+  "digest_posted": true
 }
