@@ -5,10 +5,10 @@
     "detected": 184,
     "keyword_passed": 37,
     "stage1_sent": 37,
-    "stage1_passed": 0,
-    "stage2_sent": 0,
+    "stage1_passed": 35,
+    "stage2_sent": 38,
     "recorded": 0,
-    "carried_over": 8
+    "carried_over": 3
   },
   "new_entry_ids": [],
   "manual_watch_points": [
@@ -25,7 +25,10 @@
     "Johnson & Johnson: https://www.jnj.com/latest-news"
   ],
   "fetch_errors": [],
-  "unreadable_pages": [],
+  "unreadable_pages": [
+    "openai: [The EU’s next chapter in AI is agentic](https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic) (HTTP 403 for https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic)",
+    "openai: [Amp puts AI agents to work beyond code with OpenAI models](https://openai.com/index/amp-beyond-coding) (HTTP 403 for https://openai.com/index/amp-beyond-coding)"
+  ],
   "budget_stopped": false,
   "candidate_changes": [],
   "digest_posted": false

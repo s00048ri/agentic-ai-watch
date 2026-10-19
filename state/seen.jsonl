@@ -17198,3 +17198,7 @@
 {"url":"https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore","org_id":"amazon","doc_type":"tech-blog","detected":"2026-10-18","lastmod":null,"content_hash":null,"outcome":"queued"}
 {"url":"https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore","org_id":"amazon","doc_type":"tech-blog","detected":"2026-10-18","lastmod":null,"content_hash":null,"outcome":"queued"}
 {"url":"https://aws.amazon.com/blogs/machine-learning/how-tamnoon-built-ai-powered-cloud-security-remediation-with-amazon-bedrock","org_id":"amazon","doc_type":"tech-blog","detected":"2026-10-18","lastmod":null,"content_hash":null,"outcome":"queued"}
+{"url":"https://www.fiddler.ai/blog/information-leakage-security-optimization-model","org_id":"fiddler-ai","doc_type":"tech-blog","detected":"2026-10-18","lastmod":"2026-10-17T05:00:53.738Z","content_hash":null,"outcome":"stage1_rejected"}
+{"url":"https://www.fiddler.ai/blog/discover-ai-agent-failure-patterns","org_id":"fiddler-ai","doc_type":"tech-blog","detected":"2026-10-18","lastmod":"2026-10-17T05:00:53.738Z","content_hash":null,"outcome":"stage1_rejected"}
+{"url":"https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic","org_id":"openai","doc_type":"newsroom","detected":"2026-10-18","lastmod":null,"content_hash":null,"outcome":"fetch_failed"}
+{"url":"https://openai.com/index/amp-beyond-coding","org_id":"openai","doc_type":"newsroom","detected":"2026-10-18","lastmod":null,"content_hash":null,"outcome":"fetch_failed"}

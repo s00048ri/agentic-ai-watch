@@ -1,6 +1,700 @@
 {
-  "msgbatch_01UUF5tiTFWKQTLZHCkMHB1q": {
+  "msgbatch_015NX1nrcERKV3YHPfSWsqAw": {
     "collected": false,
+    "items": [
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-14",
+        "doc_type": "newsroom",
+        "id": "de035fc3e01d04fb99727a67b85da90b47813847",
+        "language": "en",
+        "lastmod": "2026-10-13",
+        "org_id": "google",
+        "published": "2026-10-13",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Gemini 4 Argon is now available in the Gemini app",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-14",
+        "doc_type": "tech-blog",
+        "id": "ea6ac6a92eab73ac3b29846b72325cde1c88d338",
+        "language": "en",
+        "lastmod": null,
+        "org_id": "amazon",
+        "published": "2026-10-08",
+        "relevance": {
+          "confidence": 0.85,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Pay-per-inference for AI agents: How BlockRun and Incarna use Amazon Bedrock AgentCore payments",
+        "url": "https://aws.amazon.com/blogs/machine-learning/pay-per-inference-for-ai-agents-how-blockrun-and-incarna-use-amazon-bedrock-agentcore-payments"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-14",
+        "doc_type": "tech-blog",
+        "id": "ec8a0026491ee554ea4d2127eff7328e462d028f",
+        "language": "en",
+        "lastmod": "2026-10-09T00:15:13.431Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-09",
+        "relevance": {
+          "confidence": 0.55,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "OTel Tracing for Production AI Agents | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/otel-tracing-production-ai-agents"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-14",
+        "doc_type": "tech-blog",
+        "id": "ee1679b83fc2b4faff50edd61dae7522ae3a3c3f",
+        "language": "en",
+        "lastmod": "2026-10-02T08:42:19.000Z",
+        "org_id": "lua-ai",
+        "published": "2026-10-02",
+        "relevance": {
+          "confidence": 0.7,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Lorcan O Cathain - Lua AI",
+        "url": "https://blog.heylua.ai/author/lorcan"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-14",
+        "doc_type": "newsroom",
+        "id": "ef7c8bf9c7af1af5e414c4e328f1494718926601",
+        "language": "en",
+        "lastmod": "2026-10-06",
+        "org_id": "google",
+        "published": "2026-10-06",
+        "relevance": {
+          "confidence": 0.62,
+          "label": "research"
+        },
+        "stage": "stage2",
+        "title": "Google Earth AI: Making global health more proactive",
+        "url": "https://blog.google/innovation-and-ai/technology/health/google-earth-ai"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-14",
+        "doc_type": "newsroom",
+        "id": "f1697bde546526caddbaa0ea69a38eac2bdb4800",
+        "language": "en",
+        "lastmod": "2026-09-30T16:12:25.513Z",
+        "org_id": "dataiku",
+        "published": "2026-09-30",
+        "relevance": {
+          "confidence": 0.85,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Dataiku Launches AI Blueprint to Help Manufacturers Modernize Factory Operations With NVIDIA AI | Dataiku Press Release",
+        "url": "https://www.dataiku.com/company/news/dataiku-and-nvidia-launch-ai-manufacturing-blueprint"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-14",
+        "doc_type": "tech-blog",
+        "id": "f96fbc26900825eadfbe61c966a3be99b5dae847",
+        "language": "en",
+        "lastmod": "2026-10-02T17:00:01.795Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-02",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "AI in Cybersecurity: How Workflows Change | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/ai-in-cybersecurity-workflows"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-14",
+        "doc_type": "newsroom",
+        "id": "fabe8f8f1dc379e78fe0289c930eacbe479c60fe",
+        "language": "en",
+        "lastmod": "2026-10-08T13:46:41.517Z",
+        "org_id": "mistral-ai",
+        "published": "2026-10-08",
+        "relevance": {
+          "confidence": 0.85,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Upgrading agentic coding capabilities with the new Devstral models | Mistral AI",
+        "url": "https://mistral.ai/news/devstral-2507"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "1137929dc286dd15ed3889dac73747975a57ba55",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "What Your Agent Harness Is Missing | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/ai-agent-harness-engineering"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "newsroom",
+        "id": "18fd0c294914123ad918a021beb1ffaad918f61e",
+        "language": "en",
+        "lastmod": "2026-10-14T03:04:33.108Z",
+        "org_id": "dataiku",
+        "published": "2026-10-14",
+        "relevance": {
+          "confidence": 0.9,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Dataiku Launches Agent Management for enterprise AI agents",
+        "url": "https://www.dataiku.com/company/news/dataiku-agent-management-general-availability"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "1d4cff712a9a12812912916b09ee2f570c14be95",
+        "language": "en",
+        "lastmod": "2026-10-16",
+        "org_id": "google",
+        "published": "2026-10-16",
+        "relevance": {
+          "confidence": 0.85,
+          "label": "deployment"
+        },
+        "stage": "stage2",
+        "title": "Google Antigravity: Accelerating Antimicrobial Peptide Search \u2014 Google DeepMind",
+        "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "1f5b24c94a7af68f9b50b21e9b4f25e63c8cd90d",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "AI Security Posture Management in the Age of Agents | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/ai-security-posture-management"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "25dcb59795ffe17eb57c6f8b6a2c92dee4295f32",
+        "language": "en",
+        "lastmod": null,
+        "org_id": "amazon",
+        "published": "2026-10-15",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Trust in Depth: Giving agents more autonomy without losing control",
+        "url": "https://aws.amazon.com/blogs/machine-learning/trust-in-depth-giving-agents-more-autonomy-without-losing-control"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "2a10b736b43b9420e881201e105554c4129c5bfa",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "AI Agent Anomaly Detection in Financial Services | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/ai-agent-anomaly-detection-financial-services"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "384f3a5b72353dff873d06d780ac78be6fe1440d",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Continuous Evaluation for AI Agents: Trace Classifications | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/continuous-evaluation-ai-agents-trace-classifications"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "3c62b56b17f57253f3d099be081f52fb20bf6bab",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Agentic AI Observability: Built for Decision Chains | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/agentic-ai-observability-decision-chains"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "5039e066c798b66c0d77824656919117170290b1",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "AI Agent Security Risks: New Threat Model for Agents | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/ai-agent-security-risks"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "50430dd8f2d4063b4b35d784fcb03735ea72073d",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "research"
+        },
+        "stage": "stage2",
+        "title": "OTel Tracing for Production AI Agents | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/otel-tracing-production-ai-agents"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "61faebf7e89f192bdec23e9f80bfd2f8a56c1c52",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Bank Examination Evidence for Model Risk Review | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/bank-examination-evidence-model-risk"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "7bd3e3f63e0f7daa9eb10a9e54ace03c2cef3502",
+        "language": "en",
+        "lastmod": null,
+        "org_id": "amazon",
+        "published": "2026-10-16",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Introducing Reflection Beam: an open-weight model for agentic coding on AWS",
+        "url": "https://aws.amazon.com/blogs/machine-learning/introducing-reflection-beam-an-open-weight-model-for-agentic-coding-on-aws"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "7cd102446ad9f55809dc666557e4079c7d836547",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "AI in Cybersecurity: How Workflows Change | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/ai-in-cybersecurity-workflows"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "7fe4d5b8122913bca30f63f90cdd57f29c3126ed",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.55,
+          "label": "research"
+        },
+        "stage": "stage2",
+        "title": "AI Tokenomics: How to Model Token Cost for Agents | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/model-ai-tokenomics-agentic-systems"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "880d7d5b826f80d7b1fa95cab69ab09f89120bd5",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.7,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Artificial Intelligence Security Issues: Coding Agent Risks | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/artificial-intelligence-security-issues"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "a289b871257900aac2bf6034b8409d7698a704aa",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "AI Agent Control Plane: Beyond a Proxy | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/ai-agent-control-plane-beyond-proxy"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "af833b42b8bd8e0212c37d65dcebf7cc781db00b",
+        "language": "en",
+        "lastmod": null,
+        "org_id": "amazon",
+        "published": "2026-10-14",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "How Tamnoon built AI-powered cloud security remediation with Amazon Bedrock",
+        "url": "https://aws.amazon.com/blogs/machine-learning/how-tamnoon-built-ai-powered-cloud-security-remediation-with-amazon-bedrock"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "b0ef370c0dca1cbf344917bb727a806a72439d80",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Human-in-the-Loop Evaluation for LLM Apps | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/human-in-the-loop-evaluation-llm-apps"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "b7cd31d958bda34d9f9a77ce7f911ad60ff92636",
+        "language": "en",
+        "lastmod": null,
+        "org_id": "amazon",
+        "published": "2026-10-14",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Build self-improving document processing using Amazon Bedrock AgentCore",
+        "url": "https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "bf440f7f3fb44381626f826da138f831447c1195",
+        "language": "en",
+        "lastmod": null,
+        "org_id": "amazon",
+        "published": "2026-10-14",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Generate presentations with Amazon Bedrock AgentCore",
+        "url": "https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "newsroom",
+        "id": "bfe647b0306d07171319014cf009ab4a38634470",
+        "language": "en",
+        "lastmod": "2026-10-15",
+        "org_id": "google",
+        "published": "2026-10-15",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "research"
+        },
+        "stage": "stage2",
+        "title": "Google Research@ 2026: Novel capabilities and intelligence",
+        "url": "https://blog.google/innovation-and-ai/technology/research/research-capabilities-intelligence-2026"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "c0740cd5fc63ff392539a1bfbc391205684e4954",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "research"
+        },
+        "stage": "stage2",
+        "title": "What is red teaming for AI agents? | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/ai-agent-red-teaming"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "c22ce4d9c5995d4a0e885e557681fd19d60a2b9b",
+        "language": "en",
+        "lastmod": null,
+        "org_id": "amazon",
+        "published": "2026-10-16",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Building trust in AI agents: A production-ready evaluation framework with Amazon Bedrock AgentCore",
+        "url": "https://aws.amazon.com/blogs/machine-learning/building-trust-in-ai-agents-a-production-ready-evaluation-framework-with-amazon-bedrock-agentcore"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "cef338e6664a34684836b51934d457bc65b045f4",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.7,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "API Cost and AI Agent ROI: Where Evaluation Bills Hide | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/api-cost-ai-agent-roi"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "d18c3194256b86922b6c4da3690eb42bf8dcd901",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "research"
+        },
+        "stage": "stage2",
+        "title": "Agentic AI Security Risks in Enterprise Coding Agents | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/agentic-ai-security-risks-coding-agents"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "d4c66103f0ccb83abbbdd13f895bfc6e2e58bfa0",
+        "language": "en",
+        "lastmod": "2026-10-15T19:02:01.519Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-15",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "research"
+        },
+        "stage": "stage2",
+        "title": "The OpenAI-Hugging Face Breach: AI Agent Security Lessons | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/openai-hugging-face-breach-ai-agent-security"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "d92aef74a4387c5d200d062d055615d107ede34f",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "How to Trace Agent Handoffs in Multi-Agent LLM Systems | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/trace-agent-handoffs-multi-agent-llm-systems"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "d97f02c351c7587492395f13f42e55c68f94a54d",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.9,
+          "label": "policy-governance"
+        },
+        "stage": "stage2",
+        "title": "AI Governance in Healthcare for Agents | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/ai-governance-in-healthcare"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "db15e2f0ce4cf8172389eb934855b28f8fe6f857",
+        "language": "en",
+        "lastmod": "2026-10-16T02:31:13.007Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-16",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "AI Governance Framework for Generative AI | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/ai-governance-in-the-age-of-genai"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "newsroom",
+        "id": "db68ed00ad7ff41ecee21e89cc087a7aa0d655af",
+        "language": "en",
+        "lastmod": "2026-10-15T00:00:00.000Z",
+        "org_id": "h-company",
+        "published": "2026-10-15",
+        "relevance": {
+          "confidence": 0.85,
+          "label": "research"
+        },
+        "stage": "stage2",
+        "title": "Lab Notes: Post-training Nemotron 3.5 Super VL 120B-A12B for computer use | H",
+        "url": "https://hcompany.ai/newsroom/lab-notes-nemotron-3.5-super-vl"
+      }
+    ],
+    "model": "claude-haiku-5-5",
+    "reserved_tokens": 408744,
+    "run_id": "2026-10-18",
+    "stage": "stage2",
+    "submitted": "2026-10-19T04:47:25.229868Z"
+  },
+  "msgbatch_01UUF5tiTFWKQTLZHCkMHB1q": {
+    "collected": true,
     "items": [
       {
         "attempts": 0,
@@ -12,8 +706,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "What Your Agent Harness Is Missing | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/ai-agent-harness-engineering"
       },
@@ -42,8 +739,11 @@
         "lastmod": "2026-10-14T03:04:33.108Z",
         "org_id": "dataiku",
         "published": "2026-10-14",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.9,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "Dataiku Launches Agent Management for enterprise AI agents",
         "url": "https://www.dataiku.com/company/news/dataiku-agent-management-general-availability"
       },
@@ -57,8 +757,11 @@
         "lastmod": "2026-10-16",
         "org_id": "google",
         "published": "2026-10-16",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.85,
+          "label": "deployment"
+        },
+        "stage": "stage2",
         "title": "Google Antigravity: Accelerating Antimicrobial Peptide Search \u2014 Google DeepMind",
         "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery"
       },
@@ -72,8 +775,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "AI Security Posture Management in the Age of Agents | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/ai-security-posture-management"
       },
@@ -87,8 +793,11 @@
         "lastmod": null,
         "org_id": "amazon",
         "published": "2026-10-15",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "Trust in Depth: Giving agents more autonomy without losing control",
         "url": "https://aws.amazon.com/blogs/machine-learning/trust-in-depth-giving-agents-more-autonomy-without-losing-control"
       },
@@ -102,8 +811,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "AI Agent Anomaly Detection in Financial Services | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/ai-agent-anomaly-detection-financial-services"
       },
@@ -117,8 +829,11 @@
         "lastmod": null,
         "org_id": "openai",
         "published": "2026-10-14",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "research"
+        },
+        "stage": "stage2",
         "title": "The EU\u2019s next chapter in AI is agentic",
         "url": "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic"
       },
@@ -132,8 +847,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "Continuous Evaluation for AI Agents: Trace Classifications | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/continuous-evaluation-ai-agents-trace-classifications"
       },
@@ -147,8 +865,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "Agentic AI Observability: Built for Decision Chains | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/agentic-ai-observability-decision-chains"
       },
@@ -162,8 +883,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "AI Agent Security Risks: New Threat Model for Agents | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/ai-agent-security-risks"
       },
@@ -177,8 +901,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "research"
+        },
+        "stage": "stage2",
         "title": "OTel Tracing for Production AI Agents | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/otel-tracing-production-ai-agents"
       },
@@ -192,8 +919,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "Bank Examination Evidence for Model Risk Review | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/bank-examination-evidence-model-risk"
       },
@@ -222,8 +952,11 @@
         "lastmod": null,
         "org_id": "amazon",
         "published": "2026-10-16",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "Introducing Reflection Beam: an open-weight model for agentic coding on AWS",
         "url": "https://aws.amazon.com/blogs/machine-learning/introducing-reflection-beam-an-open-weight-model-for-agentic-coding-on-aws"
       },
@@ -237,8 +970,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "AI in Cybersecurity: How Workflows Change | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/ai-in-cybersecurity-workflows"
       },
@@ -252,8 +988,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.55,
+          "label": "research"
+        },
+        "stage": "stage2",
         "title": "AI Tokenomics: How to Model Token Cost for Agents | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/model-ai-tokenomics-agentic-systems"
       },
@@ -267,8 +1006,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.7,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "Artificial Intelligence Security Issues: Coding Agent Risks | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/artificial-intelligence-security-issues"
       },
@@ -282,8 +1024,11 @@
         "lastmod": null,
         "org_id": "openai",
         "published": "2026-10-14",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "Amp puts AI agents to work beyond code with OpenAI models",
         "url": "https://openai.com/index/amp-beyond-coding"
       },
@@ -297,8 +1042,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "AI Agent Control Plane: Beyond a Proxy | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/ai-agent-control-plane-beyond-proxy"
       },
@@ -312,8 +1060,11 @@
         "lastmod": null,
         "org_id": "amazon",
         "published": "2026-10-14",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "How Tamnoon built AI-powered cloud security remediation with Amazon Bedrock",
         "url": "https://aws.amazon.com/blogs/machine-learning/how-tamnoon-built-ai-powered-cloud-security-remediation-with-amazon-bedrock"
       },
@@ -327,8 +1078,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "Human-in-the-Loop Evaluation for LLM Apps | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/human-in-the-loop-evaluation-llm-apps"
       },
@@ -342,8 +1096,11 @@
         "lastmod": null,
         "org_id": "amazon",
         "published": "2026-10-14",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "Build self-improving document processing using Amazon Bedrock AgentCore",
         "url": "https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore"
       },
@@ -357,8 +1114,11 @@
         "lastmod": null,
         "org_id": "amazon",
         "published": "2026-10-14",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "Generate presentations with Amazon Bedrock AgentCore",
         "url": "https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore"
       },
@@ -372,8 +1132,11 @@
         "lastmod": "2026-10-15",
         "org_id": "google",
         "published": "2026-10-15",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "research"
+        },
+        "stage": "stage2",
         "title": "Google Research@ 2026: Novel capabilities and intelligence",
         "url": "https://blog.google/innovation-and-ai/technology/research/research-capabilities-intelligence-2026"
       },
@@ -387,8 +1150,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "research"
+        },
+        "stage": "stage2",
         "title": "What is red teaming for AI agents? | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/ai-agent-red-teaming"
       },
@@ -402,8 +1168,11 @@
         "lastmod": null,
         "org_id": "amazon",
         "published": "2026-10-16",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "Building trust in AI agents: A production-ready evaluation framework with Amazon Bedrock AgentCore",
         "url": "https://aws.amazon.com/blogs/machine-learning/building-trust-in-ai-agents-a-production-ready-evaluation-framework-with-amazon-bedrock-agentcore"
       },
@@ -417,8 +1186,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.7,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "API Cost and AI Agent ROI: Where Evaluation Bills Hide | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/api-cost-ai-agent-roi"
       },
@@ -432,8 +1204,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "research"
+        },
+        "stage": "stage2",
         "title": "Agentic AI Security Risks in Enterprise Coding Agents | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/agentic-ai-security-risks-coding-agents"
       },
@@ -447,8 +1222,11 @@
         "lastmod": "2026-10-15T19:02:01.519Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-15",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "research"
+        },
+        "stage": "stage2",
         "title": "The OpenAI-Hugging Face Breach: AI Agent Security Lessons | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/openai-hugging-face-breach-ai-agent-security"
       },
@@ -462,8 +1240,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.8,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "How to Trace Agent Handoffs in Multi-Agent LLM Systems | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/trace-agent-handoffs-multi-agent-llm-systems"
       },
@@ -477,8 +1258,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.9,
+          "label": "policy-governance"
+        },
+        "stage": "stage2",
         "title": "AI Governance in Healthcare for Agents | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/ai-governance-in-healthcare"
       },
@@ -492,8 +1276,11 @@
         "lastmod": "2026-10-16T02:31:13.007Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-16",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "AI Governance Framework for Generative AI | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/ai-governance-in-the-age-of-genai"
       },
@@ -507,8 +1294,11 @@
         "lastmod": "2026-10-15T00:00:00.000Z",
         "org_id": "h-company",
         "published": "2026-10-15",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.85,
+          "label": "research"
+        },
+        "stage": "stage2",
         "title": "Lab Notes: Post-training Nemotron 3.5 Super VL 120B-A12B for computer use | H",
         "url": "https://hcompany.ai/newsroom/lab-notes-nemotron-3.5-super-vl"
       },
@@ -522,8 +1312,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.7,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "Agentic AI Governance: Govern Agents in Production | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/agentic-ai-governance-production"
       },
@@ -537,8 +1330,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "Why do 70-95% of AI agent projects fail in production? | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/ai-agent-failure-rate"
       },
@@ -552,8 +1348,11 @@
         "lastmod": "2026-10-17T05:00:53.738Z",
         "org_id": "fiddler-ai",
         "published": "2026-10-17",
-        "relevance": null,
-        "stage": "stage1",
+        "relevance": {
+          "confidence": 0.55,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
         "title": "How To Build an AI Agent ROI Calculator Finance Trusts | Fiddler AI Blog",
         "url": "https://www.fiddler.ai/blog/ai-agent-roi-calculator"
       }
