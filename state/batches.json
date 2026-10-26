@@ -1435,6 +1435,34 @@
     "stage": "stage2",
     "submitted": "2026-10-19T04:47:25.229868Z"
   },
+  "msgbatch_015pUxZZSZ9cNznqLL9RnNhs": {
+    "collected": false,
+    "items": [
+      {
+        "attempts": 1,
+        "content_hash": null,
+        "detected": "2026-10-18",
+        "doc_type": "tech-blog",
+        "id": "e10eb698976ce4904b9264ff381c2d7be01bb15d",
+        "language": "en",
+        "lastmod": "2026-10-17T05:00:53.738Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-17",
+        "relevance": {
+          "confidence": 0.7,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Agentic AI Governance: Govern Agents in Production | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/agentic-ai-governance-production"
+      }
+    ],
+    "model": "claude-haiku-5-5",
+    "reserved_tokens": 11016,
+    "run_id": "2026-10-25",
+    "stage": "stage2",
+    "submitted": "2026-10-26T07:51:44.359088Z"
+  },
   "msgbatch_01RfHZe4Fy4qLK9cHNv2goYL": {
     "collected": true,
     "items": [
@@ -2152,7 +2180,7 @@
     "submitted": "2026-10-18T22:48:10.951086Z"
   },
   "msgbatch_01XsFoYSnxQoMdafhHAGAwM7": {
-    "collected": false,
+    "collected": true,
     "items": [
       {
         "attempts": 1,
@@ -2263,7 +2291,7 @@
         "url": "https://www.fiddler.ai/blog/ai-governance-in-healthcare"
       },
       {
-        "attempts": 0,
+        "attempts": 1,
         "content_hash": null,
         "detected": "2026-10-18",
         "doc_type": "tech-blog",
@@ -2461,7 +2489,7 @@
         "url": "https://www.fiddler.ai/blog/ai-agents-identity-complex"
       },
       {
-        "attempts": 0,
+        "attempts": 1,
         "content_hash": null,
         "detected": "2026-10-25",
         "doc_type": "tech-blog",
