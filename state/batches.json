@@ -1436,7 +1436,7 @@
     "submitted": "2026-10-19T04:47:25.229868Z"
   },
   "msgbatch_015pUxZZSZ9cNznqLL9RnNhs": {
-    "collected": false,
+    "collected": true,
     "items": [
       {
         "attempts": 1,
