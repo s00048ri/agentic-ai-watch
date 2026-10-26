@@ -18631,3 +18631,6 @@
 {"url":"https://aws.amazon.com/blogs/machine-learning/adaptive-agentic-intelligence-framework-using-strands-agents","org_id":"amazon","doc_type":"tech-blog","detected":"2026-10-25","lastmod":null,"content_hash":null,"outcome":"queued"}
 {"url":"https://aws.amazon.com/blogs/machine-learning/workflow-context-for-ai-agents-with-smartsheet-mcp-on-aws","org_id":"amazon","doc_type":"tech-blog","detected":"2026-10-25","lastmod":null,"content_hash":null,"outcome":"queued"}
 {"url":"https://www.aboutamazon.com/news/aws/amazon-nova-foundation-models-guide","org_id":"amazon","doc_type":"newsroom","detected":"2026-10-25","lastmod":"2026-10-22T17:07:48.139Z","content_hash":null,"outcome":"queued"}
+{"url":"https://www.preferred.jp/en/news/pr20261020","org_id":"preferred-networks","doc_type":"newsroom","detected":"2026-10-25","lastmod":"2026-10-20T10:05:15+09:00","content_hash":null,"outcome":"stage1_rejected"}
+{"url":"https://www.fiddler.ai/blog/monitor-ai-agent-fleet-behavior","org_id":"fiddler-ai","doc_type":"tech-blog","detected":"2026-10-25","lastmod":"2026-10-22T02:25:41.713Z","content_hash":null,"outcome":"stage1_rejected"}
+{"url":"https://openai.com/index/scaling-ai-research-for-complex-biological-data","org_id":"openai","doc_type":"newsroom","detected":"2026-10-25","lastmod":null,"content_hash":null,"outcome":"fetch_failed"}

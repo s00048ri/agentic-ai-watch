@@ -5,10 +5,10 @@
     "detected": 1398,
     "keyword_passed": 41,
     "stage1_sent": 41,
-    "stage1_passed": 0,
-    "stage2_sent": 0,
+    "stage1_passed": 39,
+    "stage2_sent": 39,
     "recorded": 0,
-    "carried_over": 9
+    "carried_over": 8
   },
   "new_entry_ids": [],
   "manual_watch_points": [
@@ -25,7 +25,9 @@
     "Johnson & Johnson: https://www.jnj.com/latest-news"
   ],
   "fetch_errors": [],
-  "unreadable_pages": [],
+  "unreadable_pages": [
+    "openai: [Using thousands of AI agents to uncover new leads in biological data](https://openai.com/index/scaling-ai-research-for-complex-biological-data) (HTTP 403 for https://openai.com/index/scaling-ai-research-for-complex-biological-data)"
+  ],
   "budget_stopped": false,
   "candidate_changes": [],
   "digest_posted": false
