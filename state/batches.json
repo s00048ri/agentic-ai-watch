@@ -1463,6 +1463,70 @@
     "stage": "stage2",
     "submitted": "2026-10-26T07:51:44.359088Z"
   },
+  "msgbatch_01Dc7CdWTuYf3VUfoTHR2tCF": {
+    "collected": false,
+    "items": [
+      {
+        "attempts": 1,
+        "content_hash": null,
+        "detected": "2026-10-25",
+        "doc_type": "tech-blog",
+        "id": "f0d4417730222c27a6f04833b90756d5098c26cf",
+        "language": "en",
+        "lastmod": "2026-10-22T02:25:41.713Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-22",
+        "relevance": {
+          "confidence": 0.6,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "How to Prevent Rogue Agents and Accelerate Enterprise AI Deployment | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/prevent-rogue-agents-enterprise-ai-deployment"
+      },
+      {
+        "attempts": 1,
+        "content_hash": null,
+        "detected": "2026-10-25",
+        "doc_type": "tech-blog",
+        "id": "fc702f4581afb3ad794188ce3364032e5e11b9ee",
+        "language": "en",
+        "lastmod": "2026-10-22T02:25:41.713Z",
+        "org_id": "fiddler-ai",
+        "published": "2026-10-22",
+        "relevance": {
+          "confidence": 0.7,
+          "label": "product-offering"
+        },
+        "stage": "stage2",
+        "title": "Verified Data Decides If Agentic AI Can Be Reliable | Fiddler AI Blog",
+        "url": "https://www.fiddler.ai/blog/verified-data-agentic-ai-reliability"
+      },
+      {
+        "attempts": 0,
+        "content_hash": null,
+        "detected": "2026-11-02",
+        "doc_type": "tech-blog",
+        "id": "984e83893d0833da52dc90b7a37441a740891434",
+        "language": "en",
+        "lastmod": "2026-10-26T18:35:15.000Z",
+        "org_id": "sierra-ai",
+        "published": "2026-10-26",
+        "relevance": {
+          "confidence": 0.85,
+          "label": "deployment"
+        },
+        "stage": "stage2",
+        "title": "Load testing: how Sierra scales for surges | Sierra",
+        "url": "https://sierra.ai/blog/load-testing"
+      }
+    ],
+    "model": "claude-haiku-5-5",
+    "reserved_tokens": 32493,
+    "run_id": "2026-11-02",
+    "stage": "stage2",
+    "submitted": "2026-11-02T16:18:22.293486Z"
+  },
   "msgbatch_01MXuWaKDRyhMmYjSXe1Ma9q": {
     "collected": true,
     "items": [
@@ -3814,7 +3878,7 @@
     "submitted": "2026-10-26T00:25:42.847128Z"
   },
   "msgbatch_01YCd8NGRNdQGvhwkfEDXdBx": {
-    "collected": false,
+    "collected": true,
     "items": [
       {
         "attempts": 1,
@@ -3907,7 +3971,7 @@
         "url": "https://www.aboutamazon.com/news/aws/amazon-nova-foundation-models-guide"
       },
       {
-        "attempts": 0,
+        "attempts": 1,
         "content_hash": null,
         "detected": "2026-10-25",
         "doc_type": "tech-blog",
@@ -3961,7 +4025,7 @@
         "url": "https://sierra.ai/blog/five-ways-to-use-ai-agents-healthcare"
       },
       {
-        "attempts": 0,
+        "attempts": 1,
         "content_hash": null,
         "detected": "2026-10-25",
         "doc_type": "tech-blog",

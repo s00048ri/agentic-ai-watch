@@ -76,7 +76,7 @@
   lead_route: people
   lead_detail: named in the team's Phase 3 proposals and contact lists (2026-10)
   first_seen: '2026-10-14'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: https://cohere.com/
   decision: pending
   decided: null
@@ -452,7 +452,7 @@
   lead_route: official-mention
   lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-expands-cobuild-capability'
   first_seen: '2026-10-14'
-  mentions: 2
+  mentions: 3
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -460,7 +460,7 @@
   lead_route: official-mention
   lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-expands-cobuild-capability'
   first_seen: '2026-10-14'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -468,7 +468,7 @@
   lead_route: official-mention
   lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-expands-cobuild-capability'
   first_seen: '2026-10-14'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -476,7 +476,7 @@
   lead_route: official-mention
   lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-expands-cobuild-capability'
   first_seen: '2026-10-14'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -484,7 +484,7 @@
   lead_route: official-mention
   lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-expands-cobuild-capability'
   first_seen: '2026-10-14'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -492,7 +492,7 @@
   lead_route: official-mention
   lead_detail: 'named in dataiku page 2026-09-30: https://www.dataiku.com/company/news/dataiku-named-snowflake-ai-data-cloud-product-partner-of-the-year'
   first_seen: '2026-10-14'
-  mentions: 2
+  mentions: 3
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -500,7 +500,7 @@
   lead_route: official-mention
   lead_detail: 'named in mistral-ai page 2026-10-08: https://mistral.ai/news/connectors'
   first_seen: '2026-10-14'
-  mentions: 3
+  mentions: 4
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -812,7 +812,7 @@
   lead_route: official-mention
   lead_detail: 'named in h-company page 2026-09-28: https://hcompany.ai/newsroom/holo4'
   first_seen: '2026-10-14'
-  mentions: 4
+  mentions: 7
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -844,7 +844,7 @@
   lead_route: official-mention
   lead_detail: 'named in dataiku page 2026-10-14: https://www.dataiku.com/company/news/dataiku-agent-management-general-availability'
   first_seen: '2026-10-19'
-  mentions: 3
+  mentions: 4
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -996,7 +996,7 @@
   lead_route: official-mention
   lead_detail: 'named in fiddler-ai page 2026-10-17: https://www.fiddler.ai/blog/trace-agent-handoffs-multi-agent-llm-systems'
   first_seen: '2026-10-19'
-  mentions: 2
+  mentions: 3
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -1004,7 +1004,7 @@
   lead_route: official-mention
   lead_detail: 'named in fiddler-ai page 2026-10-17: https://www.fiddler.ai/blog/trace-agent-handoffs-multi-agent-llm-systems'
   first_seen: '2026-10-19'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -1180,7 +1180,7 @@
   lead_route: official-mention
   lead_detail: 'named in anthropic page 2026-10-22: https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation'
   first_seen: '2026-10-26'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -1204,7 +1204,7 @@
   lead_route: official-mention
   lead_detail: 'named in google page 2026-10-23: https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber'
   first_seen: '2026-10-26'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -1212,7 +1212,7 @@
   lead_route: official-mention
   lead_detail: 'named in google page 2026-10-23: https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber'
   first_seen: '2026-10-26'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -1244,7 +1244,7 @@
   lead_route: official-mention
   lead_detail: 'named in anthropic page 2026-09-28: https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation'
   first_seen: '2026-10-26'
-  mentions: 2
+  mentions: 4
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -1452,7 +1452,7 @@
   lead_route: official-mention
   lead_detail: 'named in sierra-ai page 2026-10-19: https://sierra.ai/blog/meet-the-ai-agent-engineer'
   first_seen: '2026-10-26'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -1460,7 +1460,7 @@
   lead_route: official-mention
   lead_detail: 'named in fiddler-ai page 2026-10-22: https://www.fiddler.ai/blog/prevent-ai-agent-data-leakage-guardrails'
   first_seen: '2026-10-26'
-  mentions: 1
+  mentions: 2
   official_confirmation_url: null
   decision: pending
   decided: null
@@ -1500,6 +1500,286 @@
   lead_route: official-mention
   lead_detail: 'named in sierra-ai page 2026-10-19: https://sierra.ai/blog/our-partnership-with-plaid'
   first_seen: '2026-10-26'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Artificial Analysis
+  lead_route: official-mention
+  lead_detail: 'named in google page 2026-10-28: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon'
+  first_seen: '2026-11-02'
+  mentions: 3
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Arriva UK Trains
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-29: https://aws.amazon.com/blogs/machine-learning/how-the-uk-amazon-quick-user-group-grew-in-2026'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Carsa
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-29: https://aws.amazon.com/blogs/machine-learning/how-the-uk-amazon-quick-user-group-grew-in-2026'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Glow Labs
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-29: https://www.fiddler.ai/blog/secure-ai-agents-beyond-patching'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Forever Security
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-29: https://www.fiddler.ai/blog/secure-ai-agents-beyond-patching'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: eMudhra
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-29: https://www.fiddler.ai/blog/secure-ai-agents-beyond-patching'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: LangChain
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-23: https://www.fiddler.ai/blog/agentic-harnesses-vs-control-plane'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: CLEAR
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-19: https://sierra.ai/blog/introducing-sierra-summit-2025'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Wayfair
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-19: https://sierra.ai/blog/introducing-sierra-summit-2025'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: The Cigna Group
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-19: https://sierra.ai/blog/introducing-sierra-summit-2025'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Fox Broadcasting
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-19: https://sierra.ai/blog/introducing-sierra-summit-2025'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: DIRECTV
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-19: https://sierra.ai/blog/introducing-sierra-summit-2025'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Safelite
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-19: https://sierra.ai/blog/introducing-sierra-summit-2025'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Publicis Groupe
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-29: https://aws.amazon.com/blogs/machine-learning/building-intent-driven-ui-testing-with-amazon-nova-act'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Orange Cyberdefense
+  lead_route: official-mention
+  lead_detail: 'named in mistral-ai page 2026-10-29: https://mistral.ai/news/mistral-large-4-oss'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Cognition
+  lead_route: official-mention
+  lead_detail: 'named in mistral-ai page 2026-10-29: https://mistral.ai/news/mistral-large-4-oss'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Surge Code
+  lead_route: official-mention
+  lead_detail: 'named in mistral-ai page 2026-10-29: https://mistral.ai/news/mistral-large-4-oss'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Surge AI
+  lead_route: official-mention
+  lead_detail: 'named in mistral-ai page 2026-10-29: https://mistral.ai/news/mistral-large-4'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: LTM
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-30: https://aws.amazon.com/blogs/machine-learning/how-worldwide-express-automated-freight-exceptions-with-amazon-bedrock'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: AWS Business Transformation & Value Advisory
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-30: https://aws.amazon.com/blogs/machine-learning/how-worldwide-express-automated-freight-exceptions-with-amazon-bedrock'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Redfin
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-26: https://sierra.ai/blog/ai-agents-in-action-redfin'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Fitch Group
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-22: https://www.fiddler.ai/blog/lessons-building-agentic-systems'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Pinecone
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-26: https://sierra.ai/blog/building-sierras-mcp-gateway-an-engineering-iceberg'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Knox Systems
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-26: https://sierra.ai/blog/certified-fedramp-high'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Vanguard
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-26: https://sierra.ai/blog/certified-fedramp-high'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Rocket Mortgage
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-26: https://sierra.ai/blog/certified-fedramp-high'
+  first_seen: '2026-11-02'
+  mentions: 2
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Sutter Health
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-26: https://sierra.ai/blog/certified-fedramp-high'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Cigna
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-26: https://sierra.ai/blog/certified-fedramp-high'
+  first_seen: '2026-11-02'
+  mentions: 2
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Santander
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-26: https://sierra.ai/blog/horizon'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Funnel Leasing
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-26: https://sierra.ai/blog/ai-agents-in-action-funnel-leasing'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: PwC
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-30: https://www.fiddler.ai/blog/agentic-observability-development'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Smartsheet
+  lead_route: official-mention
+  lead_detail: 'named in amazon page 2026-10-20: https://aws.amazon.com/blogs/machine-learning/workflow-context-for-ai-agents-with-smartsheet-mcp-on-aws'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: BBVA
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-26: https://sierra.ai/blog/building-in-dach'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Next
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-26: https://sierra.ai/blog/building-in-dach'
+  first_seen: '2026-11-02'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null
+- name: Singtel
+  lead_route: official-mention
+  lead_detail: 'named in sierra-ai page 2026-10-26: https://sierra.ai/blog/building-in-dach'
+  first_seen: '2026-11-02'
   mentions: 1
   official_confirmation_url: null
   decision: pending
