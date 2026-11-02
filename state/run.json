@@ -5,10 +5,10 @@
     "detected": 319,
     "keyword_passed": 51,
     "stage1_sent": 51,
-    "stage1_passed": 0,
-    "stage2_sent": 0,
+    "stage1_passed": 49,
+    "stage2_sent": 37,
     "recorded": 0,
-    "carried_over": 9
+    "carried_over": 18
   },
   "new_entry_ids": [],
   "manual_watch_points": [
@@ -27,7 +27,11 @@
   "fetch_errors": [
     "clevva: https://clevva.com/: HTTP 404 for https://clevva.com/sitemap_index.xml"
   ],
-  "unreadable_pages": [],
+  "unreadable_pages": [
+    "openai: [How Grupo Boticário uses AI to strengthen human connections](https://openai.com/index/grupo-boticario) (HTTP 403 for https://openai.com/index/grupo-boticario)",
+    "openai: [Legora is building the agentic operating system for legal work](https://openai.com/index/legora) (HTTP 403 for https://openai.com/index/legora)",
+    "microsoft: [Introducing the Microsoft Copilot harness: Unlocking the potential of truly multi-model agentic work](https://blogs.microsoft.com/blog/2026/10/28/introducing-the-microsoft-copilot-harness-unlocking-the-potential-of-truly-multi-model-agentic-work) (HTTP 403 for https://blogs.microsoft.com/blog/2026/10/28/introducing-the-microsoft-copilot-harness-unlocking-the-potential-of-truly-multi-model-agentic-work)"
+  ],
   "budget_stopped": false,
   "candidate_changes": [],
   "digest_posted": false
