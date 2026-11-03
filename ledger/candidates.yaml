@@ -1784,3 +1784,11 @@
   official_confirmation_url: null
   decision: pending
   decided: null
+- name: Dun & Bradstreet
+  lead_route: official-mention
+  lead_detail: 'named in fiddler-ai page 2026-10-22: https://www.fiddler.ai/blog/verified-data-agentic-ai-reliability'
+  first_seen: '2026-11-03'
+  mentions: 1
+  official_confirmation_url: null
+  decision: pending
+  decided: null

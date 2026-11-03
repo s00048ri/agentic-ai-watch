@@ -1464,7 +1464,7 @@
     "submitted": "2026-10-26T07:51:44.359088Z"
   },
   "msgbatch_01Dc7CdWTuYf3VUfoTHR2tCF": {
-    "collected": false,
+    "collected": true,
     "items": [
       {
         "attempts": 1,

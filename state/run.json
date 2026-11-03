@@ -7,7 +7,7 @@
     "stage1_sent": 51,
     "stage1_passed": 49,
     "stage2_sent": 40,
-    "recorded": 35,
+    "recorded": 37,
     "carried_over": 17
   },
   "new_entry_ids": [
@@ -45,7 +45,9 @@
     "02736e4b2a727eac21331fe6556d4748b520f47c",
     "453d0fe5b3963913774cdab4ac7cdd2adf2a3b52",
     "50a818272dc69736493ee2925df4b3f60eebf097",
-    "d841fc8b370bc211320df5b380a7b352ccd83f04"
+    "d841fc8b370bc211320df5b380a7b352ccd83f04",
+    "fc702f4581afb3ad794188ce3364032e5e11b9ee",
+    "984e83893d0833da52dc90b7a37441a740891434"
   ],
   "manual_watch_points": [
     "Fujitsu: https://global.fujitsu/en-global/pr/news",
@@ -129,7 +131,8 @@
     "BBVA: new (sierra-ai)",
     "Next: new (sierra-ai)",
     "Singtel: new (sierra-ai)",
-    "NVIDIA: 7 mentions"
+    "NVIDIA: 7 mentions",
+    "Dun & Bradstreet: new (fiddler-ai)"
   ],
-  "digest_posted": false
+  "digest_posted": true
 }
